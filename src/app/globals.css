@@ -236,11 +236,43 @@ a {
 /* ───────────────────────── Game screen ───────────────────────── */
 .game {
   min-height: 100dvh;
-  background: var(--album-bg);
-  color: var(--album-fg);
+  position: relative;
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--accent) 6%, var(--poster-bg, #eef1f6)), var(--poster-bg, #eef1f6) 18rem),
+    var(--poster-bg, #eef1f6);
+  color: #111111;
   padding: 14px 14px 40px;
   max-width: 760px;
   margin: 0 auto;
+  overflow: hidden;
+}
+.game--poster {
+  --paper: #f9fafc;
+  --paper-deep: #e9edf3;
+  --poster-bg: #eef1f6;
+  --board-base: #fcfdff;
+  --ink: #111111;
+  padding-bottom: 40px;
+}
+.game--poster::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.45;
+  z-index: 0;
+  background: transparent;
+}
+.game--poster > * {
+  position: relative;
+  z-index: 1;
+}
+.game__albumskin {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.42;
 }
 .game__header {
   display: flex;
@@ -258,9 +290,9 @@ a {
   justify-content: center;
   width: 40px;
   height: 40px;
-  border-radius: var(--radius-md);
-  background: color-mix(in srgb, var(--album-fg) 10%, transparent);
-  color: var(--album-fg);
+  border: 2px solid var(--album-fg);
+  background: #fcfdff;
+  color: #111111;
   flex: none;
 }
 .game__titles {
@@ -293,12 +325,12 @@ a {
 }
 .game__timer {
   font-variant-numeric: tabular-nums;
-  font-weight: 600;
+  font-weight: 800;
   font-size: var(--font-sm);
-  color: var(--accent);
-  background: color-mix(in srgb, var(--accent) 16%, transparent);
+  color: #111111;
+  background: #ffe100;
   padding: 6px 10px;
-  border-radius: var(--radius-md);
+  border: 2px solid #111111;
   min-height: 32px;
   display: inline-flex;
   align-items: center;
@@ -309,60 +341,72 @@ a {
   display: inline-flex;
   flex: none;
   align-items: stretch;
-  gap: 2px;
-  padding: 2px;
-  border-radius: var(--radius-md);
-  background: color-mix(in srgb, var(--album-fg) 9%, transparent);
-  border: 1px solid color-mix(in srgb, var(--album-fg) 16%, transparent);
+  gap: 0;
+  padding: 0;
+  background: #fcfdff;
+  border: 2px solid #111111;
 }
 .seg-mini button {
   border: 0;
-  background: transparent;
+  background: #fcfdff;
   color: var(--album-fg);
   font-size: var(--font-xs);
-  font-weight: 600;
+  font-weight: 800;
   line-height: 1;
   padding: 0 11px;
   min-height: 30px;
-  border-radius: 7px;
-  opacity: 0.62;
-  transition: background 0.15s ease, opacity 0.15s ease, color 0.15s ease;
-}
-.seg-mini button:hover {
-  opacity: 0.85;
+  color: #111111;
+  transition: background 0.15s ease, color 0.15s ease;
 }
 .seg-mini button[data-on="true"] {
   background: var(--accent);
-  color: #fff;
-  opacity: 1;
+  color: #111111;
 }
 /* Control bar + album hero (dreamcore cover) */
 .game__bar {
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 4px 0 10px;
+  padding: 4px 0 12px;
+  position: sticky;
+  top: 0;
+  z-index: 24;
+  background: linear-gradient(180deg, var(--poster-bg) 84%, transparent);
 }
 .game__art-spacer {
   flex: 1;
 }
 .game__art {
   position: relative;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  margin: 0 0 10px;
-  padding: 14px 16px;
-  border-radius: var(--radius-xl);
-  background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 16%, var(--album-bg)), var(--album-bg) 78%);
-  border: 1px solid color-mix(in srgb, var(--album-fg) 12%, transparent);
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(220px, 0.9fr);
+  gap: 16px;
+  margin: 0 0 14px;
+  padding: 18px 18px 60px;
+  border-radius: 0;
+  background: var(--paper);
+  border: 3px solid #111111;
+  box-shadow: 10px 10px 0 color-mix(in srgb, var(--accent) 18%, #111111);
+  overflow: hidden;
 }
-.game__art-cover {
-  width: clamp(96px, 26vw, 132px);
-  flex: none;
+.game__art::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, transparent 0 78%, color-mix(in srgb, var(--accent) 12%, transparent) 78% 100%);
+  pointer-events: none;
 }
-.game__art-cover .cover-tile {
-  width: 100%;
+.game__art-noise {
+  position: absolute;
+  inset: 0;
+  opacity: 0.08;
+  background-image:
+    radial-gradient(circle at 20% 20%, currentColor 0 0.7px, transparent 0.9px),
+    radial-gradient(circle at 80% 65%, currentColor 0 0.8px, transparent 1px);
+  background-size: 12px 12px, 16px 16px;
+  color: color-mix(in srgb, var(--accent) 28%, transparent);
+  pointer-events: none;
 }
 .game__art-meta {
   display: flex;
@@ -370,39 +414,155 @@ a {
   gap: 2px;
   min-width: 0;
 }
+.game__art-copy {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.game__art-kicker {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--accent) 48%, #111111);
+}
 .game__art-artist {
   font-size: var(--font-xs);
-  font-weight: 600;
-  opacity: 0.8;
-  letter-spacing: 0.01em;
+  font-weight: 700;
+  opacity: 1;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 .game__art-album {
-  font-size: var(--font-2xl);
+  font-size: clamp(28px, 6vw, 48px);
   font-weight: 800;
-  line-height: 1.08;
-  letter-spacing: -0.01em;
+  line-height: 0.92;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
 }
 .game__concept {
-  margin: 6px 0 0;
+  margin: 10px 0 0;
   font-size: var(--font-sm);
-  line-height: 1.45;
-  opacity: 0.72;
+  line-height: 1.55;
+  opacity: 1;
+  max-width: 42ch;
+}
+.game__art-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+.game__art-tags span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 0 10px;
+  border: 2px solid #111111;
+  background: #fcfdff;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #111111;
+}
+.game__art-visual {
+  position: relative;
+  z-index: 1;
+  min-height: 230px;
+  border-radius: 0;
+  overflow: hidden;
+  background: var(--paper-deep);
+  border: 3px solid #111111;
+}
+.game__art-motif {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.game__art-glyph {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  font-size: clamp(34px, 6vw, 72px);
+  font-weight: 800;
+  line-height: 0.92;
+  letter-spacing: -0.06em;
+  text-transform: uppercase;
+  text-align: center;
+}
+.game__art-stamp {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  display: inline-flex;
+  padding: 6px 10px;
+  border: 2px solid #111;
+  background: var(--accent);
+  color: #111;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  transform: rotate(-4deg);
+}
+.game__art-tabs {
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  bottom: 0;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.game__art-tabs span {
+  min-height: 48px;
+  padding: 10px 8px 12px;
+  background: color-mix(in srgb, var(--accent) 12%, #fcfdff);
+  border-top: 2px dashed #111111;
+  border-right: 2px dashed #111111;
+  color: #121212;
+  font-size: 10px;
+  font-weight: 800;
+  line-height: 1.2;
+  text-align: center;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+}
+.game__art-tabs span:last-child {
+  border-right: 0;
+}
+.game__art--club .game__art-visual,
+.game__art--chrome .game__art-visual,
+.game__art--noir .game__art-visual {
+  background: var(--paper-deep);
+}
+.game__art--romance .game__art-visual {
+  background: var(--paper-deep);
+}
+.game__art--sunset .game__art-visual,
+.game__art--summer .game__art-visual {
+  background: var(--paper-deep);
 }
 
 /* Mobile: compact, structured album hero (no crammed look) */
 @media (max-width: 560px) {
   .game__art {
-    gap: 11px;
-    padding: 10px 11px;
-  }
-  .game__art-cover {
-    width: 80px;
-  }
-  .game__art-artist {
-    font-size: var(--font-xs);
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 14px 14px 54px;
   }
   .game__art-album {
-    font-size: var(--font-xl);
+    font-size: clamp(24px, 10vw, 34px);
   }
   .game__concept {
     margin-top: 4px;
@@ -413,28 +573,32 @@ a {
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
-  /* Trim stickers on small screens so they don't crowd the text */
-  .game__art .sticker--bubble,
-  .game__art .sticker--sparkle {
-    display: none;
+  .game__art-visual {
+    min-height: 170px;
   }
-  .game__art .sticker--star {
-    width: var(--dc-sticker-sm, 26px);
-    height: var(--dc-sticker-sm, 26px);
+  .game__art-tags {
+    margin-top: 12px;
+  }
+  .game__art-tabs {
+    left: 14px;
+    right: 14px;
+  }
+  .game__art-tabs span {
+    min-height: 42px;
+    font-size: 9px;
   }
 }
 
 .game__progress {
   position: relative;
   height: 8px;
-  background: color-mix(in srgb, var(--album-fg) 12%, transparent);
-  border-radius: 99px;
+  background: var(--paper);
+  border: 2px solid #111111;
   margin: 4px 0 16px;
 }
 .game__progress-bar {
   height: 100%;
   background: var(--accent);
-  border-radius: 99px;
   transition: width 0.25s ease;
 }
 .game__progress-label {
@@ -449,12 +613,116 @@ a {
 
 .game__boardwrap {
   overflow-x: auto;
-  padding-bottom: 6px;
+  padding: 8px 0 6px;
   display: flex;
   justify-content: center;
 }
+.game__sheet {
+  background: var(--paper);
+  border: 3px solid #111111;
+  padding: 14px;
+  box-shadow: 8px 8px 0 color-mix(in srgb, var(--accent) 14%, #111111);
+  position: relative;
+  overflow: hidden;
+}
+.game__sheet--clues {
+  align-self: stretch;
+}
+.game__sheet::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.22;
+  background: transparent;
+}
+.game[data-album="romance-untold"] .game__albumskin {
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--accent) 10%, transparent), transparent 22%),
+    radial-gradient(circle at 18% 12%, color-mix(in srgb, var(--accent) 14%, transparent) 0 10%, transparent 11%),
+    radial-gradient(circle at 82% 18%, color-mix(in srgb, var(--accent-2) 12%, transparent) 0 8%, transparent 9%),
+    repeating-linear-gradient(
+      180deg,
+      transparent 0 34px,
+      color-mix(in srgb, var(--accent) 7%, transparent) 34px 35px
+    );
+}
+.game[data-album="romance-untold"] .game__art,
+.game[data-album="romance-untold"] .game__sheet,
+.game[data-album="romance-untold"] .cluebar {
+  box-shadow: 10px 10px 0 color-mix(in srgb, var(--accent) 16%, #111111);
+}
+.game[data-album="romance-untold"] .game__art-tabs span {
+  background: color-mix(in srgb, var(--accent) 16%, #fcfdff);
+}
+
+.game[data-album="star-chapter-sanctuary"] .game__albumskin {
+  background:
+    radial-gradient(circle at 12% 10%, color-mix(in srgb, #ffffff 78%, transparent) 0 1px, transparent 2px),
+    radial-gradient(circle at 76% 18%, color-mix(in srgb, #ffffff 68%, transparent) 0 1.5px, transparent 2.5px),
+    linear-gradient(180deg, color-mix(in srgb, var(--accent) 8%, transparent), transparent 24%),
+    repeating-linear-gradient(
+      90deg,
+      transparent 0 52px,
+      color-mix(in srgb, var(--accent-2) 8%, transparent) 52px 53px
+    );
+  background-size: auto, auto, auto, auto;
+}
+.game[data-album="star-chapter-sanctuary"] .game__sheet::before,
+.game[data-album="star-chapter-sanctuary"] .game__art::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, color-mix(in srgb, #ffffff 30%, transparent), transparent 30%),
+    repeating-linear-gradient(
+      180deg,
+      transparent 0 30px,
+      color-mix(in srgb, var(--accent) 8%, transparent) 30px 31px
+    );
+  opacity: 0.22;
+}
+
+.game[data-album="ate"] .game__albumskin {
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--accent) 12%, transparent) 0 12%, transparent 12% 100%),
+    repeating-linear-gradient(
+      -45deg,
+      transparent 0 30px,
+      color-mix(in srgb, #111111 8%, transparent) 30px 32px
+    );
+}
+.game[data-album="ate"] .game__art,
+.game[data-album="ate"] .game__sheet {
+  border-width: 4px;
+}
+.game[data-album="ate"] .game__art-stamp,
+.game[data-album="ate"] .tool--primary {
+  background: #ffd447;
+}
+.game__sectionhead {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  border-bottom: 3px solid #111111;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+.game__sectionhead span {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--accent) 55%, #111111);
+}
+.game__sectionhead strong {
+  font-size: var(--font-lg);
+  font-weight: 800;
+  line-height: 1;
+}
 .board {
-  --cell-base: clamp(26px, 7.4vw, 38px);
+  --cell-base: clamp(24px, 6.8vw, 36px);
   --cell: var(--cell-base);
   display: grid;
   gap: 2px;
@@ -472,10 +740,10 @@ a {
 .board-zoom button {
   width: 34px;
   height: 30px;
-  border-radius: var(--radius-sm);
-  border: 1px solid color-mix(in srgb, var(--album-fg) 22%, transparent);
-  background: color-mix(in srgb, var(--album-fg) 8%, transparent);
-  color: var(--album-fg);
+  border-radius: 0;
+  border: 2px solid #111111;
+  background: var(--paper);
+  color: #111111;
   font-weight: 600;
   display: inline-flex;
   align-items: center;
@@ -495,10 +763,10 @@ a {
   width: var(--cell);
   height: var(--cell);
   position: relative;
-  border-radius: var(--radius-sm);
-  border: 1px solid color-mix(in srgb, var(--album-fg) 22%, transparent);
-  background: color-mix(in srgb, var(--album-fg) 8%, transparent);
-  color: var(--album-fg);
+  border-radius: 0;
+  border: 2px solid #111111;
+  background: var(--board-base);
+  color: #111111;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -514,7 +782,7 @@ a {
   left: 3px;
   font-size: 12px; /* overlay numeral — grid convention, below UI floor by design */
   font-weight: 600;
-  color: var(--accent-3);
+  color: color-mix(in srgb, var(--accent) 55%, #111111);
   line-height: 1;
 }
 .cell__letter {
@@ -523,22 +791,22 @@ a {
   text-transform: uppercase;
 }
 .cell--word {
-  background: color-mix(in srgb, var(--accent-2) 20%, transparent);
+  background: color-mix(in srgb, var(--accent-2) 18%, var(--board-base));
 }
 .cell--active {
-  background: color-mix(in srgb, var(--accent) 26%, transparent);
+  background: color-mix(in srgb, var(--accent) 28%, var(--board-base));
   border: 2px solid var(--accent);
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 24%, transparent);
+  box-shadow: 4px 4px 0 color-mix(in srgb, var(--accent) 24%, #111111);
 }
 .cell--correct {
-  background: color-mix(in srgb, var(--success) 22%, transparent);
-  border-color: color-mix(in srgb, var(--success) 60%, transparent);
+  background: color-mix(in srgb, var(--success) 22%, var(--board-base));
+  border-color: color-mix(in srgb, var(--success) 60%, #111111);
 }
 .cell--correct .cell__letter {
-  color: var(--album-fg);
+  color: #111111;
 }
 .cell--wrong {
-  background: color-mix(in srgb, var(--error) 22%, transparent);
+  background: color-mix(in srgb, var(--error) 18%, var(--board-base));
   border-color: var(--error);
   animation: cell-shake 0.32s ease;
 }
@@ -577,7 +845,7 @@ a {
   position: sticky;
   top: 0;
   z-index: 20;
-  background: var(--album-bg);
+  background: linear-gradient(180deg, var(--poster-bg) 78%, transparent);
   padding-top: 4px;
 }
 .cluebar {
@@ -585,17 +853,16 @@ a {
   align-items: center;
   gap: 8px;
   margin: 6px 0 12px;
-  background: color-mix(in srgb, var(--accent) 16%, var(--album-bg));
-  border: 1px solid color-mix(in srgb, var(--accent) 38%, transparent);
-  border-left: 3px solid var(--accent);
-  border-radius: var(--radius-md);
+  background: var(--paper);
+  border: 3px solid #111111;
   padding: 10px 12px;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+  color: #111111;
+  box-shadow: 6px 6px 0 color-mix(in srgb, var(--accent) 12%, #111111);
 }
 .cluebar__nav {
   border: 0;
   background: transparent;
-  color: var(--album-fg);
+  color: #111111;
   font-size: 22px;
   line-height: 1;
   width: 34px;
@@ -604,7 +871,7 @@ a {
   flex: none;
 }
 .cluebar__nav:hover {
-  background: color-mix(in srgb, var(--album-fg) 12%, transparent);
+  background: #ffe100;
 }
 .cluebar__text {
   flex: 1;
@@ -616,11 +883,10 @@ a {
 }
 .cluebar__tag {
   font-size: var(--font-xs);
-  font-weight: 600;
+  font-weight: 800;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  opacity: 0.92;
-  color: var(--accent);
+  color: #111111;
 }
 
 /* Toolbar */
@@ -628,27 +894,27 @@ a {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-bottom: 14px;
+  margin: 10px 0 14px;
 }
 .tool {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  border: 1px solid color-mix(in srgb, var(--album-fg) 22%, transparent);
-  background: color-mix(in srgb, var(--album-fg) 6%, transparent);
-  color: var(--album-fg);
+  border: 2px solid #111111;
+  background: #fcfdff;
+  color: #111111;
   padding: 9px 13px;
-  border-radius: var(--radius-md);
   font-size: var(--font-sm);
-  font-weight: 600;
+  font-weight: 800;
+  text-transform: uppercase;
 }
 .tool:hover {
-  background: color-mix(in srgb, var(--album-fg) 12%, transparent);
+  background: #ffe100;
 }
 .tool--primary {
   background: var(--accent);
-  border-color: var(--accent);
-  color: #fff;
+  border-color: #111111;
+  color: #111111;
 }
 
 /* Keypad */
@@ -656,8 +922,11 @@ a {
   display: flex;
   flex-direction: column;
   gap: 7px;
-  margin: 6px 0 22px;
+  margin: 6px 0 10px;
   user-select: none;
+}
+.keypad-spacer {
+  display: none;
 }
 .keypad__row {
   display: flex;
@@ -669,19 +938,19 @@ a {
   max-width: 46px;
   min-width: 28px;
   height: 48px;
-  border: 0;
-  border-radius: var(--radius-md);
-  background: color-mix(in srgb, var(--album-fg) 12%, transparent);
-  color: var(--album-fg);
+  border: 2px solid #111111;
+  background: #fcfdff;
+  border-radius: 0;
+  color: #111111;
   font-size: var(--font-xl);
-  font-weight: 600;
+  font-weight: 800;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .key:active {
-  background: var(--accent);
-  color: #fff;
+  background: #ffe100;
+  color: #111111;
 }
 .key--spacer {
   background: transparent;
@@ -689,12 +958,12 @@ a {
   max-width: 23px;
 }
 .key--del {
-  background: color-mix(in srgb, var(--accent) 22%, transparent);
+  background: #ff4fa3;
 }
 .key--lang {
-  background: color-mix(in srgb, var(--accent) 30%, transparent);
+  background: #ffe100;
   font-size: var(--font-sm);
-  font-weight: 600;
+  font-weight: 800;
 }
 
 /* Mobile: pin the keypad to the bottom (above the taskbar) so you can always type */
@@ -708,9 +977,9 @@ a {
     margin: 0;
     gap: 6px;
     padding: 9px 8px calc(9px + env(safe-area-inset-bottom, 0px));
-    background: color-mix(in srgb, var(--album-bg) 94%, black 6%);
-    border-top: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
-    box-shadow: 0 -4px 14px rgba(0, 0, 0, 0.28);
+    background: var(--poster-bg);
+    border-top: 3px solid #111111;
+    box-shadow: none;
   }
   .keypad__row {
     gap: 6px;
@@ -719,13 +988,17 @@ a {
     height: 46px;
     max-width: 42px;
     min-width: 26px;
-    border-radius: var(--radius-sm);
+    border-radius: 0;
   }
   .key--spacer {
     max-width: 21px;
   }
-  .win .game {
-    padding-bottom: 210px;
+  .keypad-spacer {
+    display: block;
+    height: 190px;
+  }
+  .game.game--poster {
+    padding-bottom: 220px;
   }
 }
 
@@ -761,10 +1034,10 @@ a {
     grid-template-columns: 1fr;
     min-width: 0;
     position: sticky;
-    top: 6px;
+    top: 8px;
     max-height: calc(100dvh - 56px);
     overflow-y: auto;
-    padding-right: 4px;
+    padding-right: 10px;
   }
 }
 .clues__title {
@@ -772,7 +1045,7 @@ a {
   font-weight: 800;
   margin: 0 0 8px;
   padding-bottom: 6px;
-  border-bottom: 1px solid color-mix(in srgb, var(--album-fg) 18%, transparent);
+  border-bottom: 2px solid #111111;
 }
 .clues__list {
   list-style: none;
@@ -790,25 +1063,229 @@ a {
   text-align: left;
   background: transparent;
   border: 0;
-  color: var(--album-fg);
+  color: #111111;
   padding: 8px 8px;
-  border-radius: var(--radius-sm);
+  border-radius: 0;
   font-size: var(--font-md);
   line-height: 1.35;
 }
 .clueitem:hover {
-  background: color-mix(in srgb, var(--album-fg) 8%, transparent);
+  background: color-mix(in srgb, var(--accent) 10%, #fcfdff);
 }
 .clueitem--active {
-  background: color-mix(in srgb, var(--accent) 18%, transparent);
+  background: color-mix(in srgb, var(--accent) 18%, #fcfdff);
 }
 .clueitem__num {
   font-weight: 600;
-  color: var(--accent-3);
+  color: color-mix(in srgb, var(--accent) 55%, #111111);
 }
 .clueitem__len {
   opacity: 0.55;
   font-variant-numeric: tabular-nums;
+}
+
+/* Variant-driven paper direction */
+.game--romance {
+  --paper: #f6e8ef;
+  --paper-deep: #ead5df;
+}
+.game--romance::before {
+  background:
+    radial-gradient(circle at 14% 12%, color-mix(in srgb, var(--accent) 18%, transparent) 0 8px, transparent 9px),
+    radial-gradient(circle at 84% 20%, color-mix(in srgb, var(--accent-2) 15%, transparent) 0 10px, transparent 11px),
+    linear-gradient(180deg, transparent 0 92%, color-mix(in srgb, var(--accent) 10%, transparent) 92% 100%);
+}
+.game--romance .game__sheet::before,
+.game--romance .game__art::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      180deg,
+      transparent 0 26px,
+      color-mix(in srgb, var(--accent) 10%, transparent) 26px 27px
+    );
+  opacity: 0.24;
+  pointer-events: none;
+}
+.game--romance .game__sectionhead,
+.game--romance .clues__title {
+  border-color: color-mix(in srgb, var(--accent) 45%, #111111);
+}
+
+.game--club {
+  --paper: #f8efb8;
+  --paper-deep: #ebde86;
+  --poster-bg: #edf0f5;
+}
+.game--club::before {
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--accent) 10%, transparent) 0 12%, transparent 12% 100%),
+    repeating-linear-gradient(
+      -45deg,
+      transparent 0 28px,
+      color-mix(in srgb, #111111 8%, transparent) 28px 30px
+    );
+}
+.game--club .game__sheet::before {
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--accent) 16%, transparent) 0 14px, transparent 14px 100%),
+    repeating-linear-gradient(
+      0deg,
+      transparent 0 34px,
+      color-mix(in srgb, #111111 8%, transparent) 34px 36px
+    );
+}
+.game--club .game__art-tabs span,
+.game--club .tool--primary,
+.game--club .game__art-stamp {
+  background: #ffd447;
+}
+
+.game--sunset {
+  --paper: #f8e6d6;
+  --paper-deep: #f0cdb8;
+}
+.game--sunset::before {
+  background:
+    radial-gradient(circle at top center, color-mix(in srgb, var(--accent) 15%, transparent) 0 18%, transparent 19%),
+    linear-gradient(180deg, color-mix(in srgb, #ffffff 22%, transparent), transparent 38%);
+}
+.game--sunset .game__sheet::before {
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--accent) 10%, transparent), transparent 24%),
+    repeating-linear-gradient(
+      90deg,
+      transparent 0 40px,
+      color-mix(in srgb, var(--accent-2) 8%, transparent) 40px 41px
+    );
+}
+
+.game--summer {
+  --paper: #e4f5f3;
+  --paper-deep: #c7e8e2;
+}
+.game--summer::before {
+  background:
+    radial-gradient(circle at 10% 14%, color-mix(in srgb, #ffffff 78%, transparent) 0 8%, transparent 9%),
+    radial-gradient(circle at 82% 18%, color-mix(in srgb, var(--accent) 10%, transparent) 0 7%, transparent 8%),
+    linear-gradient(180deg, color-mix(in srgb, #bde8f3 30%, transparent), transparent 40%);
+}
+.game--summer .game__sheet::before {
+  background:
+    repeating-linear-gradient(
+      90deg,
+      transparent 0 18px,
+      color-mix(in srgb, #ffffff 45%, transparent) 18px 22px
+    );
+  opacity: 0.2;
+}
+
+.game--athletic {
+  --paper: #e9f2da;
+  --paper-deep: #d3e0b8;
+}
+.game--athletic::before {
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--accent) 8%, transparent), transparent 28%),
+    repeating-linear-gradient(
+      90deg,
+      transparent 0 32px,
+      color-mix(in srgb, #6d8752 10%, transparent) 32px 33px
+    ),
+    repeating-linear-gradient(
+      180deg,
+      transparent 0 32px,
+      color-mix(in srgb, #6d8752 10%, transparent) 32px 33px
+    );
+}
+.game--athletic .game__sheet::before {
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--accent) 16%, transparent) 0 18px, transparent 18px 100%);
+}
+
+.game--sticker {
+  --paper: #ece7d8;
+  --paper-deep: #d9cfb1;
+}
+.game--sticker::before {
+  background:
+    radial-gradient(circle at 16% 16%, color-mix(in srgb, var(--accent) 12%, transparent) 0 7%, transparent 8%),
+    radial-gradient(circle at 78% 26%, color-mix(in srgb, var(--accent-2) 12%, transparent) 0 6%, transparent 7%),
+    repeating-linear-gradient(
+      12deg,
+      transparent 0 56px,
+      color-mix(in srgb, #111111 7%, transparent) 56px 58px
+    );
+}
+.game--sticker .game__sheet::before {
+  background:
+    linear-gradient(135deg, color-mix(in srgb, #ffffff 35%, transparent) 0 22px, transparent 22px 100%),
+    repeating-linear-gradient(
+      0deg,
+      transparent 0 30px,
+      color-mix(in srgb, var(--accent) 8%, transparent) 30px 31px
+    );
+}
+
+.game--chrome {
+  --paper: #e8ebf1;
+  --paper-deep: #cfd5de;
+}
+.game--chrome::before {
+  background:
+    linear-gradient(115deg, color-mix(in srgb, #ffffff 55%, transparent) 0 10%, transparent 10% 34%, color-mix(in srgb, #ffffff 30%, transparent) 34% 40%, transparent 40% 100%),
+    repeating-linear-gradient(
+      90deg,
+      transparent 0 44px,
+      color-mix(in srgb, #7d8793 10%, transparent) 44px 45px
+    );
+}
+.game--chrome .game__sheet::before {
+  background:
+    linear-gradient(180deg, color-mix(in srgb, #ffffff 32%, transparent), transparent 22%),
+    repeating-linear-gradient(
+      0deg,
+      transparent 0 28px,
+      color-mix(in srgb, #7d8793 10%, transparent) 28px 29px
+    );
+}
+
+.game--noir {
+  --paper: #e4e2df;
+  --paper-deep: #cfcbc5;
+}
+.game--noir::before {
+  background:
+    linear-gradient(180deg, color-mix(in srgb, #111111 9%, transparent), transparent 24%),
+    repeating-linear-gradient(
+      90deg,
+      transparent 0 24px,
+      color-mix(in srgb, #111111 6%, transparent) 24px 25px
+    );
+}
+.game--noir .game__sheet::before {
+  background:
+    radial-gradient(circle at 90% 10%, color-mix(in srgb, #111111 8%, transparent) 0 12%, transparent 13%),
+    repeating-linear-gradient(
+      180deg,
+      transparent 0 26px,
+      color-mix(in srgb, #111111 7%, transparent) 26px 27px
+    );
+}
+.game--noir .game__art-stamp,
+.game--noir .tool--primary {
+  background: #dde2ea;
+}
+
+.game--paper::before {
+  background:
+    repeating-linear-gradient(
+      180deg,
+      transparent 0 36px,
+      color-mix(in srgb, #111111 5%, transparent) 36px 37px
+    );
 }
 
 /* ───────────────────────── Victory modal ─────────────────────────
@@ -823,15 +1300,15 @@ a {
   align-items: center;
   justify-content: center;
   padding: 20px;
-  background: color-mix(in srgb, var(--album-bg) 72%, rgba(0, 0, 0, 0.7));
+  background: color-mix(in srgb, var(--poster-bg) 86%, rgba(17, 17, 17, 0.55));
   animation: fade 0.3s ease both;
 }
 .victory__card {
   position: relative;
-  background: linear-gradient(180deg, color-mix(in srgb, var(--accent) 12%, var(--album-bg)), var(--album-bg) 60%);
-  border: 1px solid color-mix(in srgb, var(--accent) 40%, transparent);
-  box-shadow: var(--shadow-xl), 0 0 60px color-mix(in srgb, var(--accent) 30%, transparent);
-  border-radius: var(--radius-xl);
+  background: var(--paper);
+  border: 3px solid #111111;
+  box-shadow: 12px 12px 0 color-mix(in srgb, var(--accent) 18%, #111111);
+  border-radius: 0;
   padding: 32px 28px 26px;
   text-align: center;
   max-width: 360px;

@@ -3,15 +3,13 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { ArrowLeft, Check, Delete, Eraser, Lightbulb, RotateCcw, Share2, Trophy } from "lucide-react";
 import Link from "next/link";
+import { getAlbumBrand } from "@/lib/albumBrand";
 import type { Album, Artist, Board, Direction, Entry } from "@/lib/types";
 import { buildBoard, cellKey, entryCells } from "@/lib/puzzle";
 import Confetti from "@/components/Confetti";
 import { drawShareCard, shareOrDownload } from "@/lib/shareCard";
-import { compose, emptyComp, processJamo, type Comp } from "@/lib/hangul";
 
 const KEYPAD_ROWS = ["QWERTYUIOP", "ASDFGHJKL", "ZXCVBNM"];
-// Korean (2-beolsik) jamo layout — for Korean-answer puzzles (toggle).
-const KEYPAD_ROWS_KO = ["ㅂㅈㄷㄱㅅㅛㅕㅑㅐㅔ", "ㅁㄴㅇㄹㅎㅗㅓㅏㅣ", "ㅋㅌㅊㅍㅠㅜㅡ"];
 
 /** Relative luminance of a hex color (0=dark .. 1=light), for picking sticker contrast. */
 function luminance(hex: string): number {
@@ -22,6 +20,30 @@ function luminance(hex: string): number {
   const g = ((n >> 8) & 255) / 255;
   const b = (n & 255) / 255;
   return 0.2126 * r + 0.7152 * g + 0.0722 * b;
+}
+
+function normalizeHex(hex: string): string {
+  const raw = hex.replace("#", "").trim();
+  if (raw.length === 3) return raw.split("").map((c) => c + c).join("");
+  return raw.padEnd(6, "0").slice(0, 6);
+}
+
+function mixHex(a: string, b: string, weight = 0.5): string {
+  const ah = normalizeHex(a);
+  const bh = normalizeHex(b);
+  const ratio = Math.min(1, Math.max(0, weight));
+  const av = parseInt(ah, 16);
+  const bv = parseInt(bh, 16);
+  const ar = (av >> 16) & 255;
+  const ag = (av >> 8) & 255;
+  const ab = av & 255;
+  const br = (bv >> 16) & 255;
+  const bg = (bv >> 8) & 255;
+  const bb = bv & 255;
+  const rr = Math.round(ar * (1 - ratio) + br * ratio);
+  const rg = Math.round(ag * (1 - ratio) + bg * ratio);
+  const rb = Math.round(ab * (1 - ratio) + bb * ratio);
+  return `#${[rr, rg, rb].map((v) => v.toString(16).padStart(2, "0")).join("")}`;
 }
 
 type CheckState = Record<string, "correct" | "wrong">;
@@ -35,11 +57,8 @@ export default function CrosswordGame({
   album: Album;
   backHref?: string;
 }) {
-  const [mode, setMode] = useState<"en" | "ko">("en");
-  const puzzle = useMemo(
-    () => (mode === "ko" && album.ko ? album.ko : { grid: album.grid, entries: album.entries }),
-    [mode, album]
-  );
+  const [mode, setMode] = useState<"en" | "ko">("ko");
+  const puzzle = useMemo(() => ({ grid: album.grid, entries: album.entries }), [album]);
   const board = useMemo<Board>(() => buildBoard(puzzle), [puzzle]);
 
   // Map "r,c" + dir -> entry, for fast active-word lookups.
@@ -65,11 +84,10 @@ export default function CrosswordGame({
   const [done, setDone] = useState(false);
   const [popped, setPopped] = useState<Set<string>>(new Set());
   const [zoom, setZoom] = useState(1);
-  const [hangul, setHangul] = useState<(Comp & { key: string }) | null>(null);
   const completedRef = useRef<Set<string>>(new Set());
   const boardRef = useRef<HTMLDivElement>(null);
 
-  const clueOf = useCallback((e: Entry) => e.clue, []);
+  const clueOf = useCallback((e: Entry) => (mode === "ko" ? e.clueKo ?? e.clue : e.clue), [mode]);
 
   const activeEntry = useMemo(() => {
     const key = cellKey(active.row, active.col);
@@ -105,32 +123,37 @@ export default function CrosswordGame({
       }
     }
     if (fresh.size) {
-      setPopped(fresh);
+      const show = setTimeout(() => setPopped(fresh), 0);
       const t = setTimeout(() => setPopped(new Set()), 480);
-      return () => clearTimeout(t);
+      return () => {
+        clearTimeout(show);
+        clearTimeout(t);
+      };
     }
   }, [values, board]);
 
-  // Reset the game when switching puzzle mode (영문 <-> 한글).
-  const modeInit = useRef(true);
+  // Reset the game when the underlying board changes.
+  const boardInit = useRef(true);
   useEffect(() => {
-    if (modeInit.current) {
-      modeInit.current = false;
+    if (boardInit.current) {
+      boardInit.current = false;
       return;
     }
-    setValues({});
-    setCheck({});
-    setPopped(new Set());
-    completedRef.current = new Set();
-    setDone(false);
-    setSeconds(0);
-    setHangul(null);
-    const first = board.across[0] ?? board.down[0];
-    if (first) {
-      setActive({ row: first.row, col: first.col });
-      setDir(board.across[0] ? "across" : "down");
-    }
-  }, [mode, board]);
+    const reset = setTimeout(() => {
+      setValues({});
+      setCheck({});
+      setPopped(new Set());
+      completedRef.current = new Set();
+      setDone(false);
+      setSeconds(0);
+      const first = board.across[0] ?? board.down[0];
+      if (first) {
+        setActive({ row: first.row, col: first.col });
+        setDir(board.across[0] ? "across" : "down");
+      }
+    }, 0);
+    return () => clearTimeout(reset);
+  }, [board]);
 
   const isSolved = useCallback(
     (v: Record<string, string>) => {
@@ -144,7 +167,7 @@ export default function CrosswordGame({
     [board]
   );
 
-  const cellAt = (r: number, c: number) => (board.cells[r]?.[c] ?? null);
+  const cellAt = useCallback((r: number, c: number) => board.cells[r]?.[c] ?? null, [board]);
 
   const selectCell = useCallback(
     (r: number, c: number) => {
@@ -161,7 +184,7 @@ export default function CrosswordGame({
         }
       }
     },
-    [active, dir, entryAt]
+    [active, cellAt, dir, entryAt]
   );
 
   const advance = useCallback(
@@ -193,7 +216,7 @@ export default function CrosswordGame({
         return n;
       });
     },
-    [check, isSolved]
+    [cellAt, check, isSolved]
   );
 
   const handleChar = useCallback(
@@ -204,40 +227,7 @@ export default function CrosswordGame({
     [active, advance, setLetter]
   );
 
-  // Korean jamo input — compose syllables into the active cell, carry over to the next.
-  const handleJamo = useCallback(
-    (jamo: string) => {
-      const activeKey = cellKey(active.row, active.col);
-      const cur: Comp =
-        hangul && hangul.key === activeKey
-          ? { cho: hangul.cho, jung: hangul.jung, jong: hangul.jong }
-          : emptyComp();
-      const r = processJamo(cur, jamo);
-      setLetter(active.row, active.col, r.display);
-      if (!r.advance) {
-        setHangul({ key: activeKey, ...r.next });
-        return;
-      }
-      if (!activeEntry) {
-        setHangul(null);
-        return;
-      }
-      const cells = entryCells(activeEntry);
-      const idx = cells.findIndex((c) => c.row === active.row && c.col === active.col);
-      const next = cells[idx + 1];
-      if (next) {
-        setActive({ row: next.row, col: next.col });
-        setLetter(next.row, next.col, compose(r.next));
-        setHangul({ key: cellKey(next.row, next.col), ...r.next });
-      } else {
-        setHangul(null);
-      }
-    },
-    [active, activeEntry, hangul, setLetter]
-  );
-
   const handleBackspace = useCallback(() => {
-    setHangul(null);
     const key = cellKey(active.row, active.col);
     if (values[key]) {
       setLetter(active.row, active.col, "");
@@ -257,7 +247,7 @@ export default function CrosswordGame({
         return n;
       });
     }
-  }, [active, activeEntry, check, setLetter, values]);
+  }, [active, activeEntry, advance, check, setLetter, values]);
 
   const move = useCallback(
     (dr: number, dc: number) => {
@@ -274,7 +264,7 @@ export default function CrosswordGame({
         c += dc;
       }
     },
-    [active, board, entryAt]
+    [active, board, cellAt, entryAt]
   );
 
   // Physical keyboard
@@ -282,16 +272,24 @@ export default function CrosswordGame({
     const onKey = (e: KeyboardEvent) => {
       if (e.metaKey || e.ctrlKey || e.altKey) return;
       if (/^[a-zA-Z]$/.test(e.key)) {
-        if (mode === "ko") return; // Korean answers use the on-screen jamo keypad
         e.preventDefault();
         handleChar(e.key.toUpperCase());
       } else if (e.key === "Backspace") {
         e.preventDefault();
         handleBackspace();
-      } else if (e.key === "ArrowUp") (e.preventDefault(), move(-1, 0));
-      else if (e.key === "ArrowDown") (e.preventDefault(), move(1, 0));
-      else if (e.key === "ArrowLeft") (e.preventDefault(), move(0, -1));
-      else if (e.key === "ArrowRight") (e.preventDefault(), move(0, 1));
+      } else if (e.key === "ArrowUp") {
+        e.preventDefault();
+        move(-1, 0);
+      } else if (e.key === "ArrowDown") {
+        e.preventDefault();
+        move(1, 0);
+      } else if (e.key === "ArrowLeft") {
+        e.preventDefault();
+        move(0, -1);
+      } else if (e.key === "ArrowRight") {
+        e.preventDefault();
+        move(0, 1);
+      }
       else if (e.key === " " || e.key === "Tab") {
         e.preventDefault();
         setDir((d) => (d === "across" ? "down" : "across"));
@@ -299,7 +297,7 @@ export default function CrosswordGame({
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [handleChar, handleBackspace, move, mode]);
+  }, [handleChar, handleBackspace, move]);
 
   const runCheck = useCallback(() => {
     const next: CheckState = {};
@@ -320,7 +318,7 @@ export default function CrosswordGame({
     setLetter(active.row, active.col, cell.solution);
     setCheck((prev) => ({ ...prev, [cellKey(active.row, active.col)]: "correct" }));
     advance(1);
-  }, [active, advance, setLetter]);
+  }, [active, advance, cellAt, setLetter]);
 
   const clearAll = useCallback(() => {
     setValues({});
@@ -359,8 +357,16 @@ export default function CrosswordGame({
 
   const filled = Object.values(values).filter(Boolean).length;
   const total = board.cells.flat().filter(Boolean).length;
+  const fillRate = total ? Math.round((filled / total) * 100) : 0;
 
   const t = album.theme;
+  const brand = getAlbumBrand(artist, album);
+  const cellBase =
+    board.cols >= 18 ? "clamp(18px, 5vw, 29px)" : board.cols >= 16 ? "clamp(21px, 5.8vw, 32px)" : "clamp(24px, 6.8vw, 36px)";
+  const paperBase = t ? mixHex(t.accent[0], "#f8f9fc", 0.88) : "#f9fafc";
+  const paperDeep = t ? mixHex(t.accent[1] ?? t.accent[0], "#e8ecf2", 0.82) : "#e9edf3";
+  const posterBg = t ? mixHex(t.bg, "#eef1f6", 0.9) : "#eef1f6";
+  const boardBase = t ? mixHex(t.accent[0], "#fcfdff", 0.94) : "#fcfdff";
   const themeStyle = t
     ? ({
         ["--accent"]: t.accent[0],
@@ -368,55 +374,75 @@ export default function CrosswordGame({
         ["--accent-3"]: t.accent[2] ?? t.accent[0],
         ["--album-bg"]: t.bg,
         ["--album-fg"]: t.fg,
+        ["--paper"]: paperBase,
+        ["--paper-deep"]: paperDeep,
+        ["--poster-bg"]: posterBg,
+        ["--board-base"]: boardBase,
       } as React.CSSProperties)
     : undefined;
   const scope = t ? (luminance(t.bg) > 0.5 ? "light" : "dark") : "dark";
 
   return (
-    <div className={`game dream-scope dream-scope--${scope}`} data-themed={t ? "" : undefined} style={themeStyle}>
+    <div
+      className={`game game--poster game--${brand.variant} dream-scope dream-scope--${scope}`}
+      data-themed={t ? "" : undefined}
+      data-album={brand.albumKey}
+      style={themeStyle}
+    >
+      <div className={`game__albumskin game__albumskin--${brand.albumKey}`} aria-hidden="true" />
       {/* Control bar */}
       <div className="game__bar">
         <Link href={backHref} className="game__back" aria-label="뒤로">
           <ArrowLeft size={18} />
         </Link>
         <span className="game__art-spacer" />
-        {album.ko && (
-          <div className="seg-mini" role="group" aria-label="퍼즐 버전">
-            <button data-on={mode === "en"} onClick={() => setMode("en")}>
-              ENG
-            </button>
-            <button data-on={mode === "ko"} onClick={() => setMode("ko")}>
-              한글
-            </button>
-          </div>
-        )}
+        <div className="seg-mini" role="group" aria-label="문제 언어">
+          <button data-on={mode === "ko"} onClick={() => setMode("ko")}>
+            한글
+          </button>
+          <button data-on={mode === "en"} onClick={() => setMode("en")}>
+            영문
+          </button>
+        </div>
         <div className="game__timer" aria-label="Elapsed time">{mmss}</div>
       </div>
 
-      {/* Album hero — real cover in a dreamcore frame */}
-      <div className="game__art">
-        {album.coverUrl && (
-          <div className="halftone-frame game__art-cover">
-            <figure className="cover-tile cover-tile--flush">
-              <span className="cover-tile__glow" aria-hidden="true" />
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img className="cover-tile__img" src={album.coverUrl} alt={`${artist.name} — ${album.title} 앨범 커버`} />
-            </figure>
+      {/* Album hero */}
+      <div className={`game__art game__art--${brand.variant}`}>
+        <div className="game__art-noise" aria-hidden="true" />
+        <div className="game__art-copy">
+          <div className="game__art-kicker">
+            <span>{artist.name}</span>
+            <span>{brand.releaseLabel}</span>
           </div>
-        )}
-        <div className="game__art-meta">
           <span className="game__art-artist">{artist.name}</span>
           <span className="game__art-album">{album.title}</span>
-          {album.theme?.concept && <p className="game__concept">“{album.theme.concept}”</p>}
+          <p className="game__concept">{brand.concept}</p>
+          <div className="game__art-tags">
+            {brand.facts.map((fact) => (
+              <span key={fact}>{fact}</span>
+            ))}
+          </div>
         </div>
-        <span className="sticker sticker--star sticker--lg sticker--tr" aria-hidden="true" />
-        <span className="sticker sticker--sparkle sticker--sm" style={{ top: "14%", left: "-6px" }} aria-hidden="true" />
-        <span className="sticker sticker--bubble sticker--md sticker--delay" style={{ bottom: "6%", right: "12%" }} aria-hidden="true" />
+        <div className="game__art-visual" aria-hidden="true">
+          {brand.imageSrc ? (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img className="game__art-motif" src={brand.imageSrc} alt={`${artist.name} ${album.title} cover`} />
+          ) : (
+            <span className="game__art-glyph">{brand.glyph}</span>
+          )}
+          <span className="game__art-stamp">{brand.titleTrackLabel}</span>
+        </div>
+        <div className="game__art-tabs" aria-hidden="true">
+          {[brand.releaseLabel, artist.name, artist.fandom].map((fact) => (
+            <span key={fact}>{fact}</span>
+          ))}
+        </div>
       </div>
 
       <div className="game__progress">
-        <div className="game__progress-bar" style={{ width: `${(filled / total) * 100}%` }} />
-        <span className="game__progress-label">{filled}/{total}</span>
+        <div className="game__progress-bar" style={{ width: `${fillRate}%` }} />
+        <span className="game__progress-label">{filled}/{total} · {fillRate}%</span>
       </div>
 
       {/* Active clue bar — sticky above the board */}
@@ -441,6 +467,11 @@ export default function CrosswordGame({
 
       <div className="game__play">
       <div className="game__playmain">
+      <section className="game__sheet">
+      <div className="game__sectionhead">
+        <span>QUIZ BOARD</span>
+        <strong>{brand.boardLabel}</strong>
+      </div>
       {/* Board zoom */}
       <div className="board-zoom">
         <button
@@ -469,6 +500,7 @@ export default function CrosswordGame({
             gridTemplateColumns: `repeat(${board.cols}, var(--cell))`,
             gridTemplateRows: `repeat(${board.rows}, var(--cell))`,
             ["--cell"]: `calc(var(--cell-base) * ${zoom})`,
+            ["--cell-base"]: cellBase,
           } as React.CSSProperties}
         >
           {board.cells.map((row, r) =>
@@ -503,21 +535,23 @@ export default function CrosswordGame({
 
       {/* Toolbar */}
       <div className="toolbar">
-        <button className="tool" onClick={runCheck}><Check size={16} /> Check</button>
-        <button className="tool" onClick={revealCell}><Lightbulb size={16} /> Hint</button>
-        <button className="tool" onClick={() => setCheck({})}><Eraser size={16} /> Clear marks</button>
-        <button className="tool" onClick={clearAll}><RotateCcw size={16} /> Reset</button>
+        <button className="tool" onClick={runCheck}><Check size={16} /> 정답 확인</button>
+        <button className="tool" onClick={revealCell}><Lightbulb size={16} /> 한 칸 힌트</button>
+        <button className="tool" onClick={() => setCheck({})}><Eraser size={16} /> 표시 지우기</button>
+        <button className="tool" onClick={clearAll}><RotateCcw size={16} /> 처음부터</button>
       </div>
 
-      {/* Keypad (mobile-first) — follows puzzle mode (영문 QWERTY / 한글 자모) */}
+      <div className="keypad-spacer" aria-hidden="true" />
+
+      {/* Keypad (mobile-first) */}
       <div className="keypad">
-        {(mode === "ko" ? KEYPAD_ROWS_KO : KEYPAD_ROWS).map((rowStr, i, arr) => (
+        {KEYPAD_ROWS.map((rowStr, i, arr) => (
           <div className="keypad__row" key={i}>
             {rowStr.split("").map((ch) => (
               <button
                 key={ch}
                 className="key"
-                onClick={() => (mode === "ko" ? handleJamo(ch) : handleChar(ch))}
+                onClick={() => handleChar(ch)}
               >
                 {ch}
               </button>
@@ -530,15 +564,20 @@ export default function CrosswordGame({
           </div>
         ))}
       </div>
+      </section>
 
       </div>
       {/* /game__playmain */}
 
       {/* Clue lists */}
-      <div className="clues">
+      <aside className="clues game__sheet game__sheet--clues">
+        <div className="game__sectionhead">
+          <span>CLUE FILE</span>
+          <strong>{brand.clueLabel}</strong>
+        </div>
         <ClueColumn title={mode === "ko" ? "가로" : "ACROSS"} entries={board.across} active={activeEntry} clueOf={clueOf} onPick={goToEntry} />
         <ClueColumn title={mode === "ko" ? "세로" : "DOWN"} entries={board.down} active={activeEntry} clueOf={clueOf} onPick={goToEntry} />
-      </div>
+      </aside>
       </div>
       {/* /game__play */}
 

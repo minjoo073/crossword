@@ -3,19 +3,22 @@ import Desktop from "@/components/retro/Desktop";
 
 export default function Landing() {
   return (
-    <Desktop taskbarLabel="K-POP CROSSWORD" dream>
+    <Desktop taskbarLabel="K-POP CROSSWORD">
       <div className="landing">
-        <span className="sticker sticker--star sticker--lg" style={{ top: "6%", left: "12%" }} aria-hidden="true" />
-        <span className="sticker sticker--sparkle sticker--md" style={{ top: "16%", right: "16%" }} aria-hidden="true" />
-        <span className="sticker sticker--star sticker--md sticker--delay" style={{ bottom: "20%", left: "20%" }} aria-hidden="true" />
-        <span className="sticker sticker--bubble sticker--lg" style={{ bottom: "12%", right: "14%" }} aria-hidden="true" />
-
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/logo.svg" alt="K-POP CROSSWORD" className="landing__logo-img" />
-        <span className="y2k-tag y2k-tag--sky y2k-tag--straight">Is it time?</span>
-        <Link href="/artists" className="cta-glossy">
-          ▶ 게임 시작
-        </Link>
+        <div className="landing__poster">
+          <div className="landing__strip">4TH & 5TH GEN IDOLS</div>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/logo.svg" alt="K-POP CROSSWORD" className="landing__logo-img" />
+          <p className="landing__copy">최애 앨범 컨셉으로 푸는 K-POP 팬 전용 크로스워드.</p>
+          <div className="landing__meta" aria-hidden="true">
+            <span>ALBUM ERA</span>
+            <span>TYPE QUIZ</span>
+            <span>MOBILE FIRST</span>
+          </div>
+          <Link href="/artists" className="landing__cta">
+            게임 시작
+          </Link>
+        </div>
       </div>
     </Desktop>
   );

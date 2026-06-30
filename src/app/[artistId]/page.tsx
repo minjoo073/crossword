@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Desktop from "@/components/retro/Desktop";
 import RetroWindow from "@/components/retro/RetroWindow";
+import { getAlbumBrand } from "@/lib/albumBrand";
 import { getArtist, getArtists } from "@/lib/puzzle";
 
 export function generateStaticParams() {
@@ -32,28 +33,51 @@ export default async function ArtistAlbumsPage(props: PageProps<"/[artistId]">) 
           </div>
           <div className="pick__section">최근 2년 앨범 · {artist.albums.length}게임</div>
           <div className="albums">
-            {artist.albums.map((album) => (
-              <Link key={album.id} href={`/${artist.id}/${album.id}`} className="album-card">
-                <figure
-                  className="cover-tile cover-tile--flush album-card__cover"
-                  style={{ ["--accent"]: album.theme?.accent[0] ?? "#8a38f5" } as React.CSSProperties}
+            {artist.albums.map((album) => {
+              const brand = getAlbumBrand(artist, album);
+
+              return (
+                <Link
+                  key={album.id}
+                  href={`/${artist.id}/${album.id}`}
+                  className={`album-card album-card--${brand.variant}`}
+                  style={
+                    {
+                      ["--accent"]: album.theme?.accent[0] ?? "#8a38f5",
+                      ["--accent-2"]: album.theme?.accent[1] ?? "#d53a6b",
+                      ["--accent-3"]: album.theme?.accent[2] ?? "#111111",
+                      ["--album-bg"]: album.theme?.bg ?? "#ffffff",
+                      ["--album-fg"]: album.theme?.fg ?? "#111111",
+                    } as React.CSSProperties
+                  }
                 >
-                  <span className="cover-tile__glow" aria-hidden="true" />
-                  {album.coverUrl ? (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img className="cover-tile__img" src={album.coverUrl} alt={`${album.title} 커버`} />
-                  ) : (
-                    <span className="album-card__big" aria-hidden>
-                      {album.title[0]}
-                    </span>
-                  )}
-                </figure>
-                <div className="album-card__body">
-                  <div className="album-card__title">{album.title}</div>
-                  <div className="album-card__meta">{album.entries.length}문항 · 크로스워드</div>
-                </div>
-              </Link>
-            ))}
+                  <div className="album-card__paper">
+                    <div className="album-card__head">
+                      <span>{brand.releaseLabel}</span>
+                      <span>{brand.yearLabel} ERA</span>
+                    </div>
+                    <div className="album-card__title">{album.title}</div>
+                    <p className="album-card__concept">{brand.conceptLine}</p>
+                    <div className="album-card__visual">
+                      {brand.imageSrc ? (
+                        // eslint-disable-next-line @next/next/no-img-element
+                        <img className="album-card__motif" src={brand.imageSrc} alt={`${album.title} cover`} />
+                      ) : (
+                        <span className="album-card__big" aria-hidden>
+                          {brand.glyph}
+                        </span>
+                      )}
+                      <span className="album-card__stamp">{brand.titleTrackLabel}</span>
+                    </div>
+                    <div className="album-card__tabs" aria-hidden="true">
+                      {brand.facts.map((fact) => (
+                        <span key={fact}>{fact}</span>
+                      ))}
+                    </div>
+                  </div>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </RetroWindow>
