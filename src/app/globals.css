@@ -1,26 +1,914 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Agbalumo&display=swap");
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* App shell — Crowny Class */
+  --primary: #8a38f5;
+  --secondary: #d53a6b;
+  --gradient: linear-gradient(135deg, #8a38f5, #d53a6b);
+  --light-bg: #f3f4f6;
+  --surface: #ffffff;
+  --text-dark: #1f2937;
+  --text-mute: #6b7280;
+  --line: #e5e7eb;
+
+  --success: #22c55e;
+  --error: #ef4444;
+  --info: #3b82f6;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-xl: 16px;
+  --shadow-sm: 0 1px 2px rgba(17, 24, 39, 0.06), 0 1px 3px rgba(17, 24, 39, 0.08);
+  --shadow-md: 0 4px 12px rgba(17, 24, 39, 0.1);
+  --shadow-xl: 0 20px 50px rgba(17, 24, 39, 0.35);
+
+  /* ── TYPE SYSTEM ────────────────────────────────────────────────────────
+   * FONT: Pretendard everywhere (Korean/body/UI). Tahoma ONLY on the retro
+   *       window chrome (.win__title / .win__menu). Agbalumo ONLY on the logo.
+   *       No other font mixing.
+   * SCALE (project override — CEO-approved): the global Crowny 16px floor is
+   *       relaxed for this dense game UI; UI text floor = 13px, never smaller.
+   * WEIGHT: exactly 3 steps — 400 regular / 600 semibold / 800 bold.
+   *         (No 500/700/900 in app UI.)
+   * ─────────────────────────────────────────────────────────────────────── */
+  --font-xs: 13px;   /* meta · tags · tiny labels (hard UI floor) */
+  --font-sm: 14px;   /* secondary text · compact buttons */
+  --font-md: 15px;   /* body · clue text (default) */
+  --font-lg: 16px;   /* active clue · primary buttons */
+  --font-xl: 18px;   /* keypad keys · sub-headings */
+  --font-2xl: 22px;  /* album title */
+  --font-3xl: 28px;  /* victory CLEAR! */
+
+  --weight-regular: 400;
+  --weight-semibold: 600;
+  --weight-bold: 800;
+
+  /* Default game theme (overridden per album) */
+  --accent: #8a38f5;
+  --accent-2: #d53a6b;
+  --accent-3: #8a38f5;
+  --album-bg: #0e0e12;
+  --album-fg: #f5f5f7;
+
+  font-family: "Pretendard Variable", Pretendard, system-ui, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+body {
+  background: var(--light-bg);
+  color: var(--text-dark);
+  font-size: var(--font-md);
+  -webkit-font-smoothing: antialiased;
+}
+button {
+  font: inherit;
+  cursor: pointer;
+}
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ───────────────────────── App shell / Home ───────────────────────── */
+.shell {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 24px 16px 64px;
+}
+.brand {
+  font-family: "Agbalumo", cursive; /* logo only — per design system */
+  font-size: clamp(24px, 5.4vw, 36px);
+  line-height: 1.1;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  letter-spacing: -0.01em;
+}
+.brand__sub {
+  margin-top: 6px;
+  color: var(--text-mute);
+  font-size: var(--font-md);
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin: 22px 0 8px;
+}
+.search {
+  flex: 1 1 220px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 0 12px;
+  height: 46px;
+}
+.search input {
+  border: 0;
+  outline: 0;
+  flex: 1;
+  font-size: var(--font-md);
+  background: transparent;
+  color: var(--text-dark);
+}
+.seg {
+  display: inline-flex;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 3px;
+  height: 46px;
+}
+.seg button {
+  border: 0;
+  background: transparent;
+  padding: 0 14px;
+  border-radius: 8px;
+  font-size: var(--font-md);
+  color: var(--text-mute);
+  font-weight: 600;
+}
+.seg button[data-on="true"] {
+  background: var(--gradient);
+  color: #fff;
+}
+
+.group__label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 26px 4px 12px;
+  font-size: var(--font-lg);
+  font-weight: 800;
+  color: var(--text-dark);
+}
+.group__label span {
+  color: var(--text-mute);
+  font-weight: 600;
+  font-size: var(--font-md);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 14px;
+}
+
+/* Album card — editorial: color field + big letter, no glass */
+.card {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--line);
+  background: var(--surface);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+.card__art {
+  aspect-ratio: 1 / 1;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  padding: 12px;
+  color: var(--ca-fg, #fff);
+  background: linear-gradient(150deg, var(--ca1, #8a38f5), var(--ca2, #d53a6b));
+}
+.card__initial {
+  position: absolute;
+  top: -6px;
+  right: 6px;
+  font-size: 92px;
+  font-weight: 800;
+  line-height: 1;
+  opacity: 0.22;
+  color: var(--ca-fg, #fff);
+  pointer-events: none;
+}
+.card__fandom {
+  font-size: var(--font-xs);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+.card__body {
+  padding: 11px 13px 14px;
+}
+.card__artist {
+  font-size: var(--font-xs);
+  color: var(--text-mute);
+  font-weight: 600;
+}
+.card__album {
+  font-size: var(--font-lg);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-top: 2px;
+  color: var(--text-dark);
+}
+.card__meta {
+  margin-top: 6px;
+  font-size: var(--font-xs);
+  color: var(--text-mute);
+}
+
+/* ───────────────────────── Game screen ───────────────────────── */
+.game {
+  min-height: 100dvh;
+  background: var(--album-bg);
+  color: var(--album-fg);
+  padding: 14px 14px 40px;
+  max-width: 760px;
+  margin: 0 auto;
+}
+.game__header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: var(--album-bg);
+  padding: 6px 0 10px;
+}
+.game__back {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background: color-mix(in srgb, var(--album-fg) 10%, transparent);
+  color: var(--album-fg);
+  flex: none;
+}
+.game__titles {
+  flex: 1;
+  min-width: 0;
+}
+.game__artist {
+  font-size: var(--font-xs);
+  opacity: 0.7;
+  font-weight: 600;
+}
+.game__album {
+  font-size: var(--font-2xl);
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 0;
+}
+.lang-toggle {
+  flex: none;
+  border: 1px solid color-mix(in srgb, var(--accent) 50%, transparent);
+  background: color-mix(in srgb, var(--accent) 14%, transparent);
+  color: var(--album-fg);
+  font-weight: 600;
+  font-size: var(--font-sm);
+  padding: 7px 11px;
+  border-radius: var(--radius-md);
+}
+.lang-toggle:hover {
+  background: color-mix(in srgb, var(--accent) 26%, transparent);
+}
+.game__timer {
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  font-size: var(--font-sm);
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 16%, transparent);
+  padding: 6px 10px;
+  border-radius: var(--radius-md);
+  min-height: 32px;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Compact version toggle (ENG | 한글) in the game header — 2-button segmented */
+.seg-mini {
+  display: inline-flex;
+  flex: none;
+  align-items: stretch;
+  gap: 2px;
+  padding: 2px;
+  border-radius: var(--radius-md);
+  background: color-mix(in srgb, var(--album-fg) 9%, transparent);
+  border: 1px solid color-mix(in srgb, var(--album-fg) 16%, transparent);
+}
+.seg-mini button {
+  border: 0;
+  background: transparent;
+  color: var(--album-fg);
+  font-size: var(--font-xs);
+  font-weight: 600;
+  line-height: 1;
+  padding: 0 11px;
+  min-height: 30px;
+  border-radius: 7px;
+  opacity: 0.62;
+  transition: background 0.15s ease, opacity 0.15s ease, color 0.15s ease;
+}
+.seg-mini button:hover {
+  opacity: 0.85;
+}
+.seg-mini button[data-on="true"] {
+  background: var(--accent);
+  color: #fff;
+  opacity: 1;
+}
+/* Control bar + album hero (dreamcore cover) */
+.game__bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 0 10px;
+}
+.game__art-spacer {
+  flex: 1;
+}
+.game__art {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 0 0 10px;
+  padding: 14px 16px;
+  border-radius: var(--radius-xl);
+  background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 16%, var(--album-bg)), var(--album-bg) 78%);
+  border: 1px solid color-mix(in srgb, var(--album-fg) 12%, transparent);
+}
+.game__art-cover {
+  width: clamp(96px, 26vw, 132px);
+  flex: none;
+}
+.game__art-cover .cover-tile {
+  width: 100%;
+}
+.game__art-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+.game__art-artist {
+  font-size: var(--font-xs);
+  font-weight: 600;
+  opacity: 0.8;
+  letter-spacing: 0.01em;
+}
+.game__art-album {
+  font-size: var(--font-2xl);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+}
+.game__concept {
+  margin: 6px 0 0;
+  font-size: var(--font-sm);
+  line-height: 1.45;
+  opacity: 0.72;
+}
+
+/* Mobile: compact, structured album hero (no crammed look) */
+@media (max-width: 560px) {
+  .game__art {
+    gap: 11px;
+    padding: 10px 11px;
+  }
+  .game__art-cover {
+    width: 80px;
+  }
+  .game__art-artist {
+    font-size: var(--font-xs);
+  }
+  .game__art-album {
+    font-size: var(--font-xl);
+  }
+  .game__concept {
+    margin-top: 4px;
+    font-size: var(--font-xs);
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  /* Trim stickers on small screens so they don't crowd the text */
+  .game__art .sticker--bubble,
+  .game__art .sticker--sparkle {
+    display: none;
+  }
+  .game__art .sticker--star {
+    width: var(--dc-sticker-sm, 26px);
+    height: var(--dc-sticker-sm, 26px);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.game__progress {
+  position: relative;
+  height: 8px;
+  background: color-mix(in srgb, var(--album-fg) 12%, transparent);
+  border-radius: 99px;
+  margin: 4px 0 16px;
+}
+.game__progress-bar {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 99px;
+  transition: width 0.25s ease;
+}
+.game__progress-label {
+  position: absolute;
+  right: 0;
+  top: 12px;
+  font-size: var(--font-xs);
+  font-weight: 600;
+  opacity: 0.7;
+  font-variant-numeric: tabular-nums;
+}
+
+.game__boardwrap {
+  overflow-x: auto;
+  padding-bottom: 6px;
+  display: flex;
+  justify-content: center;
+}
+.board {
+  --cell-base: clamp(26px, 7.4vw, 38px);
+  --cell: var(--cell-base);
+  display: grid;
+  gap: 2px;
+  margin: 0 auto;
+}
+
+/* Board zoom control */
+.board-zoom {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+  margin: 0 2px 6px;
+}
+.board-zoom button {
+  width: 34px;
+  height: 30px;
+  border-radius: var(--radius-sm);
+  border: 1px solid color-mix(in srgb, var(--album-fg) 22%, transparent);
+  background: color-mix(in srgb, var(--album-fg) 8%, transparent);
+  color: var(--album-fg);
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.board-zoom button:disabled {
+  opacity: 0.4;
+}
+.board-zoom__label {
+  font-size: var(--font-xs);
+  opacity: 0.7;
+  font-variant-numeric: tabular-nums;
+  min-width: 60px;
+  text-align: center;
+}
+.cell {
+  width: var(--cell);
+  height: var(--cell);
+  position: relative;
+  border-radius: var(--radius-sm);
+  border: 1px solid color-mix(in srgb, var(--album-fg) 22%, transparent);
+  background: color-mix(in srgb, var(--album-fg) 8%, transparent);
+  color: var(--album-fg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+.cell--void {
+  border: 0;
+  background: transparent;
+}
+.cell__num {
+  position: absolute;
+  top: 1px;
+  left: 3px;
+  font-size: 12px; /* overlay numeral — grid convention, below UI floor by design */
+  font-weight: 600;
+  color: var(--accent-3);
+  line-height: 1;
+}
+.cell__letter {
+  font-size: clamp(15px, 4.2vw, 20px);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.cell--word {
+  background: color-mix(in srgb, var(--accent-2) 20%, transparent);
+}
+.cell--active {
+  background: color-mix(in srgb, var(--accent) 26%, transparent);
+  border: 2px solid var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 24%, transparent);
+}
+.cell--correct {
+  background: color-mix(in srgb, var(--success) 22%, transparent);
+  border-color: color-mix(in srgb, var(--success) 60%, transparent);
+}
+.cell--correct .cell__letter {
+  color: var(--album-fg);
+}
+.cell--wrong {
+  background: color-mix(in srgb, var(--error) 22%, transparent);
+  border-color: var(--error);
+  animation: cell-shake 0.32s ease;
+}
+.cell--pop {
+  animation: cell-pop 0.46s ease;
+  z-index: 1;
+}
+@keyframes cell-pop {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.16);
+    background: color-mix(in srgb, var(--accent) 40%, transparent);
+    border-color: var(--accent);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes cell-shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-3px);
+  }
+  75% {
+    transform: translateX(3px);
+  }
+}
+
+/* Active clue bar */
+.game__top {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: var(--album-bg);
+  padding-top: 4px;
+}
+.cluebar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 6px 0 12px;
+  background: color-mix(in srgb, var(--accent) 16%, var(--album-bg));
+  border: 1px solid color-mix(in srgb, var(--accent) 38%, transparent);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius-md);
+  padding: 10px 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+}
+.cluebar__nav {
+  border: 0;
+  background: transparent;
+  color: var(--album-fg);
+  font-size: 22px;
+  line-height: 1;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  flex: none;
+}
+.cluebar__nav:hover {
+  background: color-mix(in srgb, var(--album-fg) 12%, transparent);
+}
+.cluebar__text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-size: var(--font-lg);
+  line-height: 1.35;
+}
+.cluebar__tag {
+  font-size: var(--font-xs);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  opacity: 0.92;
+  color: var(--accent);
+}
+
+/* Toolbar */
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.tool {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid color-mix(in srgb, var(--album-fg) 22%, transparent);
+  background: color-mix(in srgb, var(--album-fg) 6%, transparent);
+  color: var(--album-fg);
+  padding: 9px 13px;
+  border-radius: var(--radius-md);
+  font-size: var(--font-sm);
+  font-weight: 600;
+}
+.tool:hover {
+  background: color-mix(in srgb, var(--album-fg) 12%, transparent);
+}
+.tool--primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+/* Keypad */
+.keypad {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin: 6px 0 22px;
+  user-select: none;
+}
+.keypad__row {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+.key {
+  flex: 1 1 0;
+  max-width: 46px;
+  min-width: 28px;
+  height: 48px;
+  border: 0;
+  border-radius: var(--radius-md);
+  background: color-mix(in srgb, var(--album-fg) 12%, transparent);
+  color: var(--album-fg);
+  font-size: var(--font-xl);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.key:active {
+  background: var(--accent);
+  color: #fff;
+}
+.key--spacer {
+  background: transparent;
+  pointer-events: none;
+  max-width: 23px;
+}
+.key--del {
+  background: color-mix(in srgb, var(--accent) 22%, transparent);
+}
+.key--lang {
+  background: color-mix(in srgb, var(--accent) 30%, transparent);
+  font-size: var(--font-sm);
+  font-weight: 600;
+}
+
+/* Mobile: pin the keypad to the bottom (above the taskbar) so you can always type */
+@media (max-width: 700px) {
+  .keypad {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 38px; /* clears the sticky taskbar */
+    z-index: 25;
+    margin: 0;
+    gap: 6px;
+    padding: 9px 8px calc(9px + env(safe-area-inset-bottom, 0px));
+    background: color-mix(in srgb, var(--album-bg) 94%, black 6%);
+    border-top: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
+    box-shadow: 0 -4px 14px rgba(0, 0, 0, 0.28);
+  }
+  .keypad__row {
+    gap: 6px;
+  }
+  .key {
+    height: 46px;
+    max-width: 42px;
+    min-width: 26px;
+    border-radius: var(--radius-sm);
+  }
+  .key--spacer {
+    max-width: 21px;
+  }
+  .win .game {
+    padding-bottom: 210px;
+  }
+}
+
+/* Clue lists */
+.game__play {
+  display: block;
+}
+.game__playmain {
+  min-width: 0;
+}
+.clues {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+@media (min-width: 620px) {
+  .clues {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+/* Desktop: clue list beside the board (no scrolling to read the problems) */
+@media (min-width: 900px) {
+  .game__play {
+    display: flex;
+    gap: 22px;
+    align-items: flex-start;
+  }
+  .game__playmain {
+    flex: 0 1 auto;
+  }
+  .game__play .clues {
+    flex: 1 1 0;
+    grid-template-columns: 1fr;
+    min-width: 0;
+    position: sticky;
+    top: 6px;
+    max-height: calc(100dvh - 56px);
+    overflow-y: auto;
+    padding-right: 4px;
+  }
+}
+.clues__title {
+  font-size: var(--font-lg);
+  font-weight: 800;
+  margin: 0 0 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid color-mix(in srgb, var(--album-fg) 18%, transparent);
+}
+.clues__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.clueitem {
+  display: grid;
+  grid-template-columns: 26px 1fr auto;
+  gap: 8px;
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: 0;
+  color: var(--album-fg);
+  padding: 8px 8px;
+  border-radius: var(--radius-sm);
+  font-size: var(--font-md);
+  line-height: 1.35;
+}
+.clueitem:hover {
+  background: color-mix(in srgb, var(--album-fg) 8%, transparent);
+}
+.clueitem--active {
+  background: color-mix(in srgb, var(--accent) 18%, transparent);
+}
+.clueitem__num {
+  font-weight: 600;
+  color: var(--accent-3);
+}
+.clueitem__len {
+  opacity: 0.55;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ───────────────────────── Victory modal ─────────────────────────
+ * Renamed from .win to avoid colliding with the retro window .win.
+ * Staged reveal: backdrop fade → card pop → trophy bounce → CLEAR! glow →
+ * details rise. Confetti runs on top (anim.css). Honors reduced-motion. */
+.victory {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: color-mix(in srgb, var(--album-bg) 72%, rgba(0, 0, 0, 0.7));
+  animation: fade 0.3s ease both;
+}
+.victory__card {
+  position: relative;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--accent) 12%, var(--album-bg)), var(--album-bg) 60%);
+  border: 1px solid color-mix(in srgb, var(--accent) 40%, transparent);
+  box-shadow: var(--shadow-xl), 0 0 60px color-mix(in srgb, var(--accent) 30%, transparent);
+  border-radius: var(--radius-xl);
+  padding: 32px 28px 26px;
+  text-align: center;
+  max-width: 360px;
+  width: 100%;
+  overflow: hidden;
+  animation: victory-pop 0.5s cubic-bezier(0.18, 0.9, 0.32, 1.28) both;
+}
+/* soft accent halo sweeping behind the contents */
+.victory__card::before {
+  content: "";
+  position: absolute;
+  top: -40%;
+  left: 50%;
+  width: 140%;
+  aspect-ratio: 1;
+  transform: translateX(-50%);
+  background: radial-gradient(circle at center, color-mix(in srgb, var(--accent) 32%, transparent) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+.victory__card > * {
+  position: relative;
+  z-index: 1;
+}
+.victory__trophy {
+  color: var(--accent);
+  filter: drop-shadow(0 4px 14px color-mix(in srgb, var(--accent) 65%, transparent));
+  animation: trophy-drop 0.75s cubic-bezier(0.2, 0.8, 0.2, 1.25) 0.18s both;
+}
+.victory__card h2 {
+  font-size: var(--font-3xl);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  margin: 12px 0 4px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 2px 10px color-mix(in srgb, var(--accent) 45%, transparent));
+  animation: clear-in 0.55s cubic-bezier(0.2, 0.9, 0.3, 1.35) 0.34s both;
+}
+.victory__card > p {
+  font-size: var(--font-sm);
+  opacity: 0.85;
+  margin: 4px 0 0;
+  animation: victory-rise 0.45s ease 0.5s both;
+}
+.victory__card > p.victory__time {
+  color: var(--accent);
+  font-weight: 600;
+  font-size: var(--font-md);
+  opacity: 1;
+  margin-top: 6px;
+  animation: victory-rise 0.45s ease 0.6s both;
+}
+.victory__actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 18px;
+  animation: victory-rise 0.45s ease 0.7s both;
+}
+.victory__actions + .victory__actions {
+  margin-top: 10px;
+  animation-delay: 0.78s;
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }

@@ -1,0 +1,113 @@
+{
+  "_meta": {
+    "note": "Per-album mood banner art. file = self-contained SVG under /public/art (viewBox 0 0 880 240). glyph = the bold sans-serif word rendered on the banner. Colors come from design/album-themes.json. No external fonts/images/links; no copyrighted assets. Top-left / top-right corners kept clear for game controls (back chip, timer chip).",
+    "lastUpdated": "2026-06-30"
+  },
+  "albums": [
+    {
+      "artistId": "stray-kids",
+      "albumId": "ate",
+      "file": "/art/stray-kids__ate.svg",
+      "glyph": "ATE",
+      "mood": ["regal", "bold", "hiphop", "feast"]
+    },
+    {
+      "artistId": "enhypen",
+      "albumId": "romance-untold",
+      "file": "/art/enhypen__romance-untold.svg",
+      "glyph": "ROMANCE",
+      "mood": ["romantic", "dramatic", "fairytale", "dark"]
+    },
+    {
+      "artistId": "txt",
+      "albumId": "star-chapter-sanctuary",
+      "file": "/art/txt__star-chapter-sanctuary.svg",
+      "glyph": "SANCTUARY",
+      "mood": ["celestial", "ethereal", "dreamy", "cosmic"]
+    },
+    {
+      "artistId": "ateez",
+      "albumId": "golden-hour-part1",
+      "file": "/art/ateez__golden-hour-part1.svg",
+      "glyph": "GOLDEN HOUR",
+      "mood": ["golden", "nostalgic", "energetic", "sunset"]
+    },
+    {
+      "artistId": "riize",
+      "albumId": "riizing",
+      "file": "/art/riize__riizing.svg",
+      "glyph": "RIIZING",
+      "mood": ["fresh", "funky", "bright", "groove"]
+    },
+    {
+      "artistId": "boynextdoor",
+      "albumId": "1999",
+      "file": "/art/boynextdoor__1999.svg",
+      "glyph": "19.99",
+      "mood": ["nostalgic", "boyish", "retro", "y2k"]
+    },
+    {
+      "artistId": "zerobaseone",
+      "albumId": "you-had-me-at-hello",
+      "file": "/art/zerobaseone__you-had-me-at-hello.svg",
+      "glyph": "HELLO",
+      "mood": ["pop", "summery", "bright", "sweet"]
+    },
+    {
+      "artistId": "tws",
+      "albumId": "summer-beat",
+      "file": "/art/tws__summer-beat.svg",
+      "glyph": "SUMMER BEAT!",
+      "mood": ["refreshing", "playful", "summer", "soda"]
+    },
+    {
+      "artistId": "plave",
+      "albumId": "caligo-pt1",
+      "file": "/art/plave__caligo-pt1.svg",
+      "glyph": "CALIGO",
+      "mood": ["virtual", "neon", "dramatic", "noir"]
+    },
+    {
+      "artistId": "nct-wish",
+      "albumId": "steady",
+      "file": "/art/nct-wish__steady.svg",
+      "glyph": "STEADY",
+      "mood": ["fresh", "youthful", "sporty", "bright"]
+    },
+    {
+      "artistId": "le-sserafim",
+      "albumId": "crazy",
+      "file": "/art/le-sserafim__crazy.svg",
+      "glyph": "CRAZY",
+      "mood": ["fierce", "disco", "bold", "sultry"]
+    },
+    {
+      "artistId": "ive",
+      "albumId": "ive-empathy",
+      "file": "/art/ive__ive-empathy.svg",
+      "glyph": "REBEL",
+      "mood": ["rebellious", "chic", "bold", "edgy"]
+    },
+    {
+      "artistId": "aespa",
+      "albumId": "whiplash",
+      "file": "/art/aespa__whiplash.svg",
+      "glyph": "WHIPLASH",
+      "mood": ["chic", "metallic", "edgy", "cyber"]
+    },
+    {
+      "artistId": "illit",
+      "albumId": "super-real-me",
+      "file": "/art/illit__super-real-me.svg",
+      "glyph": "MAGNETIC",
+      "mood": ["dreamy", "soft", "magnetic", "girlish"]
+    },
+    {
+      "artistId": "babymonster",
+      "albumId": "drip",
+      "file": "/art/babymonster__drip.svg",
+      "glyph": "DRIP",
+      "mood": ["swag", "fierce", "hiphop", "chrome"]
+    }
+  ]
+}

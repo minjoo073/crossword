@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="240" viewBox="0 0 880 240" role="img" aria-label="ZEROBASEONE - You had me at HELLO">
+  <rect width="880" height="240" fill="#FFFBF2"/>
+  <g>
+    <circle cx="150" cy="190" r="9" fill="#2ED3C6"/>
+    <circle cx="725" cy="60" r="8" fill="#FFD23F"/>
+    <circle cx="690" cy="160" r="11" fill="#FF5FA2" opacity="0.55"/>
+    <circle cx="205" cy="70" r="7" fill="#FFD23F"/>
+    <rect x="745" y="120" width="14" height="14" rx="3" fill="#2ED3C6" transform="rotate(20 752 127)"/>
+    <rect x="165" y="135" width="12" height="12" rx="3" fill="#FF5FA2" transform="rotate(-15 171 141)"/>
+  </g>
+  <g>
+    <rect x="262" y="68" width="356" height="108" rx="54" fill="#FF5FA2"/>
+    <path d="M360 172 L350 210 L408 174 Z" fill="#FF5FA2"/>
+  </g>
+  <text x="440" y="142" text-anchor="middle" font-family="Tahoma,'Segoe UI',sans-serif" font-weight="800" font-size="62" letter-spacing="7" fill="#FFFBF2">HELLO</text>
+  <text x="440" y="210" text-anchor="middle" font-family="Tahoma,'Segoe UI',sans-serif" font-weight="700" font-size="18" letter-spacing="3" fill="#2ED3C6">YOU HAD ME AT</text>
+</svg>

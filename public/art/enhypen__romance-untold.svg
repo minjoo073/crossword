@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="240" viewBox="0 0 880 240" role="img" aria-label="ENHYPEN - ROMANCE : UNTOLD">
+  <defs>
+    <radialGradient id="rom-bg" cx="50%" cy="35%" r="90%">
+      <stop offset="0" stop-color="#3A1020"/>
+      <stop offset="60%" stop-color="#250E18"/>
+      <stop offset="100%" stop-color="#1C0D14"/>
+    </radialGradient>
+  </defs>
+  <rect width="880" height="240" fill="#1C0D14"/>
+  <rect width="880" height="240" fill="url(#rom-bg)"/>
+  <g transform="translate(440 78)" fill="none" stroke-linecap="round">
+    <path d="M0 -2 a14 14 0 1 1 -11 21 a30 30 0 1 1 40 -10 a46 46 0 1 1 -64 -16" stroke="#B91C42" stroke-width="7"/>
+    <path d="M0 -2 a14 14 0 1 1 -11 21 a30 30 0 1 1 40 -10" stroke="#D4A574" stroke-width="3" opacity="0.85"/>
+    <path d="M-2 36 q-26 26 -62 30 M2 36 q26 26 62 30" stroke="#7A2236" stroke-width="5"/>
+  </g>
+  <g stroke="#D4A574" stroke-width="2" opacity="0.55">
+    <path d="M150 60 q40 14 70 6" fill="none"/>
+    <path d="M730 70 q-40 14 -70 6" fill="none"/>
+  </g>
+  <text x="440" y="212" text-anchor="middle" font-family="Tahoma,'Segoe UI',sans-serif" font-weight="800" font-size="74" letter-spacing="8" fill="#F3E4DE">ROMANCE</text>
+</svg>

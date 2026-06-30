@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="240" viewBox="0 0 880 240" role="img" aria-label="IVE - Rebel Heart">
+  <defs>
+    <radialGradient id="ive-bg" cx="50%" cy="40%" r="95%">
+      <stop offset="0" stop-color="#3A0F16"/>
+      <stop offset="60%" stop-color="#1F0A0D"/>
+      <stop offset="100%" stop-color="#140A0C"/>
+    </radialGradient>
+    <linearGradient id="ive-chrome" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F2E7E9"/>
+      <stop offset="50%" stop-color="#B8BCC6"/>
+      <stop offset="100%" stop-color="#71757F"/>
+    </linearGradient>
+  </defs>
+  <rect width="880" height="240" fill="url(#ive-bg)"/>
+  <path d="M440 96 C 430 70 392 70 392 96 C 392 120 440 138 440 138 C 440 138 488 120 488 96 C 488 70 450 70 440 96 Z" fill="none" stroke="url(#ive-chrome)" stroke-width="7"/>
+  <path d="M440 76 L452 110" stroke="#E11D3C" stroke-width="5" stroke-linecap="round"/>
+  <g stroke="#E11D3C" stroke-width="3" opacity="0.55">
+    <path d="M120 70 l40 0 m-30 14 l30 0"/>
+    <path d="M760 70 l-40 0 m30 14 l-30 0"/>
+  </g>
+  <text x="440" y="214" text-anchor="middle" font-family="Tahoma,'Segoe UI',sans-serif" font-weight="800" font-size="104" letter-spacing="10" fill="#E11D3C">REBEL</text>
+</svg>

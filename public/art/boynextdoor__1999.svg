@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="240" viewBox="0 0 880 240" role="img" aria-label="BOYNEXTDOOR - 19.99">
+  <defs>
+    <pattern id="bnd-dots" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="4" cy="4" r="2.4" fill="#3E6BD4" opacity="0.16"/>
+    </pattern>
+  </defs>
+  <rect width="880" height="240" fill="#F5F0E6"/>
+  <rect width="880" height="240" fill="url(#bnd-dots)"/>
+  <g fill="#E89A4B">
+    <path d="M150 60 l5 13 14 1 -11 9 4 14 -12 -8 -12 8 4 -14 -11 -9 14 -1 Z"/>
+    <path d="M720 170 l4 11 12 1 -9 8 3 12 -10 -7 -10 7 3 -12 -9 -8 12 -1 Z" opacity="0.85"/>
+  </g>
+  <rect x="60" y="178" width="540" height="10" rx="5" fill="#E89A4B"/>
+  <text x="60" y="165" font-family="Tahoma,'Segoe UI',sans-serif" font-weight="800" font-size="120" letter-spacing="2" fill="#3E6BD4">19.99</text>
+</svg>

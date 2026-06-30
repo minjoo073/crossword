@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="240" viewBox="0 0 880 240" role="img" aria-label="BABYMONSTER - DRIP">
+  <defs>
+    <linearGradient id="drp-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#12161E"/>
+      <stop offset="100%" stop-color="#0B0E13"/>
+    </linearGradient>
+    <linearGradient id="drp-chrome" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="40%" stop-color="#2DD4FF"/>
+      <stop offset="72%" stop-color="#C7CCD6"/>
+      <stop offset="100%" stop-color="#6A7480"/>
+    </linearGradient>
+  </defs>
+  <rect width="880" height="240" fill="url(#drp-bg)"/>
+  <g fill="url(#drp-chrome)">
+    <path d="M360 0 h26 v40 a13 13 0 1 1 -26 0 Z"/>
+    <path d="M440 0 h22 v64 a11 11 0 1 1 -22 0 Z"/>
+    <path d="M512 0 h24 v32 a12 12 0 1 1 -24 0 Z"/>
+  </g>
+  <g fill="#2DD4FF" opacity="0.7">
+    <circle cx="412" cy="92" r="7"/>
+    <circle cx="486" cy="100" r="5"/>
+  </g>
+  <text x="440" y="214" text-anchor="middle" font-family="Tahoma,'Segoe UI',sans-serif" font-weight="800" font-size="118" letter-spacing="10" fill="url(#drp-chrome)">DRIP</text>
+</svg>

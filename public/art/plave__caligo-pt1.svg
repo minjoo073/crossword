@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="240" viewBox="0 0 880 240" role="img" aria-label="PLAVE - Caligo">
+  <defs>
+    <linearGradient id="cal-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0A0E18"/>
+      <stop offset="70%" stop-color="#0C1424"/>
+      <stop offset="100%" stop-color="#0A0E18"/>
+    </linearGradient>
+    <linearGradient id="cal-fog" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3DE0E0" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#3DE0E0" stop-opacity="0.14"/>
+    </linearGradient>
+  </defs>
+  <rect width="880" height="240" fill="url(#cal-bg)"/>
+  <g stroke="#8B5CF6" stroke-width="1.5" opacity="0.45">
+    <path d="M440 150 L120 240 M440 150 L300 240 M440 150 L580 240 M440 150 L760 240"/>
+    <path d="M60 240 L820 240 M120 215 L760 215 M200 196 L680 196 M260 182 L620 182" fill="none"/>
+  </g>
+  <ellipse cx="440" cy="230" rx="420" ry="60" fill="url(#cal-fog)"/>
+  <g stroke="#3DE0E0" stroke-width="4" stroke-linecap="round" opacity="0.7">
+    <path d="M150 64 l54 0 M120 84 l40 0 M700 70 l54 0 M724 92 l40 0"/>
+  </g>
+  <text x="442" y="150" text-anchor="middle" font-family="Tahoma,'Segoe UI',sans-serif" font-weight="800" font-size="92" letter-spacing="8" fill="#8B5CF6" opacity="0.6">CALIGO</text>
+  <text x="440" y="148" text-anchor="middle" font-family="Tahoma,'Segoe UI',sans-serif" font-weight="800" font-size="92" letter-spacing="8" fill="#3DE0E0">CALIGO</text>
+</svg>

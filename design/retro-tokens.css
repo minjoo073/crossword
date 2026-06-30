@@ -1,0 +1,96 @@
+/* ============================================================
+   RETRO SHELL TOKENS  —  Y2K / Frutiger Aero / Win98·XP
+   Scope: APP SHELL ONLY (desktop, window chrome, taskbar, logo).
+   Game-internal grid/clue/keypad keeps album-themes.json vars.
+   All raw HEX lives here as variables — never inline in components.
+   Pairs with design/RETRO-SHELL.md.
+   ============================================================ */
+
+:root {
+  /* ---------- Desktop wallpaper (pure CSS, no photo) ---------- */
+  --rs-sky-top:      #1f6fd6;   /* deep azure zenith */
+  --rs-sky-mid:      #4f9ff0;   /* mid sky */
+  --rs-sky-low:      #a9dbff;   /* pale near-horizon */
+  --rs-sky-haze:     #e6f5ff;   /* horizon haze */
+  --rs-cloud:        #ffffff;
+  --rs-grass-hi:     #8ed14a;   /* sunlit hilltop */
+  --rs-grass-mid:    #5aa82a;   /* field */
+  --rs-grass-lo:     #3a7a16;   /* shaded base */
+
+  /* ---------- Titlebar (active window) ---------- */
+  --rs-title-1:      #3a93ef;   /* glossy top */
+  --rs-title-2:      #1f72d8;   /* upper body */
+  --rs-title-3:      #1a61c2;   /* mid */
+  --rs-title-4:      #134c9e;   /* lower body */
+  --rs-title-5:      #0d3f88;   /* bottom edge */
+  --rs-title-text:   #ffffff;
+  --rs-title-shadow: rgba(6, 28, 64, 0.55);  /* engraved text */
+  /* Titlebar (inactive window) */
+  --rs-title-off-1:  #aac4e6;
+  --rs-title-off-2:  #8aa9d2;
+  --rs-title-text-off: #eef3fb;
+
+  /* ---------- Window body / face ---------- */
+  --rs-face:         #ece9d8;   /* luna beige window face */
+  --rs-face-2:       #f6f4ec;   /* lighter inner panel */
+  --rs-menu-bg:      #f3f1e7;   /* menubar strip */
+  --rs-window-frame: #0d3f88;   /* 3px frame matches titlebar base */
+
+  /* ---------- Bevel (98 outset / inset) ---------- */
+  --rs-bevel-light:  #ffffff;   /* top-left highlight */
+  --rs-bevel-face:   #d7d3c6;   /* button face */
+  --rs-bevel-soft:   #b8b3a3;   /* secondary shade */
+  --rs-bevel-shadow: #808078;   /* bottom-right shade */
+  --rs-bevel-dark:   #3f3f3a;   /* outer dark line */
+
+  /* Reusable bevel borders (apply to .rs-btn etc.) */
+  --rs-outset: 2px solid;
+  --rs-outset-color: var(--rs-bevel-light) var(--rs-bevel-dark) var(--rs-bevel-dark) var(--rs-bevel-light);
+  --rs-inset-color:  var(--rs-bevel-dark) var(--rs-bevel-light) var(--rs-bevel-light) var(--rs-bevel-dark);
+  /* Soft 2-tone shadow that fakes the classic raised look */
+  --rs-shadow-outset: inset 1px 1px 0 var(--rs-bevel-light), inset -1px -1px 0 var(--rs-bevel-shadow), inset -2px -2px 0 var(--rs-bevel-dark);
+  --rs-shadow-inset:  inset -1px -1px 0 var(--rs-bevel-light), inset 1px 1px 0 var(--rs-bevel-shadow), inset 2px 2px 0 var(--rs-bevel-dark);
+  --rs-shadow-window: 3px 3px 0 rgba(0,0,0,0.28), 0 18px 40px rgba(7,28,64,0.45);
+
+  /* ---------- Caption buttons (_ □ ✕) ---------- */
+  --rs-cap-glass-1:  #cfe7ff;   /* glossy top */
+  --rs-cap-glass-2:  #6db4f2;
+  --rs-cap-glass-3:  #2c7fd8;
+  --rs-cap-close-1:  #ffb3a0;   /* red close glossy top */
+  --rs-cap-close-2:  #e8543a;
+  --rs-cap-close-3:  #c22f17;
+  --rs-cap-glyph:    #ffffff;
+
+  /* ---------- Taskbar + Start ---------- */
+  --rs-taskbar-1:    #4196f2;
+  --rs-taskbar-2:    #1f6ed4;
+  --rs-taskbar-3:    #1a5cc0;
+  --rs-taskbar-4:    #103f93;
+  --rs-start-1:      #9fe06a;   /* green glossy top */
+  --rs-start-2:      #5fb52a;
+  --rs-start-3:      #3f8a17;
+  --rs-start-text:   #ffffff;
+  --rs-clock-bg:     #1652ad;   /* sunken clock tray */
+  --rs-clock-text:   #ffffff;
+
+  /* ---------- Accent / focus on shell ---------- */
+  --rs-aqua:         #2c8ae6;   /* generic aqua CTA */
+  --rs-aqua-hi:      #57b0f4;
+  --rs-select:       #cae3ff;   /* highlighted list row (XP selection) */
+  --rs-select-text:  #0b2b55;
+  --rs-focus-ring:   0 0 0 2px #ffffff, 0 0 0 4px var(--rs-aqua);  /* dotted-feel focus */
+  --rs-link:         #0a4fb5;
+
+  /* ---------- Radius (XP-ish: rounded titlebar top, square body) ---------- */
+  --rs-radius-window: 8px;      /* window top corners */
+  --rs-radius-btn:    3px;
+  --rs-radius-pill:   999px;    /* Start / Aero pills */
+
+  /* ---------- Type (CEO-approved floor = 14px for chrome; 16px body) ---------- */
+  --rs-font-ui:    'Tahoma', 'Segoe UI', 'Microsoft Sans Serif', 'Pretendard Variable', sans-serif;
+  --rs-font-body:  'Pretendard Variable', 'Tahoma', 'Segoe UI', sans-serif;
+  --rs-fs-chrome:  14px;        /* menubar, clock, status (min) */
+  --rs-fs-title:   15px;        /* titlebar caption */
+  --rs-fs-body:    16px;        /* korean body / clues */
+  --rs-fs-lg:      18px;
+}

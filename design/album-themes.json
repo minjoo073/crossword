@@ -1,0 +1,529 @@
+{
+  "_meta": {
+    "note": "per-album dreamcore theme; concept-driven"
+  },
+  "albums": [
+    {
+      "artistId": "stray-kids",
+      "albumId": "ate",
+      "accent": [
+        "#E8B23A",
+        "#C8102E",
+        "#1A1A1A"
+      ],
+      "bg": "#0E0B08",
+      "fg": "#F5E6C8",
+      "mood": [
+        "explosive",
+        "confident",
+        "playful"
+      ],
+      "concept": "허세가 아닌 진짜 자신감 — '우리가 해냈다(we ate)'를 폭죽처럼 터뜨리는 9th 미니"
+    },
+    {
+      "artistId": "stray-kids",
+      "albumId": "rock-star",
+      "accent": [
+        "#E4002B",
+        "#F2C200",
+        "#2B2B2B"
+      ],
+      "bg": "#121012",
+      "fg": "#F5F0E6",
+      "mood": [
+        "rebellious",
+        "euphoric",
+        "raw"
+      ],
+      "concept": "희로애락 끝에 '락(樂)'을 택하라 — 락(rock) 사운드로 터뜨리는 해방감의 8th 미니"
+    },
+    {
+      "artistId": "enhypen",
+      "albumId": "romance-untold",
+      "accent": [
+        "#7B6CA8",
+        "#D98AA0",
+        "#2A2540"
+      ],
+      "bg": "#1A1730",
+      "fg": "#EDE4F2",
+      "mood": [
+        "dreamy",
+        "romantic",
+        "moonlit"
+      ],
+      "concept": "다크/뱀파이어에서 벗어나 사랑을 지키겠다 맹세하는 일곱 소년의 '로맨스' 서막"
+    },
+    {
+      "artistId": "enhypen",
+      "albumId": "dark-blood",
+      "accent": [
+        "#8C1C2B",
+        "#C9A24B",
+        "#3A0E12"
+      ],
+      "bg": "#140709",
+      "fg": "#EAD9C0",
+      "mood": [
+        "gothic",
+        "seductive",
+        "fated"
+      ],
+      "concept": "뱀파이어 세계관 'DARK MOON: The Blood Altar' 위, 피로 운명을 새기는 4th 미니"
+    },
+    {
+      "artistId": "txt",
+      "albumId": "star-chapter-sanctuary",
+      "accent": [
+        "#3B4C8A",
+        "#C9A24B",
+        "#8AA0D8"
+      ],
+      "bg": "#0E1326",
+      "fg": "#EDEFF7",
+      "mood": [
+        "celestial",
+        "yearning",
+        "divine"
+      ],
+      "concept": "별의 언어로 띄우는, 하늘에 닿을 만큼 드높은 사랑 — Star Chapter의 '성역'"
+    },
+    {
+      "artistId": "txt",
+      "albumId": "minisode3-tomorrow",
+      "accent": [
+        "#E8A23D",
+        "#5A7FB0",
+        "#D96E4A"
+      ],
+      "bg": "#1C1812",
+      "fg": "#F5ECDD",
+      "mood": [
+        "hopeful",
+        "nostalgic",
+        "courageous"
+      ],
+      "concept": "잊었던 약속을 떠올려 '너'를 찾아 내일로 — 내일이 곧 희망이자 구원"
+    },
+    {
+      "artistId": "ateez",
+      "albumId": "golden-hour-part1",
+      "accent": [
+        "#E8A33D",
+        "#C97B2C",
+        "#F4D58D"
+      ],
+      "bg": "#1A1206",
+      "fg": "#F8EEDD",
+      "mood": [
+        "nostalgic",
+        "warm",
+        "dreamy"
+      ],
+      "concept": "해질녘 황금빛, 노을과 모래시계로 흘러가는 청춘의 골든아워"
+    },
+    {
+      "artistId": "ateez",
+      "albumId": "golden-hour-part2",
+      "accent": [
+        "#5FA8C9",
+        "#2E5C7A",
+        "#9FD3E0"
+      ],
+      "bg": "#0B1620",
+      "fg": "#E6F1F6",
+      "mood": [
+        "cool",
+        "mature",
+        "chill"
+      ],
+      "concept": "서리와 빙판의 차가운 블루 — 한층 어른스러워진 다크한 골든아워"
+    },
+    {
+      "artistId": "riize",
+      "albumId": "riizing",
+      "accent": [
+        "#3FA7FF",
+        "#FF7AAE",
+        "#FFE26B"
+      ],
+      "bg": "#0E1A2B",
+      "fg": "#F2F7FF",
+      "mood": [
+        "youthful",
+        "fresh",
+        "emotional"
+      ],
+      "concept": "여름빛 블루와 핑크 — 베이스 그루브로 떠오르는 청량 이모셔널 팝"
+    },
+    {
+      "artistId": "riize",
+      "albumId": "odyssey",
+      "accent": [
+        "#6C5CE7",
+        "#00D2D3",
+        "#A29BFE"
+      ],
+      "bg": "#070A1A",
+      "fg": "#EDEBFF",
+      "mood": [
+        "cosmic",
+        "adventurous",
+        "dreamy"
+      ],
+      "concept": "보랏빛 우주와 청록 성운 — UK개러지 리듬 위 첫 정규 오디세이"
+    },
+    {
+      "artistId": "boynextdoor",
+      "albumId": "nineteen-ninetynine",
+      "accent": [
+        "#E4572E",
+        "#3A7D44",
+        "#F3C969"
+      ],
+      "bg": "#14110C",
+      "fg": "#F5EFE3",
+      "mood": [
+        "coming-of-age",
+        "candid",
+        "restless"
+      ],
+      "concept": "필름 카메라 같은 따뜻한 톤 — 열아홉과 스물 사이의 자전적 자화상"
+    },
+    {
+      "artistId": "boynextdoor",
+      "albumId": "how",
+      "accent": [
+        "#C7456B",
+        "#5B6FB0",
+        "#F0A6C0"
+      ],
+      "bg": "#120A12",
+      "fg": "#F7EAF0",
+      "mood": [
+        "bittersweet",
+        "romantic",
+        "youthful"
+      ],
+      "concept": "노을빛 핑크와 블루 — 첫사랑 3부작을 닫는 풋풋하고 애틋한 무드"
+    },
+    {
+      "artistId": "zerobaseone",
+      "albumId": "you-had-me-at-hello",
+      "accent": [
+        "#FF5FA2",
+        "#2ED3C6",
+        "#FFD23F"
+      ],
+      "bg": "#FFFBF2",
+      "fg": "#20283A",
+      "mood": [
+        "pop",
+        "summery",
+        "bright",
+        "sweet"
+      ],
+      "concept": "You had me at HELLO — 민트·핑크 팝, 한여름의 첫 인사(Feel the POP)"
+    },
+    {
+      "artistId": "zerobaseone",
+      "albumId": "cinema-paradise",
+      "accent": [
+        "#C8102E",
+        "#E0A526",
+        "#F2E6CE"
+      ],
+      "bg": "#140A0E",
+      "fg": "#F2E6CE",
+      "mood": [
+        "cinematic",
+        "retro",
+        "dramatic",
+        "velvet"
+      ],
+      "concept": "시네마 천국 — 벨벳 레드와 골드, 필름 속 일곱 장면(GOOD SO BAD)"
+    },
+    {
+      "artistId": "tws",
+      "albumId": "summer-beat",
+      "accent": [
+        "#00BFD8",
+        "#FFD43B",
+        "#FF7AAE"
+      ],
+      "bg": "#EAFBFB",
+      "fg": "#0E3A45",
+      "mood": [
+        "refreshing",
+        "playful",
+        "summer",
+        "soda"
+      ],
+      "concept": "여름의 비트(SUMMER BEAT!) — 아쿠아·선옐로 청량 사이다"
+    },
+    {
+      "artistId": "tws",
+      "albumId": "sparkling-blue",
+      "accent": [
+        "#2E7DEE",
+        "#7FD7F2",
+        "#FFE34D"
+      ],
+      "bg": "#EAF4FF",
+      "fg": "#0E2A52",
+      "mood": [
+        "youthful",
+        "sparkling",
+        "fresh",
+        "school"
+      ],
+      "concept": "스파클링 블루 — 청량한 파랑과 탄산, 첫 만남의 반전(plot twist)"
+    },
+    {
+      "artistId": "plave",
+      "albumId": "caligo-pt1",
+      "accent": [
+        "#3DE0E0",
+        "#8B5CF6",
+        "#0A0E18"
+      ],
+      "bg": "#0A0E18",
+      "fg": "#DDE7F0",
+      "mood": [
+        "virtual",
+        "neon",
+        "dramatic",
+        "noir"
+      ],
+      "concept": "안개(Caligo)를 가르는 질주 — 버추얼 누아르, 네온 사이언·바이올렛"
+    },
+    {
+      "artistId": "plave",
+      "albumId": "asterum-134-1",
+      "accent": [
+        "#7AA8FF",
+        "#C9A7FF",
+        "#FFB3D1"
+      ],
+      "bg": "#0E1430",
+      "fg": "#E6ECFF",
+      "mood": [
+        "dreamy",
+        "virtual",
+        "romantic",
+        "starlit"
+      ],
+      "concept": "아스테룸의 사랑 찾기(WAY 4 LUV) — 별빛 블루·라벤더, 버추얼 로맨스"
+    },
+    {
+      "artistId": "nct-wish",
+      "albumId": "steady",
+      "accent": [
+        "#FF4D6D",
+        "#4D8DFF",
+        "#FFC83D"
+      ],
+      "bg": "#FAFBFF",
+      "fg": "#1B2440",
+      "mood": [
+        "fresh",
+        "youthful",
+        "sporty",
+        "bright"
+      ],
+      "concept": "흔들림 없이(Steady) — 산뜻한 청춘, 레트로 스포티 원색의 스쿨보이 무드"
+    },
+    {
+      "artistId": "nct-wish",
+      "albumId": "color",
+      "accent": [
+        "#FF5CA8",
+        "#36C2FF",
+        "#FFD23F"
+      ],
+      "bg": "#0E1424",
+      "fg": "#F2F6FF",
+      "mood": [
+        "vivid",
+        "colorful",
+        "youthful",
+        "playful"
+      ],
+      "concept": "각자의 색(COLOR) — 무지갯빛 청춘, 'Bring out the color' 자기표현"
+    },
+    {
+      "artistId": "le-sserafim",
+      "albumId": "crazy",
+      "accent": [
+        "#FF2D78",
+        "#C0C0CF",
+        "#F5E6EF"
+      ],
+      "bg": "#120810",
+      "fg": "#F5E6EF",
+      "mood": [
+        "fierce",
+        "disco",
+        "bold",
+        "sultry"
+      ],
+      "concept": "미쳐버린 디스코(CRAZY) — 핫마젠타·실버, 새벽 클럽의 광기"
+    },
+    {
+      "artistId": "le-sserafim",
+      "albumId": "unforgiven",
+      "accent": [
+        "#C9452E",
+        "#D9A441",
+        "#1F1A16"
+      ],
+      "bg": "#1A120B",
+      "fg": "#F3E7D6",
+      "mood": [
+        "western",
+        "fierce",
+        "empowering",
+        "outlaw"
+      ],
+      "concept": "용서받지 못한 자(Unforgiven) — 서부극 무법자, 흙먼지와 강철의 자기결정"
+    },
+    {
+      "artistId": "ive",
+      "albumId": "ive-empathy",
+      "accent": [
+        "#E11D3C",
+        "#B8BCC6",
+        "#F2E7E9"
+      ],
+      "bg": "#140A0C",
+      "fg": "#F2E7E9",
+      "mood": [
+        "rebellious",
+        "chic",
+        "bold",
+        "edgy"
+      ],
+      "concept": "반항의 심장(Rebel Heart) — 레드·크롬, 보헤미안 무드의 시크한 애티튜드"
+    },
+    {
+      "artistId": "ive",
+      "albumId": "ive-ive",
+      "accent": [
+        "#E84393",
+        "#5C7CFA",
+        "#1C1A22"
+      ],
+      "bg": "#15131C",
+      "fg": "#F4EEF7",
+      "mood": [
+        "chic",
+        "confident",
+        "kitsch",
+        "artpop"
+      ],
+      "concept": "자기애의 키치(Kitsch) — 'Books not guns', 당당한 자신감의 팝아트"
+    },
+    {
+      "artistId": "aespa",
+      "albumId": "whiplash",
+      "accent": [
+        "#E50914",
+        "#0D0D0D",
+        "#C0C0C0"
+      ],
+      "bg": "#0A0A0A",
+      "fg": "#F5F5F5",
+      "mood": [
+        "techno",
+        "fierce",
+        "sleek"
+      ],
+      "concept": "프레임에 갇히지 않고 자신의 기준으로 직진 — EDM 테크노 × 힙합"
+    },
+    {
+      "artistId": "aespa",
+      "albumId": "armageddon",
+      "accent": [
+        "#6C2BD9",
+        "#00E0FF",
+        "#FF3D7F"
+      ],
+      "bg": "#05040F",
+      "fg": "#EDEBFF",
+      "mood": [
+        "cosmic",
+        "epic",
+        "multiverse"
+      ],
+      "concept": "광야와 현실의 최후 결전 — 멀티버스 세계관을 연 첫 정규"
+    },
+    {
+      "artistId": "illit",
+      "albumId": "super-real-me",
+      "accent": [
+        "#FF7EB6",
+        "#7EC8FF",
+        "#FFE08A"
+      ],
+      "bg": "#FFF6FB",
+      "fg": "#2B2238",
+      "mood": [
+        "y2k",
+        "nostalgic",
+        "relatable"
+      ],
+      "concept": "90~2000년대 동아시아 Y2K 노스탤지어, 있는 그대로의 10대 자아"
+    },
+    {
+      "artistId": "illit",
+      "albumId": "ill-like-you",
+      "accent": [
+        "#FF6FA5",
+        "#9B7BFF",
+        "#FFD36E"
+      ],
+      "bg": "#FFF2F7",
+      "fg": "#33263D",
+      "mood": [
+        "cutesy",
+        "fluttery",
+        "playful"
+      ],
+      "concept": "좋아하는 마음을 고백하는 설렘 가득한 두 번째 미니"
+    },
+    {
+      "artistId": "babymonster",
+      "albumId": "drip",
+      "accent": [
+        "#D4AF37",
+        "#111111",
+        "#E63946"
+      ],
+      "bg": "#0B0B0B",
+      "fg": "#F2E9D8",
+      "mood": [
+        "swag",
+        "savage",
+        "confident"
+      ],
+      "concept": "여유롭고 당당한 스웨그 — 더블 타이틀로 낸 첫 정규"
+    },
+    {
+      "artistId": "babymonster",
+      "albumId": "babymons7er",
+      "accent": [
+        "#8E2DE2",
+        "#1B1B2F",
+        "#FF4D4D"
+      ],
+      "bg": "#0E0E1A",
+      "fg": "#EDEAF5",
+      "mood": [
+        "dark",
+        "hiphop",
+        "fierce"
+      ],
+      "concept": "7인 완전체 공식 데뷔 — 다크 힙합"
+    }
+  ]
+}

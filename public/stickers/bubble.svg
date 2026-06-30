@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100" role="img" aria-label="glossy soap bubble sticker">
+  <title>Glossy soap bubble</title>
+  <defs>
+    <radialGradient id="bbBody" cx="38%" cy="34%" r="72%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.95"/>
+      <stop offset="32%" stop-color="#D6F2FF" stop-opacity="0.55"/>
+      <stop offset="62%" stop-color="#C9B8FF" stop-opacity="0.40"/>
+      <stop offset="86%" stop-color="#FFC2E2" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#A8E6CF" stop-opacity="0.70"/>
+    </radialGradient>
+    <linearGradient id="bbRim" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#8FD4FF"/>
+      <stop offset="50%" stop-color="#FF9EC4"/>
+      <stop offset="100%" stop-color="#B5A8FF"/>
+    </linearGradient>
+  </defs>
+  <!-- iridescent rim -->
+  <circle cx="50" cy="50" r="44" fill="none" stroke="url(#bbRim)" stroke-width="2.5" opacity="0.85"/>
+  <!-- translucent body -->
+  <circle cx="50" cy="50" r="43" fill="url(#bbBody)"/>
+  <!-- big glossy highlight -->
+  <ellipse cx="36" cy="32" rx="15" ry="10" fill="#FFFFFF" opacity="0.85" transform="rotate(-28 36 32)"/>
+  <!-- small spark highlight -->
+  <circle cx="64" cy="60" r="4" fill="#FFFFFF" opacity="0.75"/>
+</svg>

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="240" viewBox="0 0 880 240" role="img" aria-label="LE SSERAFIM - CRAZY">
+  <defs>
+    <radialGradient id="crz-bg" cx="50%" cy="30%" r="90%">
+      <stop offset="0" stop-color="#3A0E26"/>
+      <stop offset="60%" stop-color="#1E0A18"/>
+      <stop offset="100%" stop-color="#120810"/>
+    </radialGradient>
+    <radialGradient id="crz-ball" cx="38%" cy="32%" r="70%">
+      <stop offset="0" stop-color="#F5E6EF"/>
+      <stop offset="55%" stop-color="#C0C0CF"/>
+      <stop offset="100%" stop-color="#6E6E80"/>
+    </radialGradient>
+    <clipPath id="crz-clip"><circle cx="440" cy="62" r="40"/></clipPath>
+  </defs>
+  <rect width="880" height="240" fill="url(#crz-bg)"/>
+  <g stroke="#FF2D78" stroke-width="3" opacity="0.5">
+    <path d="M440 62 L150 200 M440 62 L300 230 M440 62 L580 230 M440 62 L730 200"/>
+  </g>
+  <circle cx="440" cy="62" r="40" fill="url(#crz-ball)"/>
+  <g clip-path="url(#crz-clip)" stroke="#5A5A6E" stroke-width="1.4" opacity="0.7">
+    <path d="M400 50 h80 M400 62 h80 M400 74 h80 M414 30 v64 M428 30 v64 M442 30 v64 M456 30 v64 M470 30 v64"/>
+  </g>
+  <g fill="#FF2D78">
+    <path d="M180 80 l3 9 9 1 -7 6 2 9 -7 -5 -7 5 2 -9 -7 -6 9 -1 Z"/>
+    <path d="M700 96 l2 7 7 1 -5 5 1 7 -5 -4 -5 4 1 -7 -5 -5 7 -1 Z"/>
+  </g>
+  <text x="440" y="216" text-anchor="middle" font-family="Tahoma,'Segoe UI',sans-serif" font-weight="800" font-size="108" letter-spacing="8" fill="#FF2D78">CRAZY</text>
+</svg>

@@ -1,0 +1,498 @@
+/* ════════════════════════ RETRO WINDOWS SHELL ════════════════════════ */
+:root {
+  --rt-titlebar: linear-gradient(180deg, #0058e6 0%, #3f8cf3 8%, #1268eb 40%, #0a5ae3 88%, #003bc4 100%);
+  --rt-face: #ffffff;
+  --rt-face-2: #eef4ff;
+  --rt-grey: #cdd9ec;
+  --rt-sky-1: #2e7bd6;
+  --rt-sky-2: #5aa0e4;
+  --rt-sky-3: #a8d4f5;
+  --rt-taskbar: linear-gradient(180deg, #3168d8 0%, #4a86e8 6%, #245edc 14%, #1f55cf 90%, #1a4ec4 100%);
+  --rt-tahoma: Tahoma, "Segoe UI", Verdana, "MS Sans Serif", system-ui, sans-serif;
+}
+
+/* Desktop wallpaper — pure CSS bliss-like sky + hill (no copyrighted photo) */
+.desktop {
+  min-height: 100dvh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background:
+    radial-gradient(140% 70% at 50% 118%, #8ed06a 0%, #6cbb52 16%, #4f9e42 30%, transparent 46%),
+    linear-gradient(180deg, var(--rt-sky-1) 0%, var(--rt-sky-2) 34%, var(--rt-sky-3) 64%, #d8efff 100%);
+  font-family: var(--rt-tahoma);
+}
+.desktop::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(60px 26px at 18% 26%, rgba(255, 255, 255, 0.9), transparent 70%),
+    radial-gradient(90px 34px at 24% 30%, rgba(255, 255, 255, 0.8), transparent 70%),
+    radial-gradient(70px 28px at 78% 18%, rgba(255, 255, 255, 0.85), transparent 70%),
+    radial-gradient(110px 40px at 70% 22%, rgba(255, 255, 255, 0.7), transparent 72%),
+    radial-gradient(80px 30px at 50% 12%, rgba(255, 255, 255, 0.75), transparent 70%);
+  filter: blur(2px);
+}
+.desktop--fill {
+  height: 100dvh;
+  overflow: hidden;
+}
+.desktop__stage {
+  flex: 1 0 auto; /* grow to content so the page scrolls naturally */
+  position: relative;
+  z-index: 1;
+  display: block; /* block flow → window sizes to content → page scrolls (mobile-safe) */
+  padding: 22px 16px 26px;
+}
+.desktop--fill .desktop__stage {
+  display: flex;
+  flex: 1 1 0;
+  min-height: 0;
+  align-items: stretch;
+  justify-content: center;
+  padding-bottom: 0;
+}
+
+/* Window chrome */
+.win {
+  background: var(--rt-face);
+  border: 1px solid #003bc4;
+  border-radius: 8px 8px 3px 3px;
+  box-shadow: 0 10px 34px rgba(0, 0, 0, 0.4), inset 0 0 0 1px rgba(255, 255, 255, 0.6);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  min-width: 0;
+}
+.win__title,
+.win__menu,
+.win__body {
+  width: 100%;
+  align-self: stretch;
+}
+.win--app {
+  max-width: 940px;
+  margin: 0 auto;
+}
+.win--fill {
+  max-height: 100%;
+}
+.win--fill .win__body {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+}
+/* Game window: natural page scroll (mobile-safe). overflow visible so the
+   sticky clue bar sticks to the page, not a trapped inner scroll box. */
+.win--game {
+  overflow: visible;
+  animation: none;
+}
+.win--game .win__title {
+  border-radius: 7px 7px 0 0;
+}
+.win__title {
+  height: 30px;
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0 5px 0 8px;
+  background: var(--rt-titlebar);
+  color: #fff;
+  font-family: var(--rt-tahoma);
+  font-weight: 700;
+  font-size: 14px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.45);
+  user-select: none;
+}
+.win__title-ico {
+  width: 16px;
+  height: 16px;
+  flex: none;
+  display: block;
+}
+.win__title-text {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.win__ctrls {
+  display: flex;
+  gap: 3px;
+}
+.win__ctrl {
+  width: 22px;
+  height: 21px;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 3px;
+  background: linear-gradient(180deg, #5a9bf5, #1761e8);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+.win__ctrl--close {
+  background: linear-gradient(180deg, #f08a7a, #d83a22);
+}
+.win__ctrl:hover {
+  filter: brightness(1.12);
+}
+.win__menu {
+  display: flex;
+  gap: 2px;
+  padding: 2px 4px;
+  background: var(--rt-face-2);
+  border-bottom: 1px solid var(--rt-grey);
+  font-family: var(--rt-tahoma);
+  font-size: 13px;
+  color: #1b1b1b;
+}
+.win__menu span {
+  padding: 2px 8px;
+  border-radius: 3px;
+}
+.win__menu span:hover {
+  background: #cfe0ff;
+}
+.win__menu span u {
+  text-decoration: underline;
+}
+.win__body {
+  background: var(--rt-face);
+}
+
+/* Taskbar */
+.taskbar {
+  position: sticky;
+  bottom: 0;
+  z-index: 30;
+  height: 38px;
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 8px;
+  background: var(--rt-taskbar);
+  border-top: 1px solid #6ea0ec;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+.start-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  height: 28px;
+  padding: 0 16px 0 10px;
+  border: 0;
+  border-radius: 4px 8px 8px 4px;
+  background: linear-gradient(180deg, #5bbd4a 0%, #3da033 8%, #2f8f2a 50%, #237a20 100%);
+  color: #fff;
+  font-family: var(--rt-tahoma);
+  font-weight: 800;
+  font-size: 16px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 -3px 6px rgba(0, 0, 0, 0.25);
+}
+.start-btn__flag {
+  width: 17px;
+  height: 17px;
+  border-radius: 3px;
+  background: conic-gradient(from 0deg, #ff5a5a, #ffd23f, #4ad15b, #3f8cf3, #ff5a5a);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.7);
+}
+.taskbar__spacer {
+  flex: 1;
+}
+.taskbar__tab {
+  height: 26px;
+  max-width: 220px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 10px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #fff;
+  font-family: var(--rt-tahoma);
+  font-size: 13px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.clock {
+  display: inline-flex;
+  align-items: center;
+  height: 26px;
+  padding: 0 12px;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #fff;
+  font-family: var(--rt-tahoma);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Landing logo */
+.landing {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 70dvh;
+  gap: 22px;
+  text-align: center;
+}
+.landing__logo-img {
+  width: min(560px, 86vw);
+  height: auto;
+  filter: drop-shadow(0 6px 14px rgba(0, 20, 60, 0.45));
+}
+.logo-wm {
+  font-family: var(--rt-tahoma);
+  font-weight: 800;
+  line-height: 0.92;
+  letter-spacing: -0.01em;
+  font-size: clamp(44px, 12vw, 104px);
+  background: linear-gradient(180deg, #eafffd 0%, #8fe3ff 22%, #2aa8ff 47%, #0f6ee0 53%, #67c9ff 78%, #ffffff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 2px 0 #0a3d8f) drop-shadow(0 4px 6px rgba(0, 0, 0, 0.35));
+  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.5);
+}
+.logo-wm small {
+  display: block;
+  font-size: 0.3em;
+  letter-spacing: 0.5em;
+  -webkit-text-stroke: 0;
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  margin-top: 0.3em;
+  background: none;
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
+}
+.cta-glossy {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 30px;
+  border: 0;
+  border-radius: 999px;
+  font-family: var(--rt-tahoma);
+  font-weight: 800;
+  font-size: 19px;
+  color: #fff;
+  background: linear-gradient(180deg, #7ed0ff 0%, #2a9bf0 48%, #0e6ad8 52%, #4fb0ff 100%);
+  box-shadow: inset 0 2px 2px rgba(255, 255, 255, 0.7), inset 0 -4px 8px rgba(0, 0, 0, 0.25), 0 6px 16px rgba(0, 30, 90, 0.4);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+.cta-glossy:hover {
+  filter: brightness(1.08);
+}
+
+/* Category / album pickers */
+.pick {
+  padding: 16px 18px 24px;
+  background: var(--rt-face-2);
+  font-family: var(--rt-tahoma);
+}
+.pick__head {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.pick__title {
+  font-size: 22px;
+  font-weight: 800;
+  color: #0a3d8f;
+}
+.pick__crumb {
+  font-size: 13px;
+  color: #555;
+}
+.pick__crumb a {
+  color: #1568e0;
+  text-decoration: underline;
+}
+.pick__spacer {
+  flex: 1;
+}
+.icons {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(116px, 1fr));
+  gap: 8px;
+}
+.icon-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  padding: 14px 8px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: transparent;
+  text-align: center;
+  color: #14223a;
+}
+.icon-btn:hover {
+  background: rgba(120, 180, 255, 0.22);
+  border-color: rgba(80, 140, 230, 0.5);
+}
+.icon-tile {
+  width: 66px;
+  height: 66px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  font-weight: 800;
+  color: var(--ca-fg, #fff);
+  background: linear-gradient(150deg, var(--ca1, #8a38f5), var(--ca2, #d53a6b));
+  box-shadow: inset 0 2px 3px rgba(255, 255, 255, 0.6), inset 0 -5px 10px rgba(0, 0, 0, 0.25), 0 3px 8px rgba(0, 0, 0, 0.25);
+}
+.icon-btn__name {
+  font-size: 13.5px;
+  font-weight: 600;
+  line-height: 1.15;
+}
+.icon-btn__sub {
+  font-size: 11.5px;
+  color: #5a6b85;
+}
+.icon-cover {
+  width: 78px;
+  flex: none;
+}
+.album-card__cover {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 0;
+}
+.pick__section {
+  margin: 10px 0 8px;
+  font-size: 13px;
+  font-weight: 800;
+  color: #0a3d8f;
+  border-bottom: 1px solid #c9d6ea;
+  padding-bottom: 4px;
+}
+.pick__search {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #fff;
+  border: 1px solid #9db4d4;
+  border-radius: 5px;
+  padding: 0 10px;
+  height: 32px;
+  min-width: 180px;
+}
+.pick__search input {
+  border: 0;
+  outline: 0;
+  flex: 1;
+  font-size: 14px;
+  font-family: var(--rt-tahoma);
+  background: transparent;
+}
+.pick__seg {
+  display: inline-flex;
+  border: 1px solid #9db4d4;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.pick__seg button {
+  border: 0;
+  background: #fff;
+  padding: 0 12px;
+  height: 32px;
+  font-family: var(--rt-tahoma);
+  font-size: 13px;
+  font-weight: 600;
+  color: #34465f;
+}
+.pick__seg button[data-on="true"] {
+  background: linear-gradient(180deg, #4a86e8, #1f55cf);
+  color: #fff;
+}
+
+/* Album picker cards */
+.albums {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 14px;
+}
+.album-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #b9c6dc;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+.album-card:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+  transition: 0.12s;
+}
+.album-card__art {
+  aspect-ratio: 16 / 10;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  padding: 10px;
+  color: var(--ca-fg, #fff);
+  background: linear-gradient(150deg, var(--ca1, #8a38f5), var(--ca2, #d53a6b));
+}
+.album-card__big {
+  position: absolute;
+  top: -10px;
+  right: 4px;
+  font-size: 80px;
+  font-weight: 800;
+  opacity: 0.22;
+  line-height: 1;
+}
+.album-card__body {
+  padding: 10px 12px 13px;
+}
+.album-card__title {
+  font-size: 17px;
+  font-weight: 800;
+  color: #14223a;
+  line-height: 1.15;
+}
+.album-card__meta {
+  margin-top: 4px;
+  font-size: 12.5px;
+  color: #5a6b85;
+}
+
+/* Game inside a window */
+.win .game {
+  min-height: auto;
+  max-width: none;
+  margin: 0;
+  padding: 12px 14px 26px;
+}
+.win .game__header {
+  position: static;
+}

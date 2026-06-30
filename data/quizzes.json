@@ -1,0 +1,2216 @@
+{
+  "meta": {
+    "title": "K-pop Album Crossword",
+    "description": "4th/5th gen idol album-themed crossword quizzes (2024-2026 releases).",
+    "lastUpdated": "2026-06-30",
+    "wordsPerAlbum": 12,
+    "answerRules": "Answers are single words, letters only (A-Z), uppercase."
+  },
+  "artists": [
+    {
+      "id": "stray-kids",
+      "name": "Stray Kids",
+      "gender": "male",
+      "agency": "JYP Entertainment",
+      "fandom": "STAY",
+      "albums": [
+        {
+          "id": "ate",
+          "title": "ATE",
+          "releaseDate": "2024-07-19",
+          "titleTrack": "Chk Chk Boom",
+          "lightstick": null,
+          "words": [
+            {
+              "answer": "MOUNTAINS",
+              "len": 9,
+              "clue": "Track 1 of ATE, named for the towering peaks that open the EP."
+            },
+            {
+              "answer": "RUNNERS",
+              "len": 7,
+              "clue": "Energetic ATE b-side about charging full speed ahead."
+            },
+            {
+              "answer": "TWILIGHT",
+              "len": 8,
+              "clue": "English subtitle of ATE's Korean-titled track 6, '또 다시 밤'."
+            },
+            {
+              "answer": "JJAM",
+              "len": 4,
+              "clue": "Track 3 of ATE; Korean slang for clever, cheeky improvising."
+            },
+            {
+              "answer": "ATE",
+              "len": 3,
+              "clue": "The EP's title — TikTok slang meaning someone totally excelled."
+            },
+            {
+              "answer": "DOMINATE",
+              "len": 8,
+              "clue": "The fuller word that the slang title 'ATE' is drawn from."
+            },
+            {
+              "answer": "EIGHT",
+              "len": 5,
+              "clue": "The number 'ATE' sounds like — also exactly how many members SKZ have."
+            },
+            {
+              "answer": "CONFIDENCE",
+              "len": 10,
+              "clue": "The central theme running through all of ATE."
+            },
+            {
+              "answer": "NACHIMBONG",
+              "len": 10,
+              "clue": "Stray Kids' official 'compass rod' lightstick."
+            },
+            {
+              "answer": "STAY",
+              "len": 4,
+              "clue": "Stray Kids' fandom name."
+            },
+            {
+              "answer": "BANGCHAN",
+              "len": 8,
+              "clue": "The Aussie-born leader who heads production trio 3RACHA."
+            },
+            {
+              "answer": "JYP",
+              "len": 3,
+              "clue": "Three-letter agency, founded by a singer with the same initials, that houses SKZ."
+            }
+          ]
+        },
+        {
+          "id": "rock-star",
+          "title": "ROCK-STAR (樂-STAR)",
+          "releaseDate": "2023-11-10",
+          "titleTrack": "LALALALA",
+          "lightstick": null,
+          "words": [
+            {
+              "answer": "LALALALA",
+              "len": 8,
+              "clue": "The drift-phonk title track of 樂-STAR, also styled '락 (樂)'."
+            },
+            {
+              "answer": "MEGAVERSE",
+              "len": 9,
+              "clue": "The opening track 1 of ROCK-STAR."
+            },
+            {
+              "answer": "COMFLEX",
+              "len": 7,
+              "clue": "Track 4 of ROCK-STAR, a portmanteau-titled b-side."
+            },
+            {
+              "answer": "LEAVE",
+              "len": 5,
+              "clue": "Track 6 of ROCK-STAR."
+            },
+            {
+              "answer": "SOCIAL",
+              "len": 6,
+              "clue": "'___ Path,' the b-side featuring Japanese rocker LiSA (first word)."
+            },
+            {
+              "answer": "COVER",
+              "len": 5,
+              "clue": "'___ Me,' track 5 of ROCK-STAR (first word)."
+            },
+            {
+              "answer": "ROCK",
+              "len": 4,
+              "clue": "The English word the Chinese character 樂 puns on in the EP title."
+            },
+            {
+              "answer": "JOY",
+              "len": 3,
+              "clue": "The meaning of 樂 (rak) — the emotion SKZ urge you to choose last."
+            },
+            {
+              "answer": "LISA",
+              "len": 4,
+              "clue": "Japanese rock vocalist (famed for anime OSTs) featured on 'Social Path'."
+            },
+            {
+              "answer": "NACHIMBONG",
+              "len": 10,
+              "clue": "Stray Kids' official lightstick."
+            },
+            {
+              "answer": "STAY",
+              "len": 4,
+              "clue": "Stray Kids' fandom name."
+            },
+            {
+              "answer": "BANGCHAN",
+              "len": 8,
+              "clue": "SKZ's leader and 3RACHA's eldest producer."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "enhypen",
+      "name": "ENHYPEN",
+      "gender": "male",
+      "agency": "Belift Lab",
+      "fandom": "ENGENE",
+      "albums": [
+        {
+          "id": "romance-untold",
+          "title": "ROMANCE : UNTOLD",
+          "releaseDate": "2024-07-12",
+          "titleTrack": "XO (Only If You Say Yes)",
+          "lightstick": null,
+          "words": [
+            {
+              "answer": "MOONSTRUCK",
+              "len": 10,
+              "clue": "Track 1, comparing attraction to how the moon pulls the tides."
+            },
+            {
+              "answer": "PARANORMAL",
+              "len": 10,
+              "clue": "Track 6 of ROMANCE : UNTOLD."
+            },
+            {
+              "answer": "ROYALTY",
+              "len": 7,
+              "clue": "Regal-titled track 7 of the album."
+            },
+            {
+              "answer": "HIGHWAY",
+              "len": 7,
+              "clue": "'___ 1009,' track 8 of the album (first word)."
+            },
+            {
+              "answer": "JVKE",
+              "len": 4,
+              "clue": "American singer featured on the English version of the title track."
+            },
+            {
+              "answer": "XO",
+              "len": 2,
+              "clue": "Two-letter start of the title track, 'XO (Only If You Say Yes).'"
+            },
+            {
+              "answer": "DAYDREAM",
+              "len": 8,
+              "clue": "Subtitle of the November 2024 repackage: ROMANCE : UNTOLD -___-."
+            },
+            {
+              "answer": "ENGINEBONG",
+              "len": 10,
+              "clue": "ENHYPEN's official lightstick (engine + bong)."
+            },
+            {
+              "answer": "ENGENE",
+              "len": 6,
+              "clue": "ENHYPEN's fandom name."
+            },
+            {
+              "answer": "ROMANCE",
+              "len": 7,
+              "clue": "The new lore series this album launches: '___ : UNTOLD.'"
+            },
+            {
+              "answer": "MOON",
+              "len": 4,
+              "clue": "Celestial body inspiring 'Moonstruck'; also half of the DARK ___ universe."
+            },
+            {
+              "answer": "JUNGWON",
+              "len": 7,
+              "clue": "The dependable leader nicknamed 'Won.'"
+            }
+          ]
+        },
+        {
+          "id": "dark-blood",
+          "title": "DARK BLOOD",
+          "releaseDate": "2023-05-22",
+          "titleTrack": "Bite Me",
+          "lightstick": null,
+          "words": [
+            {
+              "answer": "FATE",
+              "len": 4,
+              "clue": "The opening track 1 of DARK BLOOD."
+            },
+            {
+              "answer": "SACRIFICE",
+              "len": 9,
+              "clue": "Track 3, fully titled '___ (Eat Me Up).'"
+            },
+            {
+              "answer": "CHACONNE",
+              "len": 8,
+              "clue": "Track 4, named after a baroque musical form."
+            },
+            {
+              "answer": "BILLS",
+              "len": 5,
+              "clue": "Track 5 of DARK BLOOD."
+            },
+            {
+              "answer": "KARMA",
+              "len": 5,
+              "clue": "The track 6 that closes out DARK BLOOD."
+            },
+            {
+              "answer": "BITE",
+              "len": 4,
+              "clue": "'___ Me,' the EP's lead single (first word)."
+            },
+            {
+              "answer": "VAMPIRE",
+              "len": 7,
+              "clue": "The supernatural creature concept driving DARK BLOOD."
+            },
+            {
+              "answer": "BLOOD",
+              "len": 5,
+              "clue": "The second word of the EP title; it flows through the vampire lore."
+            },
+            {
+              "answer": "MOON",
+              "len": 4,
+              "clue": "'DARK ___: The Blood Altar,' the webtoon ENHYPEN's lore is based on."
+            },
+            {
+              "answer": "ALTAR",
+              "len": 5,
+              "clue": "The 'Blood ___' in the webtoon title DARK MOON: The Blood ___."
+            },
+            {
+              "answer": "ENGENE",
+              "len": 6,
+              "clue": "ENHYPEN's fandom name."
+            },
+            {
+              "answer": "SUNGHOON",
+              "len": 8,
+              "clue": "Former competitive figure skater turned idol."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "txt",
+      "name": "TOMORROW X TOGETHER",
+      "gender": "male",
+      "agency": "Big Hit Music",
+      "fandom": "MOA",
+      "albums": [
+        {
+          "id": "star-chapter-sanctuary",
+          "title": "The Star Chapter: SANCTUARY",
+          "releaseDate": "2024-11-04",
+          "titleTrack": "Over The Moon",
+          "lightstick": null,
+          "words": [
+            {
+              "answer": "HEAVEN",
+              "len": 6,
+              "clue": "Track 1 that opens SANCTUARY with euphoric, life-transforming love."
+            },
+            {
+              "answer": "DANGER",
+              "len": 6,
+              "clue": "Edgy track 3 of SANCTUARY."
+            },
+            {
+              "answer": "RESIST",
+              "len": 6,
+              "clue": "Track 4, fully titled '___ (Not Gonna Run Away)' (first word)."
+            },
+            {
+              "answer": "SANCTUARY",
+              "len": 9,
+              "clue": "The one-word subtitle of this Star Chapter release."
+            },
+            {
+              "answer": "STAR",
+              "len": 4,
+              "clue": "'The ___ Chapter,' the era this EP belongs to."
+            },
+            {
+              "answer": "MOON",
+              "len": 4,
+              "clue": "'Over The ___,' the album's title track."
+            },
+            {
+              "answer": "WINKS",
+              "len": 5,
+              "clue": "'Forty One ___,' the R&B b-side track 5 (last word)."
+            },
+            {
+              "answer": "HIGHER",
+              "len": 6,
+              "clue": "'___ than Heaven,' track 6 (first word)."
+            },
+            {
+              "answer": "MOA",
+              "len": 3,
+              "clue": "TXT's fandom, standing for 'Moments Of Alwaysness.'"
+            },
+            {
+              "answer": "MOABONG",
+              "len": 7,
+              "clue": "TXT's official lightstick, named after the fandom."
+            },
+            {
+              "answer": "SOOBIN",
+              "len": 6,
+              "clue": "The tall, witty leader and former Music Bank MC."
+            },
+            {
+              "answer": "BIGHIT",
+              "len": 6,
+              "clue": "The HYBE label, also home to BTS, that manages TXT."
+            }
+          ]
+        },
+        {
+          "id": "minisode3-tomorrow",
+          "title": "minisode 3: TOMORROW",
+          "releaseDate": "2024-04-01",
+          "titleTrack": "Deja Vu",
+          "lightstick": null,
+          "words": [
+            {
+              "answer": "TOMORROW",
+              "len": 8,
+              "clue": "The hopeful EP title word; also track 1, 'I'll See You There ___.'"
+            },
+            {
+              "answer": "MIRACLE",
+              "len": 7,
+              "clue": "Track 4 of minisode 3: TOMORROW."
+            },
+            {
+              "answer": "KILLA",
+              "len": 5,
+              "clue": "'The ___ (I Belong to You),' track 5."
+            },
+            {
+              "answer": "QUARTER",
+              "len": 7,
+              "clue": "'___ Life,' track 6 (first word)."
+            },
+            {
+              "answer": "ANEMOIA",
+              "len": 7,
+              "clue": "The remix of Deja Vu (track 7); a coined word for nostalgia for a time you never knew."
+            },
+            {
+              "answer": "MORSE",
+              "len": 5,
+              "clue": "Track 2's title is written in ___ code, spelling 'tomorrow.'"
+            },
+            {
+              "answer": "PROMISE",
+              "len": 7,
+              "clue": "The forgotten ___ the boy recalls and sets out to keep."
+            },
+            {
+              "answer": "FOX",
+              "len": 3,
+              "clue": "The desert ___ from The Little Prince, symbolizing the forgotten promise (and MOA)."
+            },
+            {
+              "answer": "HOPE",
+              "len": 4,
+              "clue": "What 'tomorrow with you' represents in this minisode."
+            },
+            {
+              "answer": "MOA",
+              "len": 3,
+              "clue": "TXT's fandom name."
+            },
+            {
+              "answer": "MOABONG",
+              "len": 7,
+              "clue": "TXT's official lightstick."
+            },
+            {
+              "answer": "BEOMGYU",
+              "len": 7,
+              "clue": "The guitar-loving mood-maker of TXT."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ateez",
+      "name": "ATEEZ",
+      "gender": "male",
+      "agency": "KQ Entertainment",
+      "fandom": "ATINY",
+      "albums": [
+        {
+          "id": "golden-hour-part1",
+          "title": "GOLDEN HOUR : Part.1",
+          "releaseDate": "2024-05-31",
+          "titleTrack": "WORK",
+          "lightstick": null,
+          "words": [
+            {
+              "answer": "WORK",
+              "len": 4,
+              "clue": "Track 3 and the title track of this 2024 EP — a one-word command to grind it out."
+            },
+            {
+              "answer": "BLIND",
+              "len": 5,
+              "clue": "Track 2 of GOLDEN HOUR : Part.1; you can't see a thing when you're this."
+            },
+            {
+              "answer": "SHABOOM",
+              "len": 7,
+              "clue": "Explosive b-side, track 5, whose made-up name mimics a blast."
+            },
+            {
+              "answer": "SIREN",
+              "len": 5,
+              "clue": "The closing track 6 — also a wailing emergency wail."
+            },
+            {
+              "answer": "GOLDEN",
+              "len": 6,
+              "clue": "First word of the EP title and of the 1:24 opening track."
+            },
+            {
+              "answer": "HOUR",
+              "len": 4,
+              "clue": "Second word of the EP title; in medicine, the critical first 60-minute window."
+            },
+            {
+              "answer": "NOSTALGIA",
+              "len": 9,
+              "clue": "The dream-pop mood the EP evokes — a longing for the past."
+            },
+            {
+              "answer": "DREAM",
+              "len": 5,
+              "clue": "Per the storyline, 'it takes money to ___' — what the members are drunk on."
+            },
+            {
+              "answer": "HERO",
+              "len": 4,
+              "clue": "In the worldview they were once one of these in another world; now they're nobody."
+            },
+            {
+              "answer": "ATINY",
+              "len": 5,
+              "clue": "ATEEZ's official fandom name (A-TEEZ + destiny)."
+            },
+            {
+              "answer": "HONGJOONG",
+              "len": 9,
+              "clue": "The captain and leader of ATEEZ (one word, no space)."
+            },
+            {
+              "answer": "ENDURANCE",
+              "len": 9,
+              "clue": "The 'golden hour' is a testament to this — pushing through to survive."
+            }
+          ]
+        },
+        {
+          "id": "golden-hour-part2",
+          "title": "GOLDEN HOUR : Part.2",
+          "releaseDate": "2024-11-15",
+          "titleTrack": "Ice On My Teeth",
+          "lightstick": null,
+          "words": [
+            {
+              "answer": "ICE",
+              "len": 3,
+              "clue": "First word of the title track: '___ On My Teeth.'"
+            },
+            {
+              "answer": "TEETH",
+              "len": 5,
+              "clue": "Last word of the title track: 'Ice On My ___.'"
+            },
+            {
+              "answer": "ENOUGH",
+              "len": 6,
+              "clue": "The closing track 6 — a one-word declaration that you've had it."
+            },
+            {
+              "answer": "DEEP",
+              "len": 4,
+              "clue": "First word of opening track 1, '___ Dive.'"
+            },
+            {
+              "answer": "DIVE",
+              "len": 4,
+              "clue": "Second word of track 1, 'Deep ___.'"
+            },
+            {
+              "answer": "WALTZ",
+              "len": 5,
+              "clue": "Track 5 is 'Selfish ___' — a three-beat ballroom dance."
+            },
+            {
+              "answer": "SELFISH",
+              "len": 7,
+              "clue": "First word of track 5, '___ Waltz.'"
+            },
+            {
+              "answer": "FIRE",
+              "len": 4,
+              "clue": "Track 4 is 'Man On ___.'"
+            },
+            {
+              "answer": "VALUE",
+              "len": 5,
+              "clue": "Track 2 is 'Scene 1 : ___' — the EP's theme of self-worth."
+            },
+            {
+              "answer": "SCENE",
+              "len": 5,
+              "clue": "Track 2 opens with '___ 1 : Value.'"
+            },
+            {
+              "answer": "SEONGHWA",
+              "len": 8,
+              "clue": "ATEEZ's eldest member and visual (one word)."
+            },
+            {
+              "answer": "MATURE",
+              "len": 6,
+              "clue": "Compared to Part.1, this EP's vibe is cooler, chiller, and more ___."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "riize",
+      "name": "RIIZE",
+      "gender": "male",
+      "agency": "SM Entertainment",
+      "fandom": "BRIIZE",
+      "albums": [
+        {
+          "id": "riizing",
+          "title": "RIIZING",
+          "releaseDate": "2024-06-17",
+          "titleTrack": "Boom Boom Bass",
+          "lightstick": null,
+          "words": [
+            {
+              "answer": "BOOM",
+              "len": 4,
+              "clue": "Doubled-up first words of the title track: '___ ___ Bass.'"
+            },
+            {
+              "answer": "BASS",
+              "len": 4,
+              "clue": "Last word of the title track 'Boom Boom ___' — the low-end string they play."
+            },
+            {
+              "answer": "SIREN",
+              "len": 5,
+              "clue": "Track 2 of RIIZING (not the ATEEZ one) — a wailing alarm."
+            },
+            {
+              "answer": "IMPOSSIBLE",
+              "len": 10,
+              "clue": "Track 3 — a one-word b-side meaning 'can't be done.'"
+            },
+            {
+              "answer": "HONESTLY",
+              "len": 8,
+              "clue": "Track 5 — a candid one-word b-side, 'to tell the truth.'"
+            },
+            {
+              "answer": "RIIZING",
+              "len": 7,
+              "clue": "The EP's own title — RIIZE on the way up (double-i spelling)."
+            },
+            {
+              "answer": "BRIIZE",
+              "len": 6,
+              "clue": "RIIZE's official fandom name (double-i spelling)."
+            },
+            {
+              "answer": "GUITAR",
+              "len": 6,
+              "clue": "RIIZE debuted with 'Get a ___' — the string instrument in their name."
+            },
+            {
+              "answer": "EMOTIONAL",
+              "len": 9,
+              "clue": "RIIZE call their genre '___ pop.'"
+            },
+            {
+              "answer": "YOUTH",
+              "len": 5,
+              "clue": "The title track is about this stage of life freely expressing excitement."
+            },
+            {
+              "answer": "KISS",
+              "len": 4,
+              "clue": "Track 6 is 'One ___.'"
+            },
+            {
+              "answer": "ANTON",
+              "len": 5,
+              "clue": "RIIZE's youngest member, son of singer Yoon Sang."
+            }
+          ]
+        },
+        {
+          "id": "odyssey",
+          "title": "ODYSSEY",
+          "releaseDate": "2025-05-19",
+          "titleTrack": "Fly Up",
+          "lightstick": null,
+          "words": [
+            {
+              "answer": "ODYSSEY",
+              "len": 7,
+              "clue": "The album's title and its opening track 1 — an epic voyage."
+            },
+            {
+              "answer": "FLY",
+              "len": 3,
+              "clue": "First word of the title track '___ Up.'"
+            },
+            {
+              "answer": "PASSAGE",
+              "len": 7,
+              "clue": "Track 6 — a one-word b-side meaning a way through or a journey."
+            },
+            {
+              "answer": "EMBER",
+              "len": 5,
+              "clue": "Track 3 is '___ to Solar' (잉걸) — a glowing coal."
+            },
+            {
+              "answer": "SOLAR",
+              "len": 5,
+              "clue": "Track 3 is 'Ember to ___' — relating to the sun."
+            },
+            {
+              "answer": "MIRAGE",
+              "len": 6,
+              "clue": "Track 7 is 'Midnight ___' — an illusion shimmering in the distance."
+            },
+            {
+              "answer": "MIDNIGHT",
+              "len": 8,
+              "clue": "Track 7 opens with '___ Mirage' — twelve o'clock at night."
+            },
+            {
+              "answer": "VOYAGE",
+              "len": 6,
+              "clue": "The album frames youth as a long ___ — a journey by sea or space."
+            },
+            {
+              "answer": "JOURNEY",
+              "len": 7,
+              "clue": "The title track captures the thrill before starting this trip."
+            },
+            {
+              "answer": "SPACE",
+              "len": 5,
+              "clue": "The synth atmosphere makes you feel like floating through this."
+            },
+            {
+              "answer": "ANOTHER",
+              "len": 7,
+              "clue": "The closing track 10 is '___ Life.'"
+            },
+            {
+              "answer": "SUNGCHAN",
+              "len": 8,
+              "clue": "Tall RIIZE member who, like Shotaro, came from NCT (one word)."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "boynextdoor",
+      "name": "BOYNEXTDOOR",
+      "gender": "male",
+      "agency": "KOZ Entertainment",
+      "fandom": "ONEDOOR",
+      "albums": [
+        {
+          "id": "nineteen-ninetynine",
+          "title": "19.99",
+          "releaseDate": "2024-09-09",
+          "titleTrack": "Nice Guy",
+          "lightstick": null,
+          "words": [
+            {
+              "answer": "NICE",
+              "len": 4,
+              "clue": "First word of the title track '___ Guy.'"
+            },
+            {
+              "answer": "GUY",
+              "len": 3,
+              "clue": "Second word of the title track 'Nice ___.'"
+            },
+            {
+              "answer": "DANGEROUS",
+              "len": 9,
+              "clue": "The pre-release / track 1 — a one-word warning of risk."
+            },
+            {
+              "answer": "TWENTY",
+              "len": 6,
+              "clue": "Track 5, the age the EP's title (19.99) is about to hit."
+            },
+            {
+              "answer": "SKIT",
+              "len": 4,
+              "clue": "Track 3 — a short spoken interlude, not a full song."
+            },
+            {
+              "answer": "ROCK",
+              "len": 4,
+              "clue": "Track 2 is 'Gonna be a ___' — both a stone and a music genre."
+            },
+            {
+              "answer": "ONEDOOR",
+              "len": 7,
+              "clue": "BOYNEXTDOOR's fandom name — the single door connecting them to the world."
+            },
+            {
+              "answer": "KOZ",
+              "len": 3,
+              "clue": "BOYNEXTDOOR's label, founded by rapper Zico (three letters)."
+            },
+            {
+              "answer": "NINETEEN",
+              "len": 8,
+              "clue": "The age in '19.99' — the year you're still not quite twenty."
+            },
+            {
+              "answer": "TAESAN",
+              "len": 6,
+              "clue": "Rapper-producer member who writes much of BOYNEXTDOOR's music."
+            },
+            {
+              "answer": "CALL",
+              "len": 4,
+              "clue": "Track 6 is '___ Me.'"
+            },
+            {
+              "answer": "ADULT",
+              "len": 5,
+              "clue": "Turning 20 in Korea means officially becoming one of these."
+            }
+          ]
+        },
+        {
+          "id": "how",
+          "title": "HOW?",
+          "releaseDate": "2024-04-15",
+          "titleTrack": "Earth, Wind & Fire",
+          "lightstick": null,
+          "words": [
+            {
+              "answer": "EARTH",
+              "len": 5,
+              "clue": "First word of the title track '___, Wind & Fire.'"
+            },
+            {
+              "answer": "WIND",
+              "len": 4,
+              "clue": "Second word of the title track 'Earth, ___ & Fire.'"
+            },
+            {
+              "answer": "FIRE",
+              "len": 4,
+              "clue": "Last word of the title track 'Earth, Wind & ___.'"
+            },
+            {
+              "answer": "AMNESIA",
+              "len": 7,
+              "clue": "Track 2 — a one-word b-side meaning loss of memory."
+            },
+            {
+              "answer": "STARS",
+              "len": 5,
+              "clue": "Track 3 is 'So Let's Go See the ___' (별 보러 가자)."
+            },
+            {
+              "answer": "DARLING",
+              "len": 7,
+              "clue": "Track 6 is 'Dear. My ___' — a sweet name for a sweetheart."
+            },
+            {
+              "answer": "COOL",
+              "len": 4,
+              "clue": "Track 5 is 'Life is ___.'"
+            },
+            {
+              "answer": "HOW",
+              "len": 3,
+              "clue": "The EP's one-word title, closing the trilogy after 'Who!' and 'Why..'"
+            },
+            {
+              "answer": "TRILOGY",
+              "len": 7,
+              "clue": "HOW? completes BOYNEXTDOOR's first-love three-part ___."
+            },
+            {
+              "answer": "OUR",
+              "len": 3,
+              "clue": "The opening track 1 — a one-word possessive, 'belonging to us.'"
+            },
+            {
+              "answer": "WOONHAK",
+              "len": 7,
+              "clue": "BOYNEXTDOOR's youngest member (one word)."
+            },
+            {
+              "answer": "LOVE",
+              "len": 4,
+              "clue": "The whole trilogy is about first ___."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zerobaseone",
+      "name": "ZEROBASEONE",
+      "gender": "male",
+      "agency": "WAKEONE",
+      "fandom": "ZEROSE",
+      "albums": [
+        {
+          "id": "you-had-me-at-hello",
+          "title": "You had me at HELLO",
+          "releaseDate": "2024-05-13",
+          "titleTrack": "Feel the POP",
+          "lightstick": null,
+          "words": [
+            {
+              "answer": "POP",
+              "len": 3,
+              "clue": "Title-track verb: 'Feel the ___,' the EP's lead single."
+            },
+            {
+              "answer": "FEEL",
+              "len": 4,
+              "clue": "First word of the lead single '___ the POP.'"
+            },
+            {
+              "answer": "HELLO",
+              "len": 5,
+              "clue": "Word that closes the EP title; also the Young K (DAY6)-penned acoustic ballad on it."
+            },
+            {
+              "answer": "SOLAR",
+              "len": 5,
+              "clue": "'___ Power,' the hip-hop opener built on heavy bass and electric guitars."
+            },
+            {
+              "answer": "SWEAT",
+              "len": 5,
+              "clue": "Exhilarating house-genre dance b-side on the EP."
+            },
+            {
+              "answer": "ECLIPSE",
+              "len": 7,
+              "clue": "'Dear ___,' the R&B track that samples the lead single's piano riff."
+            },
+            {
+              "answer": "SUMMER",
+              "len": 6,
+              "clue": "Season the EP evokes; teaser film was titled '___ Came Early.'"
+            },
+            {
+              "answer": "ZEROSE",
+              "len": 6,
+              "clue": "ZEROBASEONE's official fandom name."
+            },
+            {
+              "answer": "WAKEONE",
+              "len": 7,
+              "clue": "The agency, born from Mnet's Boys Planet, that manages ZEROBASEONE."
+            },
+            {
+              "answer": "HANBIN",
+              "len": 6,
+              "clue": "Boys Planet's #1 finisher, Sung ___, the leader."
+            },
+            {
+              "answer": "MATTHEW",
+              "len": 7,
+              "clue": "Canadian-raised member Seok ___, the group's English speaker."
+            },
+            {
+              "answer": "TAERAE",
+              "len": 6,
+              "clue": "Clear-toned main vocalist Kim ___."
+            }
+          ]
+        },
+        {
+          "id": "cinema-paradise",
+          "title": "CINEMA PARADISE",
+          "releaseDate": "2024-08-26",
+          "titleTrack": "GOOD SO BAD",
+          "lightstick": null,
+          "words": [
+            {
+              "answer": "CINEMA",
+              "len": 6,
+              "clue": "First word of the 4th mini-album title; the film-house concept it runs on."
+            },
+            {
+              "answer": "PARADISE",
+              "len": 8,
+              "clue": "Second word of the album title, evoking a heaven of movies."
+            },
+            {
+              "answer": "GOOD",
+              "len": 4,
+              "clue": "First word of the title track '___ So Bad.'"
+            },
+            {
+              "answer": "BAD",
+              "len": 3,
+              "clue": "Last word of the title track 'Good So ___.'"
+            },
+            {
+              "answer": "ROMEO",
+              "len": 5,
+              "clue": "'Kill the ___,' a b-side naming Shakespeare's tragic lover."
+            },
+            {
+              "answer": "INSOMNIA",
+              "len": 8,
+              "clue": "Sleepless-night-titled b-side on CINEMA PARADISE."
+            },
+            {
+              "answer": "ETERNITY",
+              "len": 8,
+              "clue": "B-side whose one-word title means everlasting time."
+            },
+            {
+              "answer": "MOVIE",
+              "len": 5,
+              "clue": "'Road ___,' a b-side named for a film genre."
+            },
+            {
+              "answer": "ROAD",
+              "len": 4,
+              "clue": "First word of the b-side '___ Movie.'"
+            },
+            {
+              "answer": "SEA",
+              "len": 3,
+              "clue": "ZB1's remake on this EP is 'The ___' (바다)."
+            },
+            {
+              "answer": "ZEROSE",
+              "len": 6,
+              "clue": "ZEROBASEONE's official fandom name."
+            },
+            {
+              "answer": "HANBIN",
+              "len": 6,
+              "clue": "The leader, Sung ___, who topped Boys Planet."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tws",
+      "name": "TWS",
+      "gender": "male",
+      "agency": "Pledis Entertainment",
+      "fandom": "42",
+      "albums": [
+        {
+          "id": "summer-beat",
+          "title": "SUMMER BEAT!",
+          "releaseDate": "2024-06-24",
+          "titleTrack": "If I'm S, Can You Be My N?",
+          "lightstick": null,
+          "words": [
+            {
+              "answer": "SUMMER",
+              "len": 6,
+              "clue": "First word of the 2nd mini-album title '___ BEAT!'"
+            },
+            {
+              "answer": "BEAT",
+              "len": 4,
+              "clue": "Second word of the EP title; also the rhythm you dance to."
+            },
+            {
+              "answer": "BOYHOOD",
+              "len": 7,
+              "clue": "The genre TWS coined, '___ pop,' depicting boys' everyday lives."
+            },
+            {
+              "answer": "POP",
+              "len": 3,
+              "clue": "TWS brands their music 'boyhood ___.'"
+            },
+            {
+              "answer": "MAGNET",
+              "len": 6,
+              "clue": "Title-track metaphor: 'If I'm S, you're my N' likens attraction to this object's poles."
+            },
+            {
+              "answer": "CONFETTI",
+              "len": 8,
+              "clue": "'Fire ___,' a celebratory b-side on the EP."
+            },
+            {
+              "answer": "FIRE",
+              "len": 4,
+              "clue": "First word of the b-side '___ Confetti.'"
+            },
+            {
+              "answer": "DOUBLE",
+              "len": 6,
+              "clue": "'___ Take,' a b-side on SUMMER BEAT!"
+            },
+            {
+              "answer": "TAKE",
+              "len": 4,
+              "clue": "Second word of the b-side 'Double ___.'"
+            },
+            {
+              "answer": "PLEDIS",
+              "len": 6,
+              "clue": "The HYBE label, home to SEVENTEEN, that manages TWS."
+            },
+            {
+              "answer": "SHINYU",
+              "len": 6,
+              "clue": "The leader and main rapper of TWS."
+            },
+            {
+              "answer": "DOHOON",
+              "len": 6,
+              "clue": "The center and a main vocalist of TWS."
+            }
+          ]
+        },
+        {
+          "id": "sparkling-blue",
+          "title": "Sparkling Blue",
+          "releaseDate": "2024-01-22",
+          "titleTrack": "plot twist",
+          "lightstick": null,
+          "words": [
+            {
+              "answer": "SPARKLING",
+              "len": 9,
+              "clue": "First word of TWS's debut EP title."
+            },
+            {
+              "answer": "BLUE",
+              "len": 4,
+              "clue": "Second word of the debut EP title; the color of fresh youth."
+            },
+            {
+              "answer": "PLOT",
+              "len": 4,
+              "clue": "First word of the title track '___ twist.'"
+            },
+            {
+              "answer": "TWIST",
+              "len": 5,
+              "clue": "'plot ___,' the debut title track (Korean: 첫 만남은 계획대로 되지 않아)."
+            },
+            {
+              "answer": "UNPLUGGED",
+              "len": 9,
+              "clue": "'___ boy,' an acoustic-leaning b-side on the debut EP."
+            },
+            {
+              "answer": "HOOKY",
+              "len": 5,
+              "clue": "'First ___,' a b-side about skipping out / playing truant."
+            },
+            {
+              "answer": "BFF",
+              "len": 3,
+              "clue": "Best-friends-forever-titled b-side on Sparkling Blue."
+            },
+            {
+              "answer": "DEBUT",
+              "len": 5,
+              "clue": "What Sparkling Blue marked for TWS on Jan 22, 2024."
+            },
+            {
+              "answer": "PLEDIS",
+              "len": 6,
+              "clue": "The HYBE label, also home to SEVENTEEN, that manages TWS."
+            },
+            {
+              "answer": "SHINYU",
+              "len": 6,
+              "clue": "The leader and main rapper of TWS."
+            },
+            {
+              "answer": "YOUNGJAE",
+              "len": 8,
+              "clue": "A main vocalist and lead dancer of TWS."
+            },
+            {
+              "answer": "DOHOON",
+              "len": 6,
+              "clue": "The center and a main vocalist of TWS."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "plave",
+      "name": "PLAVE",
+      "gender": "male",
+      "agency": "VLAST",
+      "fandom": "PLLI",
+      "albums": [
+        {
+          "id": "caligo-pt1",
+          "title": "Caligo Pt.1",
+          "releaseDate": "2025-02-05",
+          "titleTrack": "Dash",
+          "lightstick": null,
+          "words": [
+            {
+              "answer": "CALIGO",
+              "len": 6,
+              "clue": "Latin for fog/darkness; the EP's one-word concept title."
+            },
+            {
+              "answer": "FOG",
+              "len": 3,
+              "clue": "The English meaning of 'Caligo' that veils this dark-turn EP."
+            },
+            {
+              "answer": "DASH",
+              "len": 4,
+              "clue": "The title track, a heavy rock song with a gloomy, angry MV."
+            },
+            {
+              "answer": "RIZZ",
+              "len": 4,
+              "clue": "Slang-titled b-side on Caligo Pt.1."
+            },
+            {
+              "answer": "ISLAND",
+              "len": 6,
+              "clue": "One-word b-side on the EP."
+            },
+            {
+              "answer": "CHROMA",
+              "len": 6,
+              "clue": "'___ Drift,' the dreamy city-pop opener laced with saxophone."
+            },
+            {
+              "answer": "DRIFT",
+              "len": 5,
+              "clue": "Second word of the city-pop track 'Chroma ___.'"
+            },
+            {
+              "answer": "ASTERUM",
+              "len": 7,
+              "clue": "PLAVE's worldview realm bridging Caelum and Terra."
+            },
+            {
+              "answer": "CAELUM",
+              "len": 6,
+              "clue": "The distant world the members drifted in before reaching Asterum."
+            },
+            {
+              "answer": "TERRA",
+              "len": 5,
+              "clue": "PLAVE's name for Earth; the 'T' in the b-side '12:32 (A to T).'"
+            },
+            {
+              "answer": "VLAST",
+              "len": 5,
+              "clue": "The studio/agency that creates and manages PLAVE."
+            },
+            {
+              "answer": "VIRTUAL",
+              "len": 7,
+              "clue": "PLAVE is a ___ idol group, rendered with real-time motion capture."
+            }
+          ]
+        },
+        {
+          "id": "asterum-134-1",
+          "title": "ASTERUM : 134-1",
+          "releaseDate": "2024-02-26",
+          "titleTrack": "WAY 4 LUV",
+          "lightstick": null,
+          "words": [
+            {
+              "answer": "ASTERUM",
+              "len": 7,
+              "clue": "The titular realm; this mini-album is the final chapter '___ : 134-1.'"
+            },
+            {
+              "answer": "WAY",
+              "len": 3,
+              "clue": "First word of the title track '___ 4 LUV.'"
+            },
+            {
+              "answer": "LUV",
+              "len": 3,
+              "clue": "'WAY 4 ___,' the title track about a journey to find love."
+            },
+            {
+              "answer": "LOVE",
+              "len": 4,
+              "clue": "The thing PLAVE search for across this mini-album."
+            },
+            {
+              "answer": "WOO",
+              "len": 3,
+              "clue": "'Watch Me ___!', the dreamy afropop opener."
+            },
+            {
+              "answer": "FROM",
+              "len": 4,
+              "clue": "One-word b-side on ASTERUM : 134-1."
+            },
+            {
+              "answer": "VIRTUAL",
+              "len": 7,
+              "clue": "'___ Idol' (버추얼 아이돌), a self-referential b-side; also what kind of group PLAVE is."
+            },
+            {
+              "answer": "CAELUM",
+              "len": 6,
+              "clue": "The world PLAVE drifted from before reaching Asterum."
+            },
+            {
+              "answer": "TERRA",
+              "len": 5,
+              "clue": "PLAVE's name for Earth, where their fans live."
+            },
+            {
+              "answer": "VLAST",
+              "len": 5,
+              "clue": "The studio/agency that creates PLAVE."
+            },
+            {
+              "answer": "YEJUN",
+              "len": 5,
+              "clue": "PLAVE's leader and a main vocalist."
+            },
+            {
+              "answer": "EUNHO",
+              "len": 5,
+              "clue": "PLAVE's main rapper, who also produces."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nct-wish",
+      "name": "NCT WISH",
+      "gender": "male",
+      "agency": "SM Entertainment",
+      "fandom": "NCTzen WISH",
+      "albums": [
+        {
+          "id": "steady",
+          "title": "Steady",
+          "releaseDate": "2024-09-24",
+          "titleTrack": "Steady",
+          "lightstick": null,
+          "words": [
+            {
+              "answer": "STEADY",
+              "len": 6,
+              "clue": "The title track whose name is the old-school phrase for committing to a relationship: to go ___."
+            },
+            {
+              "answer": "WISH",
+              "len": 4,
+              "clue": "The hopeful word that finishes the group's name and their slogan, '___ for OUR ___.'"
+            },
+            {
+              "answer": "DUNK",
+              "len": 4,
+              "clue": "The basketball-flavored single bouncing through this EP: '___ Shot.'"
+            },
+            {
+              "answer": "SKATE",
+              "len": 5,
+              "clue": "A breezy summer b-side that just keeps rolling."
+            },
+            {
+              "answer": "SUPERCUTE",
+              "len": 9,
+              "clue": "One-word b-side that tells you exactly how it sounds."
+            },
+            {
+              "answer": "SUMMER",
+              "len": 6,
+              "clue": "The warm season whose carefree mood drenches this whole school-set EP."
+            },
+            {
+              "answer": "SCHOOLBOY",
+              "len": 9,
+              "clue": "The youthful 'classroom crush' archetype driving the Steady visuals (one compound word)."
+            },
+            {
+              "answer": "HANDS",
+              "len": 5,
+              "clue": "The Korean re-cut of a pre-debut track closes the EP: '___ Up.'"
+            },
+            {
+              "answer": "NEO",
+              "len": 3,
+              "clue": "First word of the 'Neo Culture Technology' that the letters NCT stand for."
+            },
+            {
+              "answer": "CULTURE",
+              "len": 7,
+              "clue": "Middle word of 'Neo ___ Technology,' the meaning behind NCT."
+            },
+            {
+              "answer": "SION",
+              "len": 4,
+              "clue": "The Korean leader anchoring this six-member unit."
+            },
+            {
+              "answer": "SAKUYA",
+              "len": 6,
+              "clue": "The maknae whose name evokes blooming cherry blossoms."
+            }
+          ]
+        },
+        {
+          "id": "color",
+          "title": "COLOR",
+          "releaseDate": "2025-09-01",
+          "titleTrack": "COLOR",
+          "lightstick": null,
+          "words": [
+            {
+              "answer": "COLOR",
+              "len": 5,
+              "clue": "The electro-pop title track whose post-chorus shouts 'Bring out the ___.'"
+            },
+            {
+              "answer": "SURF",
+              "len": 4,
+              "clue": "The pre-release single that rode out ahead of this third mini album."
+            },
+            {
+              "answer": "BLUE",
+              "len": 4,
+              "clue": "B-side 'Baby ___,' a shade hiding in its own title."
+            },
+            {
+              "answer": "VIDEOHOOD",
+              "len": 9,
+              "clue": "Coined one-word b-side mashing 'video' with 'neighborhood.'"
+            },
+            {
+              "answer": "WICHU",
+              "len": 5,
+              "clue": "Stylized b-side title that reads aloud like 'with you.'"
+            },
+            {
+              "answer": "CHEAT",
+              "len": 5,
+              "clue": "Gaming-flavored b-side: '___ Code.'"
+            },
+            {
+              "answer": "CODE",
+              "len": 4,
+              "clue": "Second word of that same '___'-cracking b-side."
+            },
+            {
+              "answer": "SHINE",
+              "len": 5,
+              "clue": "The concept's promise: each member letting their own light ___."
+            },
+            {
+              "answer": "NEO",
+              "len": 3,
+              "clue": "First word of 'Neo Culture Technology,' what NCT abbreviates."
+            },
+            {
+              "answer": "CULTURE",
+              "len": 7,
+              "clue": "Middle word of 'Neo ___ Technology.'"
+            },
+            {
+              "answer": "RYO",
+              "len": 3,
+              "clue": "Shortest member name on the roster (three letters)."
+            },
+            {
+              "answer": "YUSHI",
+              "len": 5,
+              "clue": "Member whose name shares its 'yu-' start with a bandmate's."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "le-sserafim",
+      "name": "LE SSERAFIM",
+      "gender": "female",
+      "agency": "Source Music",
+      "fandom": "FEARNOT",
+      "albums": [
+        {
+          "id": "crazy",
+          "title": "CRAZY",
+          "releaseDate": "2024-08-30",
+          "titleTrack": "CRAZY",
+          "lightstick": null,
+          "words": [
+            {
+              "answer": "CRAZY",
+              "len": 5,
+              "clue": "The house/disco title track — and the EP's name — about a dizzying infatuation."
+            },
+            {
+              "answer": "PIERROT",
+              "len": 7,
+              "clue": "Sad-clown b-side that samples a Kim Wan-sun classic."
+            },
+            {
+              "answer": "CRAZIER",
+              "len": 7,
+              "clue": "The English subtitle of closing track '미치지 못하는 이유,' produced by Yunjin."
+            },
+            {
+              "answer": "LIGHTNING",
+              "len": 9,
+              "clue": "The opening track you're 'Chasing': 'Chasing ___.'"
+            },
+            {
+              "answer": "CHASING",
+              "len": 7,
+              "clue": "First word of that storm-themed opener, '___ Lightning.'"
+            },
+            {
+              "answer": "FEARNOT",
+              "len": 7,
+              "clue": "What you proudly call yourself if you stan LE SSERAFIM."
+            },
+            {
+              "answer": "PIMBONG",
+              "len": 7,
+              "clue": "Wave this glowing official lightstick at a show."
+            },
+            {
+              "answer": "SOURCE",
+              "len": 6,
+              "clue": "The HYBE label managing the group: ___ Music."
+            },
+            {
+              "answer": "DISCO",
+              "len": 5,
+              "clue": "The retro club genre fueling the 'CRAZY' sound."
+            },
+            {
+              "answer": "SAKURA",
+              "len": 6,
+              "clue": "Japanese member whose name means 'cherry blossom.'"
+            },
+            {
+              "answer": "CHAEWON",
+              "len": 7,
+              "clue": "Say hello to the group's leader (first name)."
+            },
+            {
+              "answer": "HYBE",
+              "len": 4,
+              "clue": "The four-letter parent company behind Source Music."
+            }
+          ]
+        },
+        {
+          "id": "unforgiven",
+          "title": "UNFORGIVEN",
+          "releaseDate": "2023-05-01",
+          "titleTrack": "UNFORGIVEN",
+          "lightstick": null,
+          "words": [
+            {
+              "answer": "UNFORGIVEN",
+              "len": 10,
+              "clue": "Title track featuring Nile Rodgers, named for the Clint Eastwood Western."
+            },
+            {
+              "answer": "ANTIFRAGILE",
+              "len": 11,
+              "clue": "Re-included track sharing its name with the group's 2022 EP and title song."
+            },
+            {
+              "answer": "FEARLESS",
+              "len": 8,
+              "clue": "A 2023-version track here, and the name of their debut EP."
+            },
+            {
+              "answer": "HYDRA",
+              "len": 5,
+              "clue": "'The ___,' the many-headed-serpent-named track that opens the album's new material."
+            },
+            {
+              "answer": "IMPURITIES",
+              "len": 10,
+              "clue": "Track 6 whose plural title means 'flaws' or things deemed unclean."
+            },
+            {
+              "answer": "OYSTER",
+              "len": 6,
+              "clue": "'The World Is My ___,' the album's confident opening line and track."
+            },
+            {
+              "answer": "PSYCHE",
+              "len": 6,
+              "clue": "Mythic figure named in 'Eve, ___ & the Bluebeard's Wife.'"
+            },
+            {
+              "answer": "FEARNOT",
+              "len": 7,
+              "clue": "Track 11's parenthetical-laden title — also the fandom name."
+            },
+            {
+              "answer": "WESTERN",
+              "len": 7,
+              "clue": "The dusty outlaw film genre framing the album's whole worldview."
+            },
+            {
+              "answer": "NILE",
+              "len": 4,
+              "clue": "Disco legend ___ Rodgers, featured on the title track."
+            },
+            {
+              "answer": "FLAME",
+              "len": 5,
+              "clue": "'Blue ___,' a 2023-version track burning early in the tracklist."
+            },
+            {
+              "answer": "CHAEWON",
+              "len": 7,
+              "clue": "The group's leader (first name)."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ive",
+      "name": "IVE",
+      "gender": "female",
+      "agency": "Starship Entertainment",
+      "fandom": "DIVE",
+      "albums": [
+        {
+          "id": "ive-empathy",
+          "title": "IVE EMPATHY",
+          "releaseDate": "2025-02-03",
+          "titleTrack": "Rebel Heart",
+          "lightstick": null,
+          "words": [
+            {
+              "answer": "EMPATHY",
+              "len": 7,
+              "clue": "Feel it — the one-word name of IVE's 2025 EP."
+            },
+            {
+              "answer": "ATTITUDE",
+              "len": 8,
+              "clue": "The second of the EP's two title tracks, all about serving some ___."
+            },
+            {
+              "answer": "REBEL",
+              "len": 5,
+              "clue": "'___ Heart,' the pre-released first title track (first word only)."
+            },
+            {
+              "answer": "HEART",
+              "len": 5,
+              "clue": "'Rebel ___,' that same single's second word."
+            },
+            {
+              "answer": "FLU",
+              "len": 3,
+              "clue": "Track 2's three-letter title, named for a feverish illness."
+            },
+            {
+              "answer": "TKO",
+              "len": 3,
+              "clue": "Closing track abbreviating a boxing 'technical knockout.'"
+            },
+            {
+              "answer": "CRY",
+              "len": 3,
+              "clue": "'You Wanna ___,' the tearful-titled track 3."
+            },
+            {
+              "answer": "DIVE",
+              "len": 4,
+              "clue": "Take the plunge — IVE's official fandom name."
+            },
+            {
+              "answer": "BOHEMIAN",
+              "len": 8,
+              "clue": "The free-spirited aesthetic word describing the EP's concept photos."
+            },
+            {
+              "answer": "STARSHIP",
+              "len": 8,
+              "clue": "The agency (one word) launching IVE into orbit."
+            },
+            {
+              "answer": "YUJIN",
+              "len": 5,
+              "clue": "Meet the leader, who shares 'captain' duties (first name)."
+            },
+            {
+              "answer": "WONYOUNG",
+              "len": 8,
+              "clue": "The 'it-girl' visual of the group (first name)."
+            }
+          ]
+        },
+        {
+          "id": "ive-ive",
+          "title": "I've IVE",
+          "releaseDate": "2023-04-10",
+          "titleTrack": "I AM",
+          "lightstick": null,
+          "words": [
+            {
+              "answer": "KITSCH",
+              "len": 6,
+              "clue": "Pre-released dual title track whose MV quotes 'Books, not guns' from The Dreamers."
+            },
+            {
+              "answer": "HEROINE",
+              "len": 7,
+              "clue": "Track 5 naming the leading lady of a story."
+            },
+            {
+              "answer": "HYPNOSIS",
+              "len": 8,
+              "clue": "Track 7, titled '섬찟' in Korean, about a spellbinding trance."
+            },
+            {
+              "answer": "CHERISH",
+              "len": 7,
+              "clue": "Track 10 whose title means to hold something dear."
+            },
+            {
+              "answer": "LIPS",
+              "len": 4,
+              "clue": "Track 4 named for the part of the face you kiss with."
+            },
+            {
+              "answer": "MINE",
+              "len": 4,
+              "clue": "Possessive one-word track 6."
+            },
+            {
+              "answer": "BLOOD",
+              "len": 5,
+              "clue": "'Blue ___,' the album's opening track."
+            },
+            {
+              "answer": "DREAMERS",
+              "len": 8,
+              "clue": "The Bertolucci film 'The ___,' quoted in the 'Kitsch' visuals."
+            },
+            {
+              "answer": "CONFIDENCE",
+              "len": 10,
+              "clue": "The self-love attitude at the album's core — believing in yourself."
+            },
+            {
+              "answer": "DIVE",
+              "len": 4,
+              "clue": "IVE's official fandom name (take the plunge)."
+            },
+            {
+              "answer": "GAEUL",
+              "len": 5,
+              "clue": "The main dancer and oldest member (first name)."
+            },
+            {
+              "answer": "LEESEO",
+              "len": 6,
+              "clue": "The youngest IVE member, who debuted as a teen."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "aespa",
+      "name": "aespa",
+      "gender": "female",
+      "agency": "SM Entertainment",
+      "fandom": "MY",
+      "albums": [
+        {
+          "id": "whiplash",
+          "title": "Whiplash",
+          "releaseDate": "2024-10-21",
+          "titleTrack": "Whiplash",
+          "lightstick": null,
+          "words": [
+            {
+              "answer": "WHIPLASH",
+              "len": 8,
+              "clue": "EDM-driven title track about charging ahead on your own terms — also the EP's name."
+            },
+            {
+              "answer": "KILL",
+              "len": 4,
+              "clue": "'___ It,' the punchy track that follows the title cut on the EP."
+            },
+            {
+              "answer": "FLIGHTS",
+              "len": 7,
+              "clue": "'___, Not Feelings,' the dreamy R&B b-side (first word)."
+            },
+            {
+              "answer": "HOODIE",
+              "len": 6,
+              "clue": "'Pink ___,' the self-love hip-hop track on this EP."
+            },
+            {
+              "answer": "FLOWERS",
+              "len": 7,
+              "clue": "A blooming b-side closing out the techno-leaning tracklist."
+            },
+            {
+              "answer": "KWANGYA",
+              "len": 7,
+              "clue": "aespa's infinite, ruleless digital wilderness beyond the FLAT."
+            },
+            {
+              "answer": "NAEVIS",
+              "len": 6,
+              "clue": "The AI guide who connects the portal between the FLAT and KWANGYA."
+            },
+            {
+              "answer": "SYNK",
+              "len": 4,
+              "clue": "The act of connecting with your 'æ' to share thoughts and emotions."
+            },
+            {
+              "answer": "FLAT",
+              "len": 4,
+              "clue": "The digital world where the æ avatars actually live."
+            },
+            {
+              "answer": "SBONG",
+              "len": 5,
+              "clue": "The affectionate fan nickname for aespa's lightstick."
+            },
+            {
+              "answer": "KARINA",
+              "len": 6,
+              "clue": "The leader and face of aespa."
+            },
+            {
+              "answer": "NINGNING",
+              "len": 8,
+              "clue": "The Chinese powerhouse vocalist of the group."
+            }
+          ]
+        },
+        {
+          "id": "armageddon",
+          "title": "Armageddon",
+          "releaseDate": "2024-05-27",
+          "titleTrack": "Supernova / Armageddon",
+          "lightstick": null,
+          "words": [
+            {
+              "answer": "SUPERNOVA",
+              "len": 9,
+              "clue": "The glittering cosmic hyper-pop double title track, pre-released ahead of the album."
+            },
+            {
+              "answer": "ARMAGEDDON",
+              "len": 10,
+              "clue": "The other double title track — and the album's name, evoking a final battle of good vs evil."
+            },
+            {
+              "answer": "MULTIVERSE",
+              "len": 10,
+              "clue": "The expanded worldview this first studio album opened up."
+            },
+            {
+              "answer": "LICORICE",
+              "len": 8,
+              "clue": "A b-side named after a chewy black candy."
+            },
+            {
+              "answer": "BAHAMA",
+              "len": 6,
+              "clue": "A breezy b-side named after an island getaway."
+            },
+            {
+              "answer": "PROLOGUE",
+              "len": 8,
+              "clue": "An album track whose title means the opening of a story."
+            },
+            {
+              "answer": "MELODY",
+              "len": 6,
+              "clue": "The English subtitle of closing track '목소리.'"
+            },
+            {
+              "answer": "MINE",
+              "len": 4,
+              "clue": "Possessive one-word b-side early on the tracklist."
+            },
+            {
+              "answer": "KWANGYA",
+              "len": 7,
+              "clue": "The boundless digital wilderness at the heart of aespa's lore."
+            },
+            {
+              "answer": "NAEVIS",
+              "len": 6,
+              "clue": "The AI helper guiding aespa through the FLAT and KWANGYA."
+            },
+            {
+              "answer": "REKALL",
+              "len": 6,
+              "clue": "The worldview term for an 'æ' crossing over into the real world."
+            },
+            {
+              "answer": "MAMBA",
+              "len": 5,
+              "clue": "'Black ___,' the evil entity that severs aespa's SYNK, from their debut single."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "illit",
+      "name": "ILLIT",
+      "gender": "female",
+      "agency": "BELIFT LAB",
+      "fandom": "GLLIT",
+      "albums": [
+        {
+          "id": "super-real-me",
+          "title": "SUPER REAL ME",
+          "releaseDate": "2024-03-25",
+          "titleTrack": "Magnetic",
+          "lightstick": null,
+          "words": [
+            {
+              "answer": "MAGNETIC",
+              "len": 8,
+              "clue": "The TikTok-viral title track that pulls you right in."
+            },
+            {
+              "answer": "WORLD",
+              "len": 5,
+              "clue": "'My ___,' the opening track also used to promote the debut EP."
+            },
+            {
+              "answer": "SYNDROME",
+              "len": 8,
+              "clue": "'Lucky Girl ___,' the manifest-your-luck follow-up track (last word)."
+            },
+            {
+              "answer": "MIDNIGHT",
+              "len": 8,
+              "clue": "'___ Fiction,' the dreamy track's first word."
+            },
+            {
+              "answer": "FICTION",
+              "len": 7,
+              "clue": "'Midnight ___,' that same track's second word."
+            },
+            {
+              "answer": "NOSTALGIA",
+              "len": 9,
+              "clue": "The Y2K, '90s–2000s East-Asian feeling the album's aesthetic chases."
+            },
+            {
+              "answer": "REAL",
+              "len": 4,
+              "clue": "The middle word of the EP's title, 'SUPER ___ ME.'"
+            },
+            {
+              "answer": "GLLIT",
+              "len": 5,
+              "clue": "ILLIT fans go by this glittery fandom name."
+            },
+            {
+              "answer": "GLITTER",
+              "len": 7,
+              "clue": "The sparkly English word that inspired the fandom name."
+            },
+            {
+              "answer": "BELIFT",
+              "len": 6,
+              "clue": "The HYBE sub-label (one word) behind ILLIT: ___ Lab."
+            },
+            {
+              "answer": "YUNAH",
+              "len": 5,
+              "clue": "The member most often seen fronting ILLIT (first name)."
+            },
+            {
+              "answer": "IROHA",
+              "len": 5,
+              "clue": "The youngest ILLIT member, from Japan."
+            }
+          ]
+        },
+        {
+          "id": "ill-like-you",
+          "title": "I'LL LIKE YOU",
+          "releaseDate": "2024-10-21",
+          "titleTrack": "Cherish (My Love)",
+          "lightstick": null,
+          "words": [
+            {
+              "answer": "CHERISH",
+              "len": 7,
+              "clue": "'___ (My Love),' the minimalistic lead single of this 2nd EP."
+            },
+            {
+              "answer": "LIKE",
+              "len": 4,
+              "clue": "The verb in the EP's own title, 'I'll ___ You,' and its short opening track."
+            },
+            {
+              "answer": "PIMPLE",
+              "len": 6,
+              "clue": "A cheeky b-side named after a spot you'd hate to get before a date."
+            },
+            {
+              "answer": "TICK",
+              "len": 4,
+              "clue": "'___-Tack,' the chiptune-heavy standout b-side (first half)."
+            },
+            {
+              "answer": "TACK",
+              "len": 4,
+              "clue": "'Tick-___,' that same maximalist b-side (second half)."
+            },
+            {
+              "answer": "IYKYK",
+              "len": 5,
+              "clue": "The b-side whose title is the texting acronym for 'If You Know You Know.'"
+            },
+            {
+              "answer": "GLLIT",
+              "len": 5,
+              "clue": "ILLIT's glittery fandom name."
+            },
+            {
+              "answer": "BELIFT",
+              "len": 6,
+              "clue": "The HYBE sub-label behind ILLIT: ___ Lab."
+            },
+            {
+              "answer": "MINJU",
+              "len": 5,
+              "clue": "ILLIT member sharing a name with another well-known idol."
+            },
+            {
+              "answer": "WONHEE",
+              "len": 6,
+              "clue": "The doll-faced maknae-line member."
+            },
+            {
+              "answer": "MOKA",
+              "len": 4,
+              "clue": "Japanese member named like a coffee drink."
+            },
+            {
+              "answer": "IROHA",
+              "len": 5,
+              "clue": "The Japanese maknae of ILLIT."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "babymonster",
+      "name": "BABYMONSTER",
+      "gender": "female",
+      "agency": "YG Entertainment",
+      "fandom": "MONSTIEZ",
+      "albums": [
+        {
+          "id": "drip",
+          "title": "DRIP",
+          "releaseDate": "2024-11-01",
+          "titleTrack": "CLIK CLAK / DRIP",
+          "lightstick": null,
+          "words": [
+            {
+              "answer": "DRIP",
+              "len": 4,
+              "clue": "Swaggy double title track (co-composed by G-Dragon) and the album's name."
+            },
+            {
+              "answer": "CLIK",
+              "len": 4,
+              "clue": "'___ Clak,' the savage double title where every member raps (first word)."
+            },
+            {
+              "answer": "CLAK",
+              "len": 4,
+              "clue": "'Clik ___,' the second half of that pre-released double-title track."
+            },
+            {
+              "answer": "FOREVER",
+              "len": 7,
+              "clue": "The upbeat synth-pop single pre-released before the full album."
+            },
+            {
+              "answer": "TOKYO",
+              "len": 5,
+              "clue": "'Woke Up In ___,' the Japanese-lyric hip-hop track by Ruka and Asa."
+            },
+            {
+              "answer": "BILLIONAIRE",
+              "len": 11,
+              "clue": "Money-flexing R&B b-side with 808 bass and a Y2K vibe."
+            },
+            {
+              "answer": "BATTER",
+              "len": 6,
+              "clue": "'___ Up,' the sporty track that gets a remix on this album."
+            },
+            {
+              "answer": "MONSTIEZ",
+              "len": 8,
+              "clue": "BABYMONSTER's official fandom name, blending 'MONS' with 'ties.'"
+            },
+            {
+              "answer": "RORA",
+              "len": 4,
+              "clue": "The Korean member whose name is two smooth syllables."
+            },
+            {
+              "answer": "AHYEON",
+              "len": 6,
+              "clue": "The center who sings, raps and dances all at once."
+            },
+            {
+              "answer": "RUKA",
+              "len": 4,
+              "clue": "The Japanese member and a main rapper of the group."
+            },
+            {
+              "answer": "ASA",
+              "len": 3,
+              "clue": "A three-letter Japanese rapper in the lineup."
+            }
+          ]
+        },
+        {
+          "id": "babymons7er",
+          "title": "BABYMONS7ER",
+          "releaseDate": "2024-04-01",
+          "titleTrack": "SHEESH",
+          "lightstick": null,
+          "words": [
+            {
+              "answer": "SHEESH",
+              "len": 6,
+              "clue": "The slang-titled lead single of this debut EP."
+            },
+            {
+              "answer": "MONSTERS",
+              "len": 8,
+              "clue": "The short intro track that kicks the EP off."
+            },
+            {
+              "answer": "DREAM",
+              "len": 5,
+              "clue": "A b-side that had circulated during the group's pre-debut reality show."
+            },
+            {
+              "answer": "BATTER",
+              "len": 6,
+              "clue": "'___ Up,' the sporty pre-debut single included here (and remixed)."
+            },
+            {
+              "answer": "STUCK",
+              "len": 5,
+              "clue": "'___ in the Middle,' the EP track that also gets a remix version."
+            },
+            {
+              "answer": "MONSTIEZ",
+              "len": 8,
+              "clue": "BABYMONSTER's official fandom name."
+            },
+            {
+              "answer": "YG",
+              "len": 2,
+              "clue": "Two-letter agency, also home to BLACKPINK, that launched the group."
+            },
+            {
+              "answer": "PHARITA",
+              "len": 7,
+              "clue": "A Thai vocalist member."
+            },
+            {
+              "answer": "CHIQUITA",
+              "len": 8,
+              "clue": "The youngest member, from Thailand."
+            },
+            {
+              "answer": "RAMI",
+              "len": 4,
+              "clue": "A four-letter vocalist who once went by 'Haram.'"
+            },
+            {
+              "answer": "ASA",
+              "len": 3,
+              "clue": "A three-letter Japanese rapper in the seven-piece lineup."
+            },
+            {
+              "answer": "RORA",
+              "len": 4,
+              "clue": "The Korean member completing the full seven-member debut."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

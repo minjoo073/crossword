@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="240" viewBox="0 0 880 240" role="img" aria-label="TOMORROW X TOGETHER - SANCTUARY">
+  <defs>
+    <linearGradient id="snc-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1A2456"/>
+      <stop offset="55%" stop-color="#101740"/>
+      <stop offset="100%" stop-color="#0E1330"/>
+    </linearGradient>
+    <linearGradient id="snc-beam" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#E8C56A" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#E8C56A" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="880" height="240" fill="url(#snc-bg)"/>
+  <path d="M433 56 L427 96 L453 96 L447 56 Z" fill="url(#snc-beam)"/>
+  <path d="M440 30 l8 22 22 8 -22 8 -8 22 -8 -22 -22 -8 22 -8 Z" fill="#E8C56A"/>
+  <g fill="none" stroke="#5B7CC7" stroke-width="3" opacity="0.8">
+    <path d="M360 200 L360 120 Q440 64 520 120 L520 200"/>
+    <path d="M392 200 L392 132 Q440 96 488 132 L488 200" opacity="0.5"/>
+  </g>
+  <g fill="#E4E9F7">
+    <circle cx="150" cy="70" r="2"/><circle cx="700" cy="60" r="2.5"/><circle cx="640" cy="110" r="1.8"/>
+    <circle cx="210" cy="120" r="1.8"/><circle cx="745" cy="150" r="2"/><circle cx="170" cy="180" r="1.6"/>
+  </g>
+  <text x="440" y="218" text-anchor="middle" font-family="Tahoma,'Segoe UI',sans-serif" font-weight="800" font-size="58" letter-spacing="9" fill="#E4E9F7">SANCTUARY</text>
+</svg>

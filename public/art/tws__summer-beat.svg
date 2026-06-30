@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="240" viewBox="0 0 880 240" role="img" aria-label="TWS - SUMMER BEAT">
+  <defs>
+    <linearGradient id="sb-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#EAFBFB"/>
+      <stop offset="100%" stop-color="#D2F4F6"/>
+    </linearGradient>
+  </defs>
+  <rect width="880" height="240" fill="url(#sb-bg)"/>
+  <g opacity="0.9">
+    <rect x="600" y="150" width="14" height="70" rx="6" fill="#00BFD8"/>
+    <rect x="624" y="120" width="14" height="100" rx="6" fill="#FF7AAE"/>
+    <rect x="648" y="160" width="14" height="60" rx="6" fill="#FFD43B"/>
+    <rect x="672" y="100" width="14" height="120" rx="6" fill="#00BFD8"/>
+    <rect x="696" y="140" width="14" height="80" rx="6" fill="#FF7AAE"/>
+    <rect x="720" y="170" width="14" height="50" rx="6" fill="#FFD43B"/>
+    <rect x="744" y="118" width="14" height="102" rx="6" fill="#00BFD8"/>
+  </g>
+  <g fill="none">
+    <circle cx="180" cy="70" r="16" stroke="#00BFD8" stroke-width="4"/>
+    <circle cx="150" cy="150" r="10" stroke="#FF7AAE" stroke-width="4"/>
+    <circle cx="700" cy="58" r="9" fill="#FFD43B"/>
+  </g>
+  <text x="56" y="140" font-family="Tahoma,'Segoe UI',sans-serif" font-weight="800" font-size="60" letter-spacing="3" fill="#0E3A45">SUMMER</text>
+  <text x="56" y="200" font-family="Tahoma,'Segoe UI',sans-serif" font-weight="800" font-size="60" letter-spacing="3" fill="#00BFD8">BEAT!</text>
+</svg>

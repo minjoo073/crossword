@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="240" viewBox="0 0 880 240" role="img" aria-label="ATEEZ - GOLDEN HOUR">
+  <defs>
+    <linearGradient id="gh-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7A3410"/>
+      <stop offset="50%" stop-color="#4A2009"/>
+      <stop offset="100%" stop-color="#2A1408"/>
+    </linearGradient>
+    <linearGradient id="gh-sun" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FCEBCF"/>
+      <stop offset="45%" stop-color="#F5A623"/>
+      <stop offset="100%" stop-color="#E2542C"/>
+    </linearGradient>
+    <clipPath id="gh-clip"><circle cx="440" cy="150" r="92"/></clipPath>
+  </defs>
+  <rect width="880" height="240" fill="url(#gh-bg)"/>
+  <circle cx="440" cy="150" r="92" fill="url(#gh-sun)"/>
+  <g clip-path="url(#gh-clip)">
+    <g fill="#2A1408" opacity="0.85">
+      <rect x="340" y="158" width="200" height="7"/>
+      <rect x="340" y="172" width="200" height="9"/>
+      <rect x="340" y="188" width="200" height="12"/>
+      <rect x="340" y="208" width="200" height="16"/>
+    </g>
+  </g>
+  <rect x="0" y="222" width="880" height="18" fill="#E2542C" opacity="0.55"/>
+  <text x="440" y="142" text-anchor="middle" font-family="Tahoma,'Segoe UI',sans-serif" font-weight="800" font-size="62" letter-spacing="6" fill="#2A1408">GOLDEN HOUR</text>
+</svg>

@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 260" width="700" height="260" role="img" aria-label="K-POP CROSSWORD">
+  <title>K-POP CROSSWORD</title>
+  <defs>
+    <!-- Chrome (silver) bands: white > steel > dark > white > steel -->
+    <linearGradient id="chrome" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.18" stop-color="#e3eaf1"/>
+      <stop offset="0.46" stop-color="#9aa8b8"/>
+      <stop offset="0.5" stop-color="#5f6e80"/>
+      <stop offset="0.54" stop-color="#aebccb"/>
+      <stop offset="0.74" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#a9b6c4"/>
+    </linearGradient>
+    <!-- Aqua / Aero blue with hard mid break for glossy face -->
+    <linearGradient id="aero" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#d6f2ff"/>
+      <stop offset="0.5" stop-color="#57b0f4"/>
+      <stop offset="0.5" stop-color="#2c8ae6"/>
+      <stop offset="1" stop-color="#0f5cc0"/>
+    </linearGradient>
+    <!-- Top-half white gloss overlay (font-metric independent: just lightens upper band) -->
+    <linearGradient id="gloss" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.92"/>
+      <stop offset="0.42" stop-color="#ffffff" stop-opacity="0.16"/>
+      <stop offset="0.45" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="bubble" cx="0.35" cy="0.3" r="0.8">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.95"/>
+      <stop offset="0.35" stop-color="#bfe6ff" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="#4aa6f0" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#0a1c33" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <!-- Aero bubbles (decor) -->
+  <circle cx="612" cy="44" r="26" fill="url(#bubble)"/>
+  <circle cx="58" cy="206" r="18" fill="url(#bubble)"/>
+
+  <!-- Pixel sparkle (8-bit star) top-left of wordmark -->
+  <g fill="#ffffff">
+    <rect x="92" y="22" width="10" height="10"/>
+    <rect x="82" y="32" width="10" height="10"/>
+    <rect x="102" y="32" width="10" height="10"/>
+    <rect x="92" y="42" width="10" height="10"/>
+    <rect x="92" y="12" width="10" height="10" opacity="0.55"/>
+    <rect x="92" y="52" width="10" height="10" opacity="0.55"/>
+  </g>
+
+  <!-- K-POP (chrome) -->
+  <g font-family="'Arial Black','Arial Bold',Arial,Helvetica,sans-serif" font-weight="900" text-anchor="middle" letter-spacing="2">
+    <text x="350" y="118" font-size="112" fill="url(#chrome)" stroke="#243042" stroke-width="6" paint-order="stroke" stroke-linejoin="round" filter="url(#soft)">K-POP</text>
+    <text x="350" y="118" font-size="112" fill="url(#gloss)">K-POP</text>
+  </g>
+
+  <!-- CROSSWORD (aqua) -->
+  <g font-family="'Arial Black','Arial Bold',Arial,Helvetica,sans-serif" font-weight="900" text-anchor="middle" letter-spacing="3">
+    <text x="350" y="220" font-size="78" fill="url(#aero)" stroke="#0b3f86" stroke-width="5" paint-order="stroke" stroke-linejoin="round" filter="url(#soft)">CROSSWORD</text>
+    <text x="350" y="220" font-size="78" fill="url(#gloss)">CROSSWORD</text>
+  </g>
+</svg>

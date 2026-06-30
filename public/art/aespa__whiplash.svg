@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="240" viewBox="0 0 880 240" role="img" aria-label="aespa - Whiplash">
+  <defs>
+    <linearGradient id="wp-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#16181D"/>
+      <stop offset="100%" stop-color="#0C0D10"/>
+    </linearGradient>
+    <linearGradient id="wp-chrome" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="35%" stop-color="#C8CDD6"/>
+      <stop offset="55%" stop-color="#6E7681"/>
+      <stop offset="100%" stop-color="#C8CDD6"/>
+    </linearGradient>
+  </defs>
+  <rect width="880" height="240" fill="url(#wp-bg)"/>
+  <g opacity="0.7">
+    <polygon points="0,240 120,40 150,40 30,240" fill="#6E7681" opacity="0.25"/>
+    <polygon points="60,240 200,40 224,40 84,240" fill="#C8CDD6" opacity="0.18"/>
+    <polygon points="730,40 760,40 880,240 850,240" fill="#6E7681" opacity="0.25"/>
+    <polygon points="790,40 814,40 880,160 880,210" fill="#C8CDD6" opacity="0.18"/>
+  </g>
+  <g stroke="#C8CDD6" stroke-width="2" opacity="0.5">
+    <path d="M250 60 L630 60" stroke-linecap="round"/>
+    <path d="M290 200 L590 200" stroke-linecap="round"/>
+  </g>
+  <text x="440" y="160" text-anchor="middle" font-family="Tahoma,'Segoe UI',sans-serif" font-weight="800" font-size="78" letter-spacing="6" fill="url(#wp-chrome)">WHIPLASH</text>
+</svg>

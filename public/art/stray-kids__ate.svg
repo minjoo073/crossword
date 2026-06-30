@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="240" viewBox="0 0 880 240" role="img" aria-label="Stray Kids - ATE">
+  <defs>
+    <radialGradient id="ate-bg" cx="50%" cy="118%" r="95%">
+      <stop offset="0" stop-color="#9B1B2E"/>
+      <stop offset="55%" stop-color="#3A1014"/>
+      <stop offset="100%" stop-color="#1A0E10"/>
+    </radialGradient>
+    <linearGradient id="ate-gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F8EFD2"/>
+      <stop offset="48%" stop-color="#E0A526"/>
+      <stop offset="100%" stop-color="#A9711A"/>
+    </linearGradient>
+  </defs>
+  <rect width="880" height="240" fill="#1A0E10"/>
+  <rect width="880" height="240" fill="url(#ate-bg)"/>
+  <path d="M372 96 L392 50 L420 84 L440 40 L460 84 L488 50 L508 96 Z" fill="url(#ate-gold)"/>
+  <rect x="372" y="96" width="136" height="12" rx="3" fill="url(#ate-gold)"/>
+  <circle cx="392" cy="48" r="6" fill="#F4E6C8"/>
+  <circle cx="440" cy="38" r="7" fill="#F4E6C8"/>
+  <circle cx="488" cy="48" r="6" fill="#F4E6C8"/>
+  <g opacity="0.5" fill="#E0A526">
+    <circle cx="150" cy="200" r="3"/><circle cx="730" cy="190" r="3"/><circle cx="690" cy="150" r="2"/><circle cx="195" cy="160" r="2"/>
+  </g>
+  <text x="440" y="208" text-anchor="middle" font-family="Tahoma,'Segoe UI',sans-serif" font-weight="800" font-size="132" letter-spacing="10" fill="url(#ate-gold)">ATE</text>
+</svg>
