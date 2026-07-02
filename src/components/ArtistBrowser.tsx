@@ -76,11 +76,11 @@ export default function ArtistBrowser({ artists }: { artists: ArtistItem[] }) {
                   <Link key={a.id} href={a.href} className="icon-btn">
                     {a.cover ? (
                       <figure
-                        className="cover-tile cover-tile--flush cover-tile--no-sparkle icon-cover"
+                        className="cover-frame icon-cover"
                         style={{ ["--accent"]: a.ca1 } as React.CSSProperties}
                       >
                         {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img className="cover-tile__img" src={a.cover} alt={a.name} />
+                        <img className="cover-frame__img" src={a.cover} alt={a.name} />
                       </figure>
                     ) : (
                       <span
@@ -104,9 +104,19 @@ export default function ArtistBrowser({ artists }: { artists: ArtistItem[] }) {
         })}
 
       {filtered.length === 0 && (
-        <p style={{ color: "#5a6b85", marginTop: 30, textAlign: "center" }}>
-          “{query}” 에 맞는 아티스트가 없어요.
-        </p>
+        <div className="pick__empty">
+          <p className="pick__empty-text">“{query}” 에 맞는 아티스트가 없어요.</p>
+          <button
+            type="button"
+            className="pick__empty-clear"
+            onClick={() => {
+              setQuery("");
+              setFilter("all");
+            }}
+          >
+            검색 지우기
+          </button>
+        </div>
       )}
     </div>
   );

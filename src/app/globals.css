@@ -363,10 +363,9 @@ a {
 }
 .seg-mini button[data-on="true"] {
   background: var(--accent);
-  /* --on-accent is injected per-album by luminance (see handoff spec #3);
-     falls back to ink. text-shadow lifts dark glyphs off a dark accent now. */
+  /* --on-accent injected per-album by luminance (CrosswordGame). Flat ink,
+     no text-shadow — the luminance pick owns contrast now (A2). */
   color: var(--on-accent, #111111);
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
 }
 /* Control bar + album hero (dreamcore cover) */
 .game__bar {
@@ -563,36 +562,57 @@ a {
 
 /* Mobile: compact, structured album hero (no crammed look) */
 @media (max-width: 560px) {
+  /* M1 — app-compact album hero: a small square cover thumb + title/artist on
+     one row. Concept, tags, tabs, glyph decor and the bottom gradient are
+     dropped so the crossword grid is visible on the first screen instead of a
+     full-bleed hero eating the viewport. */
   .game__art {
-    grid-template-columns: 1fr;
-    gap: 12px;
-    padding: 14px 14px 54px;
+    grid-template-columns: 56px 1fr;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    margin-bottom: 10px;
+    border-width: 2px;
+    box-shadow: 4px 4px 0 color-mix(in srgb, var(--accent) 18%, #111111);
   }
-  .game__art-album {
-    font-size: clamp(24px, 10vw, 34px);
-  }
-  .game__concept {
-    margin-top: 4px;
-    font-size: var(--font-xs);
-    line-height: 1.4;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+  .game__art::after,
+  .game__art-noise,
+  .game__art-kicker,
+  .game__concept,
+  .game__art-tags,
+  .game__art-tabs,
+  .game__art-stamp {
+    display: none;
   }
   .game__art-visual {
-    min-height: 170px;
+    order: -1;
+    width: 56px;
+    height: 56px;
+    min-height: 0;
+    border-width: 2px;
   }
-  .game__art-tags {
-    margin-top: 12px;
+  .game__art-glyph {
+    font-size: 24px;
+    padding: 2px;
+    letter-spacing: -0.04em;
   }
-  .game__art-tabs {
-    left: 14px;
-    right: 14px;
+  .game__art-copy {
+    min-width: 0;
   }
-  .game__art-tabs span {
-    min-height: 46px;
-    font-size: var(--font-xs); /* was 9px — UI floor 13px */
+  .game__art-artist {
+    font-size: var(--font-xs);
+  }
+  .game__art-album {
+    font-size: clamp(18px, 5.6vw, 24px);
+    line-height: 1.05;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  /* tighter board sheet on phones */
+  .game__sheet {
+    padding: 10px;
+    box-shadow: 6px 6px 0 color-mix(in srgb, var(--accent) 14%, #111111);
   }
 }
 
@@ -922,7 +942,6 @@ a {
   background: var(--accent);
   border-color: #111111;
   color: var(--on-accent, #111111);
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
 }
 /* Destructive confirm button (e.g. "전부 지우기") — danger pink, ink text. */
 .tool--danger {
@@ -956,6 +975,98 @@ a {
 }
 .check-summary__jump {
   margin: 0;
+}
+/* A3 HOOK (strong dev toggles this class when wrong > 0): swap the neutral
+   accent tint for an error tint so "M칸 오답" carries the board's wrong-signal
+   (matches .cell--wrong). Selector only — no TSX yet. */
+.check-summary--error {
+  background: color-mix(in srgb, var(--error) 16%, #fcfdff);
+  border-color: var(--error);
+}
+
+/* C1 HOOK — first-run onboarding coachmark (strong dev renders markup + gates
+   it behind localStorage). Neobrutal overlay, reduced-motion safe. Structure:
+     <div class="coachmark" role="dialog" aria-modal="true">
+       <div class="coachmark__card">
+         <strong class="coachmark__title">이렇게 풀어요</strong>
+         <ul class="coachmark__list">
+           <li class="coachmark__step"><span class="coachmark__badge">1</span> 칸을 눌러 단어 선택</li>
+           <li class="coachmark__step"><span class="coachmark__badge">2</span> 아래 키패드로 입력 · ENG↔한글 전환</li>
+           <li class="coachmark__step"><span class="coachmark__badge">3</span> 정답 확인으로 오답 점검</li>
+         </ul>
+         <button class="coachmark__dismiss">시작하기</button>
+       </div>
+     </div>
+*/
+.coachmark {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: color-mix(in srgb, #111111 55%, transparent);
+}
+.coachmark__card {
+  background: var(--paper, #fcfdff);
+  border: 3px solid #111111;
+  border-radius: 0;
+  box-shadow: 10px 10px 0 color-mix(in srgb, var(--accent) 20%, #111111);
+  padding: 22px 22px 20px;
+  max-width: 340px;
+  width: 100%;
+}
+.coachmark__title {
+  display: block;
+  font-size: var(--font-2xl);
+  font-weight: 800;
+  color: #111111;
+  margin: 0 0 14px;
+}
+.coachmark__list {
+  list-style: none;
+  margin: 0 0 18px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.coachmark__step {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: var(--font-md);
+  line-height: 1.4;
+  color: #111111;
+}
+.coachmark__badge {
+  flex: none;
+  width: 26px;
+  height: 26px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #111111;
+  background: var(--accent);
+  color: var(--on-accent, #111111);
+  font-weight: 800;
+  font-size: var(--font-sm);
+}
+.coachmark__dismiss {
+  width: 100%;
+  border: 2px solid #111111;
+  background: #ffe100;
+  color: #111111;
+  font-weight: 800;
+  font-size: var(--font-lg);
+  text-transform: uppercase;
+  padding: 12px;
+  box-shadow: 4px 4px 0 #111111;
+}
+.coachmark__dismiss:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 #111111;
 }
 
 /* Keypad */
@@ -1040,17 +1151,37 @@ a {
   z-index: 3;
 }
 
-/* Mobile: pin the keypad to the bottom (above the taskbar) so you can always type */
+/* ── Mobile app dock (M2/M3) ─────────────────────────────────────────────
+   The active clue bar is docked directly ABOVE the keypad and both are pinned
+   to the bottom, so the clue stays visible while typing and only the grid
+   scrolls above. Every offset derives from ONE height token (--dock-h) — no
+   magic numbers. --kp-h auto-switches EN(3-row)/KO(4-row) via :has so the clue
+   bar sits flush on the keypad in both modes with no gap and no overlap. */
 @media (max-width: 700px) {
+  .game {
+    --taskbar-h: 38px;
+    --safe-b: env(safe-area-inset-bottom, 0px);
+    --kp-h: 224px;   /* KO 4-row keypad box height; also the safe fallback */
+    --clue-h: 84px;  /* docked clue bar height */
+    --dock-h: calc(var(--taskbar-h) + var(--kp-h) + var(--clue-h) + var(--safe-b));
+  }
+  /* EN keypad has exactly 3 rows (no 4th). If :has is unsupported the whole
+     selector drops and --kp-h stays the safe KO value → never overlaps. */
+  .game:not(:has(.keypad__row:nth-child(4))) {
+    --kp-h: 172px;
+  }
+
+  /* keypad: bottom-fixed, height locked to --kp-h so the dock offset is exact */
   .keypad {
     position: fixed;
     left: 0;
     right: 0;
-    bottom: 38px; /* clears the sticky taskbar */
+    bottom: calc(var(--taskbar-h) + var(--safe-b)); /* clears the sticky taskbar */
     z-index: 25;
     margin: 0;
     gap: 6px;
-    padding: 9px 8px calc(9px + env(safe-area-inset-bottom, 0px));
+    padding: 9px 8px;
+    min-height: var(--kp-h);
     background: var(--poster-bg);
     border-top: 3px solid #111111;
     box-shadow: none;
@@ -1067,12 +1198,51 @@ a {
   .key--spacer {
     max-width: 21px;
   }
-  .keypad-spacer {
-    display: block;
-    height: 190px;
+
+  /* active clue bar: docked flush on top of the keypad (M2) */
+  .game__top {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: auto;
+    bottom: calc(var(--taskbar-h) + var(--kp-h) + var(--safe-b));
+    z-index: 26;
+    max-height: var(--clue-h);
+    overflow: hidden;
+    padding: 0;
+    background: var(--poster-bg);
+    border-top: 3px solid #111111;
   }
-  .game.game--poster {
-    padding-bottom: 220px;
+  .cluebar {
+    margin: 0;
+    border: 0;
+    box-shadow: none;
+    padding: 8px;
+    background: var(--poster-bg);
+  }
+  .cluebar__nav {
+    width: 44px;   /* touch target */
+    height: 44px;
+    flex: none;
+  }
+  .cluebar__text {
+    font-size: var(--font-md);
+  }
+
+  /* reserve exactly the dock height below the scrolling content (M3). Higher
+     specificity than retro's `.win .game` so this wins the cascade. */
+  .win .game.game--poster {
+    padding-bottom: var(--dock-h);
+  }
+  .keypad-spacer {
+    display: none; /* padding-bottom now reserves the space, not a magic spacer */
+  }
+
+  /* M-extra: the full CLUE FILE list is redundant on mobile — the docked clue
+     bar + ← → nav + tap-to-select already cover clue access, and the long list
+     was the main source of dead scroll. Hidden on phones; kept on desktop. */
+  .clues {
+    display: none;
   }
 }
 
@@ -1424,9 +1594,24 @@ a {
   filter: drop-shadow(0 2px 10px color-mix(in srgb, var(--accent) 45%, transparent));
   animation: clear-in 0.55s cubic-bezier(0.2, 0.9, 0.3, 1.35) 0.34s both;
 }
-/* Confirm dialog reuses the .victory frame (radius 0, 3px ink border, offset
-   shadow, accent halo) but with a plain warning heading/body — no trophy
-   gradient or celebratory delays (UX #1). */
+/* Confirm dialog reuses the .victory FRAME (radius 0, 3px ink border, offset
+   shadow) but strips every celebratory cue: no pop animation, no accent halo.
+   A single danger strip along the top edge is the only signal (A1). */
+.victory__card.confirm {
+  animation: none;
+  padding-top: 28px;
+}
+.victory__card.confirm::before {
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  aspect-ratio: auto;
+  transform: none;
+  background: var(--danger);
+  border-bottom: 2px solid #111111;
+}
 .confirm__title {
   display: block;
   font-size: var(--font-2xl);

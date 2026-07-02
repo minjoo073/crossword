@@ -6,14 +6,12 @@ interface DesktopProps {
   children: ReactNode;
   taskbarLabel?: string;
   fill?: boolean;
-  dream?: boolean;
 }
 
 /** Full-screen retro desktop: CSS wallpaper + taskbar with Start button and clock. */
-export default function Desktop({ children, taskbarLabel, fill, dream }: DesktopProps) {
+export default function Desktop({ children, taskbarLabel, fill }: DesktopProps) {
   return (
     <div className={`desktop ${fill ? "desktop--fill" : ""}`}>
-      {dream && <div className="dream-bg dream-bg--hero" aria-hidden="true" />}
       <div className="desktop__stage">{children}</div>
       <div className="taskbar">
         <Link href="/" className="start-btn">

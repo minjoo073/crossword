@@ -4,22 +4,29 @@
   --rt-face: #ffffff;
   --rt-face-2: #eef4ff;
   --rt-grey: #cdd9ec;
-  --rt-sky-1: #2e7bd6;
-  --rt-sky-2: #5aa0e4;
-  --rt-sky-3: #a8d4f5;
+  /* Desktop wallpaper — muted steel-blue (toned down from the vivid XP Bliss
+     sky). Keeps the retro-Windows hue family but at low saturation so the blue
+     window chrome + neobrutal content read as the accents, not the background.
+     Swap these 4 values to change the wallpaper mood (see options B/C). */
+  --rt-wall-top: #3d566b;
+  --rt-wall-mid: #5f7889;
+  --rt-wall-low: #93a7b4;
+  --rt-wall-base: #ccd5db;
   --rt-taskbar: linear-gradient(180deg, #3168d8 0%, #4a86e8 6%, #245edc 14%, #1f55cf 90%, #1a4ec4 100%);
   --rt-tahoma: Tahoma, "Segoe UI", Verdana, "MS Sans Serif", system-ui, sans-serif;
 }
 
-/* Desktop wallpaper — pure CSS bliss-like sky + hill (no copyrighted photo) */
+/* Desktop wallpaper — refined retro: a calm muted steel-blue gradient with a
+   soft horizon light and a gentle edge vignette. No cartoon sky / green hill /
+   clouds. Window chrome + neobrutal content stay the visual focus. */
 .desktop {
   min-height: 100dvh;
   position: relative;
   display: flex;
   flex-direction: column;
   background:
-    radial-gradient(140% 70% at 50% 118%, #8ed06a 0%, #6cbb52 16%, #4f9e42 30%, transparent 46%),
-    linear-gradient(180deg, var(--rt-sky-1) 0%, var(--rt-sky-2) 34%, var(--rt-sky-3) 64%, #d8efff 100%);
+    radial-gradient(120% 58% at 50% 112%, color-mix(in srgb, var(--rt-wall-base) 82%, #ffffff) 0%, transparent 44%),
+    linear-gradient(180deg, var(--rt-wall-top) 0%, var(--rt-wall-mid) 40%, var(--rt-wall-low) 72%, var(--rt-wall-base) 100%);
   font-family: var(--rt-tahoma);
 }
 .desktop::before {
@@ -28,12 +35,8 @@
   inset: 0;
   pointer-events: none;
   background:
-    radial-gradient(60px 26px at 18% 26%, rgba(255, 255, 255, 0.9), transparent 70%),
-    radial-gradient(90px 34px at 24% 30%, rgba(255, 255, 255, 0.8), transparent 70%),
-    radial-gradient(70px 28px at 78% 18%, rgba(255, 255, 255, 0.85), transparent 70%),
-    radial-gradient(110px 40px at 70% 22%, rgba(255, 255, 255, 0.7), transparent 72%),
-    radial-gradient(80px 30px at 50% 12%, rgba(255, 255, 255, 0.75), transparent 70%);
-  filter: blur(2px);
+    radial-gradient(140% 80% at 50% -12%, rgba(255, 255, 255, 0.1), transparent 55%),
+    radial-gradient(130% 95% at 50% 120%, rgba(17, 17, 17, 0.14), transparent 62%);
 }
 .desktop--fill {
   height: 100dvh;
@@ -307,6 +310,19 @@
 .landing__meta span:last-child {
   border-right: 0;
 }
+/* C3: decorative mini-board on the poster. Reuses the shared .cell tones but
+   supplies the grid sizing + --board-base that the game normally sets on .board,
+   so the cells render as neat squares here (--accent/--accent-2/--success come
+   from :root). #fcfdff is the same board-base literal the game falls back to. */
+.landing__preview {
+  align-self: flex-start;
+  display: grid;
+  grid-template-columns: repeat(4, var(--cell));
+  grid-auto-rows: var(--cell);
+  gap: 2px;
+  --cell: 40px;
+  --board-base: #fcfdff;
+}
 .landing__cta {
   display: inline-flex;
   align-items: center;
@@ -387,6 +403,7 @@
   color: var(--ca-fg, #fff);
   background: var(--ca1, #8a38f5);
   border: 2px solid #111111;
+  box-shadow: 4px 4px 0 color-mix(in srgb, var(--ca1, #8a38f5) 30%, #111111);
 }
 .icon-btn__name {
   font-size: 13.5px;
@@ -401,6 +418,26 @@
 .icon-cover {
   width: 78px;
   flex: none;
+}
+/* B1: real album covers wear the SAME neobrutal frame as the .icon-tile
+   fallback (radius 0, #111 border, accent offset shadow) so a single artist
+   grid never mixes glossy dreamcore tiles with hard-edged ones. Replaces the
+   old .cover-tile (dream.css) usage in ArtistBrowser. */
+.cover-frame {
+  margin: 0;
+  border: 2px solid #111111;
+  border-radius: 0;
+  overflow: hidden;
+  background: #fcfdff;
+  line-height: 0;
+  box-shadow: 4px 4px 0 color-mix(in srgb, var(--accent, #8a38f5) 30%, #111111);
+}
+.cover-frame__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
 }
 .album-card__cover {
   width: 100%;
@@ -453,6 +490,62 @@
   color: #111111;
 }
 
+/* C2: search empty state — neobrutal card + clear action (replaces the old
+   inline grey <p>). Tokens only, no raw HEX in JSX. */
+.pick__empty {
+  margin: 30px auto 10px;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 22px 18px;
+  background: #fff7df;
+  border: 3px solid #111111;
+  box-shadow: 6px 6px 0 #111111;
+  text-align: center;
+}
+.pick__empty-text {
+  margin: 0;
+  font-size: var(--font-md);
+  font-weight: 800;
+  color: #111111;
+  line-height: 1.4;
+}
+.pick__empty-clear {
+  border: 2px solid #111111;
+  background: #ffe100;
+  color: #111111;
+  font-weight: 800;
+  font-size: var(--font-sm);
+  padding: 9px 16px;
+  text-transform: uppercase;
+  box-shadow: 3px 3px 0 #111111;
+}
+.pick__empty-clear:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 #111111;
+}
+
+/* C4: on narrow phones let the search take a full row and drop the segmented
+   filter below it, so the header never overflows at <=360px. */
+@media (max-width: 560px) {
+  .pick__head {
+    gap: 8px;
+  }
+  .pick__spacer {
+    display: none;
+  }
+  .pick__search {
+    order: 3;
+    flex: 1 1 100%;
+    min-width: 0;
+  }
+  .pick__seg {
+    order: 4;
+  }
+}
+
 @media (max-width: 640px) {
   .landing {
     min-height: calc(100dvh - 60px);
@@ -494,18 +587,18 @@
 .album-card {
   position: relative;
   display: block;
-  border: 1px solid #9eabc6;
-  border-radius: 14px;
+  border: 3px solid #111111;
+  border-radius: 0;
   overflow: hidden;
   background:
     radial-gradient(circle at top left, color-mix(in srgb, var(--accent) 28%, #fff), transparent 34%),
     linear-gradient(180deg, #fffef8 0%, #f4efe3 100%);
-  box-shadow: 0 5px 16px rgba(15, 32, 68, 0.14);
+  box-shadow: 8px 8px 0 color-mix(in srgb, var(--accent) 18%, #111111);
+  transition: transform 0.14s ease, box-shadow 0.14s ease;
 }
 .album-card:hover {
-  box-shadow: 0 12px 26px rgba(15, 32, 68, 0.2);
-  transform: translateY(-4px) rotate(-0.4deg);
-  transition: transform 0.16s ease, box-shadow 0.16s ease;
+  transform: translate(3px, 3px);
+  box-shadow: 5px 5px 0 color-mix(in srgb, var(--accent) 18%, #111111);
 }
 .album-card::before {
   content: "";
@@ -623,8 +716,10 @@
     radial-gradient(circle at top left, color-mix(in srgb, var(--accent) 18%, transparent), transparent 40%),
     linear-gradient(180deg, #f7f0e6 0%, #e8decf 100%);
 }
+/* B2: neobrutal cards use offset-shadow motion only — the sticker variant's
+   idle rotate is dropped so it doesn't fight the hover translate. */
 .album-card--sticker {
-  transform: rotate(-0.8deg);
+  transform: none;
 }
 .album-card--romance {
   background:
@@ -661,4 +756,19 @@
 }
 .win .game__header {
   position: static;
+}
+
+/* Mobile app trim: keep the XP window title bar + taskbar as brand chrome, but
+   drop the decorative menu row (파일 · 보기 …) and tighten the stage/game
+   padding so the app uses the full narrow width. Desktop keeps the menus. */
+@media (max-width: 700px) {
+  .win__menu {
+    display: none;
+  }
+  .desktop__stage {
+    padding: 6px 6px 10px;
+  }
+  .win .game {
+    padding: 8px 8px 26px;
+  }
 }

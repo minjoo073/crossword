@@ -123,6 +123,10 @@ export default function CrosswordGame({
   const [zoom, setZoom] = useState(1);
   // clearAll is destructive, so it is gated behind a confirm dialog (UX #1).
   const [confirmClear, setConfirmClear] = useState(false);
+  // First-run onboarding coachmark (C1). Starts false so SSR and the first
+  // client render agree (localStorage is client-only); a mount effect flips it
+  // on when the player hasn't seen it yet, avoiding a hydration mismatch.
+  const [showCoach, setShowCoach] = useState(false);
   const completedRef = useRef<Set<string>>(new Set());
   const boardRef = useRef<HTMLDivElement>(null);
   const cancelRef = useRef<HTMLButtonElement>(null);
@@ -352,7 +356,7 @@ export default function CrosswordGame({
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.metaKey || e.ctrlKey || e.altKey) return;
-      if (confirmClear) return; // modal owns the keyboard while open
+      if (confirmClear || showCoach) return; // an open modal owns the keyboard
       if (koActive) {
         // Map physical QWERTY position → 2벌식 jamo (independent of OS IME state).
         const jamo = e.shiftKey ? QWERTY_TO_JAMO_SHIFT[e.code] : QWERTY_TO_JAMO[e.code];
@@ -388,7 +392,7 @@ export default function CrosswordGame({
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [handleChar, handleBackspace, handleJamo, move, koActive, confirmClear]);
+  }, [handleChar, handleBackspace, handleJamo, move, koActive, confirmClear, showCoach]);
 
   // Confirm dialog: focus 취소 on open (never the destructive button) and let
   // Esc cancel (UX #1).
@@ -404,6 +408,47 @@ export default function CrosswordGame({
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, [confirmClear]);
+
+  const COACH_KEY = "kpx.coach.v1";
+  const dismissCoach = useCallback(() => {
+    try {
+      localStorage.setItem(COACH_KEY, "1");
+    } catch {
+      // Private-mode / storage-disabled: still close so the overlay never
+      // traps the player. It may re-show next visit — acceptable, not silenced.
+      console.warn("coachmark: localStorage unavailable, dismissing without persist");
+    }
+    setShowCoach(false);
+  }, []);
+
+  // Show the coachmark once, after mount (never during SSR/first render), and
+  // only if this browser hasn't dismissed it before (C1).
+  useEffect(() => {
+    let seen = true;
+    try {
+      seen = localStorage.getItem(COACH_KEY) === "1";
+    } catch {
+      seen = false; // storage blocked → treat as first run
+    }
+    if (seen) return;
+    // Defer the setState out of the effect body (same idiom as the pop/reset
+    // effects above) so it never runs synchronously during commit.
+    const id = setTimeout(() => setShowCoach(true), 0);
+    return () => clearTimeout(id);
+  }, []);
+
+  // Esc closes the coachmark; the overlay owns the keyboard while open (below).
+  useEffect(() => {
+    if (!showCoach) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        e.preventDefault();
+        dismissCoach();
+      }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [showCoach, dismissCoach]);
 
   const runCheck = useCallback(() => {
     const next: CheckState = {};
@@ -525,11 +570,9 @@ export default function CrosswordGame({
         ["--on-accent"]: luminance(t.accent[0]) > 0.45 ? "#111111" : "#ffffff",
       } as React.CSSProperties)
     : undefined;
-  const scope = t ? (luminance(t.bg) > 0.5 ? "light" : "dark") : "dark";
-
   return (
     <div
-      className={`game game--poster game--${brand.variant} dream-scope dream-scope--${scope}`}
+      className={`game game--poster game--${brand.variant}`}
       data-themed={t ? "" : undefined}
       data-album={brand.albumKey}
       style={themeStyle}
@@ -692,7 +735,11 @@ export default function CrosswordGame({
       </div>
 
       {checkSummary && (
-        <div className="check-summary" role="status" aria-live="polite">
+        <div
+          className={`check-summary ${checkSummary.wrong > 0 ? "check-summary--error" : ""}`}
+          role="status"
+          aria-live="polite"
+        >
           <span className="check-summary__text">
             {checkSummary.wrong === 0
               ? `${checkSummary.filled}칸 전부 정답 ✓`
@@ -773,6 +820,34 @@ export default function CrosswordGame({
       </aside>
       </div>
       {/* /game__play */}
+
+      {showCoach && (
+        <div
+          className="coachmark"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="coach-title"
+          onClick={dismissCoach}
+        >
+          <div className="coachmark__card" onClick={(e) => e.stopPropagation()}>
+            <strong className="coachmark__title" id="coach-title">이렇게 풀어요</strong>
+            <ul className="coachmark__list">
+              <li className="coachmark__step">
+                <span className="coachmark__badge">1</span> 칸을 눌러 단어 선택
+              </li>
+              <li className="coachmark__step">
+                <span className="coachmark__badge">2</span> 아래 키패드로 입력 · ENG↔한글 전환
+              </li>
+              <li className="coachmark__step">
+                <span className="coachmark__badge">3</span> 정답 확인으로 오답 점검
+              </li>
+            </ul>
+            <button className="coachmark__dismiss" onClick={dismissCoach}>
+              시작하기
+            </button>
+          </div>
+        </div>
+      )}
 
       {confirmClear && (
         <div
