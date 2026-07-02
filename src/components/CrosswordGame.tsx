@@ -7,6 +7,7 @@ import { getAlbumBrand } from "@/lib/albumBrand";
 import type { Album, Artist, Board, Direction, Entry } from "@/lib/types";
 import { buildBoard, cellKey, entryCells } from "@/lib/puzzle";
 import { processJamo, compose, emptyComp, type Comp } from "@/lib/hangul";
+import { readModeProgress, saveProgress, markCleared } from "@/lib/progress";
 import Confetti from "@/components/Confetti";
 import { drawShareCard, shareOrDownload } from "@/lib/shareCard";
 
@@ -128,6 +129,15 @@ export default function CrosswordGame({
   // on when the player hasn't seen it yet, avoiding a hydration mismatch.
   const [showCoach, setShowCoach] = useState(false);
   const completedRef = useRef<Set<string>>(new Set());
+  // Which mode's data currently lives in `values` (null until first load).
+  // Drives save-outgoing / load-incoming on language toggle (#1 / #2).
+  const loadedModeRef = useRef<"en" | "ko" | null>(null);
+  // Latest values/seconds mirrored into refs so the unmount save reads the
+  // freshest state without re-subscribing effects on every keystroke/tick.
+  const valuesRef = useRef(values);
+  valuesRef.current = values;
+  const secondsRef = useRef(seconds);
+  secondsRef.current = seconds;
   const boardRef = useRef<HTMLDivElement>(null);
   const cancelRef = useRef<HTMLButtonElement>(null);
   // Round-robin cursor over the wrong cells for the "다음 오답으로" jump (UX #2).
@@ -180,29 +190,91 @@ export default function CrosswordGame({
     }
   }, [values, board]);
 
-  // Reset the game when the underlying board changes.
-  const boardInit = useRef(true);
+  // Load saved progress when the board (i.e. the language mode) changes, and
+  // save the mode we're leaving. This runs on mount too (loadedModeRef starts
+  // null → nothing to save, just load the initial mode), so restoring is
+  // client-only: the server and first client render both show the empty
+  // props-based board, then this mount effect fills in the saved values —
+  // no hydration mismatch (#1 이어풀기, #2 토글 진행 보존).
   useEffect(() => {
-    if (boardInit.current) {
-      boardInit.current = false;
-      return;
+    const prevMode = loadedModeRef.current;
+    if (prevMode && prevMode !== mode) {
+      // Persist the outgoing mode's board before we swap it out.
+      saveProgress(artist.id, album.id, prevMode, {
+        values: valuesRef.current,
+        seconds: secondsRef.current,
+      });
     }
-    const reset = setTimeout(() => {
-      setValues({});
-      setCheck({});
-      setPopped(new Set());
-      completedRef.current = new Set();
-      composeRef.current = { key: "", comp: emptyComp() };
-      setDone(false);
-      setSeconds(0);
-      const first = board.across[0] ?? board.down[0];
-      if (first) {
-        setActive({ row: first.row, col: first.col });
-        setDir(board.across[0] ? "across" : "down");
+
+    const saved = readModeProgress(artist.id, album.id, mode);
+    const nextValues = saved?.values ?? {};
+
+    // Prime completedRef with words that are already fully correct in the
+    // restored board, so the "word solved" pop effect doesn't fire on load.
+    const completed = new Set<string>();
+    for (const e of board.entries) {
+      const cells = entryCells(e);
+      const full = cells.every(
+        (c) => nextValues[cellKey(c.row, c.col)] === board.cells[c.row]?.[c.col]?.solution
+      );
+      if (full) completed.add(`${e.number}-${e.dir}`);
+    }
+
+    setValues(nextValues);
+    setCheck({});
+    setPopped(new Set());
+    completedRef.current = completed;
+    composeRef.current = { key: "", comp: emptyComp() };
+    // Resuming a cleared board does not re-open the victory modal; the album's
+    // completion badge already signals it. `done` only re-fires the modal when
+    // the player actually solves it again this session.
+    setDone(false);
+    setSeconds(saved?.seconds ?? 0);
+    loadedModeRef.current = mode;
+
+    const first = board.across[0] ?? board.down[0];
+    if (first) {
+      setActive({ row: first.row, col: first.col });
+      setDir(board.across[0] ? "across" : "down");
+    }
+    // board is derived from `mode` (same album per mount), so [mode, board] fire
+    // together; artist/album ids are constant for the component's lifetime.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [mode]);
+
+  // Persist the current mode's board whenever the values change. Cheap: a
+  // single JSON write per keystroke, and cleared/bestSeconds are preserved.
+  useEffect(() => {
+    const m = loadedModeRef.current;
+    if (!m) return; // initial load hasn't run yet
+    saveProgress(artist.id, album.id, m, { values, seconds: secondsRef.current });
+    // secondsRef read intentionally (avoid re-saving every timer tick).
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [values, artist.id, album.id]);
+
+  // Flush the latest board on unmount (route change away) so the timer and any
+  // unsaved keystrokes survive without saving on every tick.
+  useEffect(() => {
+    return () => {
+      const m = loadedModeRef.current;
+      if (m) {
+        saveProgress(artist.id, album.id, m, {
+          values: valuesRef.current,
+          seconds: secondsRef.current,
+        });
       }
-    }, 0);
-    return () => clearTimeout(reset);
-  }, [board]);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // On solve, mark this album+mode cleared and record the best time.
+  useEffect(() => {
+    if (!done) return;
+    const m = loadedModeRef.current;
+    if (!m) return;
+    markCleared(artist.id, album.id, m, secondsRef.current);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [done]);
 
   const isSolved = useCallback(
     (v: Record<string, string>) => {

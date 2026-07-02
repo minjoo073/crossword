@@ -5,6 +5,7 @@ import Desktop from "@/components/retro/Desktop";
 import RetroWindow from "@/components/retro/RetroWindow";
 import { getAlbumBrand } from "@/lib/albumBrand";
 import { getArtist, getArtists } from "@/lib/puzzle";
+import { AlbumClearBadge, ClearCounter } from "@/components/ClearBadge";
 
 export function generateStaticParams() {
   return getArtists().map((a) => ({ artistId: a.id }));
@@ -31,7 +32,10 @@ export default async function ArtistAlbumsPage(props: PageProps<"/[artistId]">) 
               <Link href="/artists">아티스트</Link> › {artist.name} · {artist.fandom} 팬덤
             </span>
           </div>
-          <div className="pick__section">최근 2년 앨범 · {artist.albums.length}게임</div>
+          <div className="pick__section">
+            최근 2년 앨범 · {artist.albums.length}게임
+            <ClearCounter albums={artist.albums.map((al) => ({ artistId: artist.id, albumId: al.id }))} />
+          </div>
           <div className="albums">
             {artist.albums.map((album) => {
               const brand = getAlbumBrand(artist, album);
@@ -52,6 +56,7 @@ export default async function ArtistAlbumsPage(props: PageProps<"/[artistId]">) 
                   }
                 >
                   <div className="album-card__paper">
+                    <AlbumClearBadge artistId={artist.id} albumId={album.id} />
                     <div className="album-card__head">
                       <span>{brand.releaseLabel}</span>
                       <span>{brand.yearLabel} ERA</span>

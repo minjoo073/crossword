@@ -14,6 +14,7 @@ export default function ArtistsPage() {
       gender: a.gender,
       fandom: a.fandom,
       albumCount: a.albums.length,
+      albumIds: a.albums.map((al) => al.id),
       // Skip the album-select screen when there's only one album.
       href: a.albums.length > 1 ? `/${a.id}` : `/${a.id}/${a.albums[0].id}`,
       initial: a.name[0],

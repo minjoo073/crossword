@@ -382,6 +382,7 @@
   gap: 8px;
 }
 .icon-btn {
+  position: relative; /* anchor for .clear-badge--tile corner star */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -735,6 +736,66 @@
   background:
     radial-gradient(circle at top left, color-mix(in srgb, var(--accent) 30%, #fff), transparent 34%),
     linear-gradient(180deg, #fff6dd 0%, #f2ead3 100%);
+}
+
+/* ── Completion badges + counter (강개발 markup, 강디 neobrutal styling) ──── */
+/* 1. Album card "완료" sticker — top-LEFT corner so it never collides with the
+   bottom-right .album-card__stamp. The accent fill is lightened toward white so
+   #111 ink stays legible on ANY album accent (cards don't inject --on-accent).
+   pointer-events off so the sticker never blocks the card link. */
+.clear-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 9px;
+  background: color-mix(in srgb, var(--accent) 72%, #ffffff);
+  color: #111111;
+  border: 3px solid #111111;
+  box-shadow: 3px 3px 0 #111111;
+  border-radius: 0;
+  font-size: var(--font-xs);
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transform: rotate(-4deg);
+  pointer-events: none;
+}
+/* 2. Artist tile ★ — top-RIGHT corner overlay (anchored to .icon-btn). Fixed
+   gold so it reads over any cover image; overrides the base corner/tilt. */
+.clear-badge--tile {
+  top: 4px;
+  right: 4px;
+  left: auto;
+  z-index: 3;
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  justify-content: center;
+  background: #ffe100;
+  border-width: 2px;
+  box-shadow: 2px 2px 0 #111111;
+  font-size: var(--font-lg);
+  line-height: 1;
+  transform: none;
+}
+/* 3. "N/M 클리어" counter chip — inline in the album section header. */
+.clear-counter {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 8px;
+  padding: 2px 8px;
+  background: color-mix(in srgb, var(--accent, var(--primary)) 20%, #ffffff);
+  color: #111111;
+  border: 2px solid #111111;
+  border-radius: 0;
+  font-size: var(--font-xs);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  font-variant-numeric: tabular-nums;
+  vertical-align: middle;
 }
 
 @media (max-width: 640px) {
