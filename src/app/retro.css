@@ -299,7 +299,7 @@
   padding: 8px;
   border-right: 2px solid #111111;
   font-family: var(--rt-tahoma);
-  font-size: 12px;
+  font-size: var(--font-xs); /* was 12px — UI floor 13px */
   font-weight: 800;
   letter-spacing: 0.08em;
   text-align: center;
@@ -395,7 +395,7 @@
   text-transform: uppercase;
 }
 .icon-btn__sub {
-  font-size: 11.5px;
+  font-size: var(--font-xs); /* was 11.5px — UI floor 13px */
   color: #5a6b85;
 }
 .icon-cover {
@@ -559,7 +559,7 @@
 }
 .album-card__concept {
   margin: 10px 0 0;
-  font-size: 12.5px;
+  font-size: var(--font-xs); /* was 12.5px — reading text, UI floor 13px */
   line-height: 1.45;
   color: #30384c;
   min-height: 54px;
@@ -602,11 +602,12 @@
 }
 .album-card__tabs span {
   min-height: 54px;
-  padding: 10px 8px 12px;
+  padding: 10px 5px 12px;
   border-top: 1px dashed rgba(17, 24, 39, 0.24);
   border-right: 1px dashed rgba(17, 24, 39, 0.2);
-  font-size: 10px;
-  line-height: 1.25;
+  font-size: var(--font-xs); /* was 10px — UI floor 13px */
+  letter-spacing: -0.01em;
+  line-height: 1.2;
   font-weight: 800;
   text-align: center;
   text-transform: uppercase;

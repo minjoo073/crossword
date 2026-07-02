@@ -6,10 +6,34 @@ import Link from "next/link";
 import { getAlbumBrand } from "@/lib/albumBrand";
 import type { Album, Artist, Board, Direction, Entry } from "@/lib/types";
 import { buildBoard, cellKey, entryCells } from "@/lib/puzzle";
+import { processJamo, compose, emptyComp, type Comp } from "@/lib/hangul";
 import Confetti from "@/components/Confetti";
 import { drawShareCard, shareOrDownload } from "@/lib/shareCard";
 
 const KEYPAD_ROWS = ["QWERTYUIOP", "ASDFGHJKL", "ZXCVBNM"];
+
+// 2벌식 keypad, laid out to mirror the QWERTY positions the physical map uses.
+const KEYPAD_ROWS_KO = [
+  ["ㅂ", "ㅈ", "ㄷ", "ㄱ", "ㅅ", "ㅛ", "ㅕ", "ㅑ", "ㅐ", "ㅔ"],
+  ["ㅁ", "ㄴ", "ㅇ", "ㄹ", "ㅎ", "ㅗ", "ㅓ", "ㅏ", "ㅣ"],
+  ["ㅋ", "ㅌ", "ㅊ", "ㅍ", "ㅠ", "ㅜ", "ㅡ"],
+];
+// Shift row — double consonants and the two wide vowels (2벌식 shift layer).
+const KEYPAD_ROW_KO_SHIFT = ["ㄲ", "ㄸ", "ㅃ", "ㅆ", "ㅉ", "ㅒ", "ㅖ"];
+
+// Physical QWERTY (by KeyboardEvent.code) → 2벌식 jamo, IME-independent.
+const QWERTY_TO_JAMO: Record<string, string> = {
+  KeyQ: "ㅂ", KeyW: "ㅈ", KeyE: "ㄷ", KeyR: "ㄱ", KeyT: "ㅅ",
+  KeyY: "ㅛ", KeyU: "ㅕ", KeyI: "ㅑ", KeyO: "ㅐ", KeyP: "ㅔ",
+  KeyA: "ㅁ", KeyS: "ㄴ", KeyD: "ㅇ", KeyF: "ㄹ", KeyG: "ㅎ",
+  KeyH: "ㅗ", KeyJ: "ㅓ", KeyK: "ㅏ", KeyL: "ㅣ",
+  KeyZ: "ㅋ", KeyX: "ㅌ", KeyC: "ㅊ", KeyV: "ㅍ", KeyB: "ㅠ",
+  KeyN: "ㅜ", KeyM: "ㅡ",
+};
+const QWERTY_TO_JAMO_SHIFT: Record<string, string> = {
+  KeyQ: "ㅃ", KeyW: "ㅉ", KeyE: "ㄸ", KeyR: "ㄲ", KeyT: "ㅆ",
+  KeyO: "ㅒ", KeyP: "ㅖ",
+};
 
 /** Relative luminance of a hex color (0=dark .. 1=light), for picking sticker contrast. */
 function luminance(hex: string): number {
@@ -57,8 +81,21 @@ export default function CrosswordGame({
   album: Album;
   backHref?: string;
 }) {
-  const [mode, setMode] = useState<"en" | "ko">("ko");
-  const puzzle = useMemo(() => ({ grid: album.grid, entries: album.entries }), [album]);
+  // A Korean-answer puzzle isn't generated for every album (e.g. ATEEZ
+  // GOLDEN HOUR : Part.1). Without one, KO mode must never engage: start in EN
+  // and keep the 한글 toggle disabled so the board, keypad, clue language, and
+  // the toggle's own highlight all stay consistent (QA P2-2).
+  const hasKo = !!album.ko;
+  const [mode, setMode] = useState<"en" | "ko">(hasKo ? "ko" : "en");
+  // KO board is only playable when a Korean-answer puzzle was generated for this album.
+  const koActive = mode === "ko" && !!album.ko;
+  const puzzle = useMemo(
+    () =>
+      koActive && album.ko
+        ? { grid: album.ko.grid, entries: album.ko.entries }
+        : { grid: album.grid, entries: album.entries },
+    [album, koActive]
+  );
   const board = useMemo<Board>(() => buildBoard(puzzle), [puzzle]);
 
   // Map "r,c" + dir -> entry, for fast active-word lookups.
@@ -84,8 +121,15 @@ export default function CrosswordGame({
   const [done, setDone] = useState(false);
   const [popped, setPopped] = useState<Set<string>>(new Set());
   const [zoom, setZoom] = useState(1);
+  // clearAll is destructive, so it is gated behind a confirm dialog (UX #1).
+  const [confirmClear, setConfirmClear] = useState(false);
   const completedRef = useRef<Set<string>>(new Set());
   const boardRef = useRef<HTMLDivElement>(null);
+  const cancelRef = useRef<HTMLButtonElement>(null);
+  // Round-robin cursor over the wrong cells for the "다음 오답으로" jump (UX #2).
+  const wrongCursor = useRef(0);
+  // Hangul composition buffer for the cell currently being typed into (KO mode).
+  const composeRef = useRef<{ key: string; comp: Comp }>({ key: "", comp: emptyComp() });
 
   const clueOf = useCallback((e: Entry) => (mode === "ko" ? e.clueKo ?? e.clue : e.clue), [mode]);
 
@@ -144,6 +188,7 @@ export default function CrosswordGame({
       setCheck({});
       setPopped(new Set());
       completedRef.current = new Set();
+      composeRef.current = { key: "", comp: emptyComp() };
       setDone(false);
       setSeconds(0);
       const first = board.across[0] ?? board.down[0];
@@ -227,7 +272,43 @@ export default function CrosswordGame({
     [active, advance, setLetter]
   );
 
+  // Feed one Hangul jamo into the active cell, composing via the automaton.
+  // On `advance`, the active cell is finalized and the carried composition
+  // continues in the next cell of the current word.
+  const handleJamo = useCallback(
+    (jamo: string) => {
+      const key = cellKey(active.row, active.col);
+      const buf = composeRef.current.key === key ? composeRef.current.comp : emptyComp();
+      const res = processJamo(buf, jamo);
+      setLetter(active.row, active.col, res.display);
+
+      if (!res.advance) {
+        composeRef.current = { key, comp: res.next };
+        return;
+      }
+      // Finalize current cell, carry the composition into the next word cell.
+      const cells = activeEntry ? entryCells(activeEntry) : [];
+      const idx = cells.findIndex((c) => c.row === active.row && c.col === active.col);
+      const nextCell = cells[idx + 1];
+      if (nextCell) {
+        setActive({ row: nextCell.row, col: nextCell.col });
+        setLetter(nextCell.row, nextCell.col, compose(res.next));
+        composeRef.current = { key: cellKey(nextCell.row, nextCell.col), comp: res.next };
+      } else {
+        // End of word — nowhere to carry the spilled jamo. `res.display` is the
+        // split syllable (any 종성 that would migrate has been stripped), so
+        // restore the finalized cell to its full pre-jamo syllable to keep the
+        // 종성, and drop the un-place-able jamo (QA P3-2).
+        setLetter(active.row, active.col, compose(buf));
+        composeRef.current = { key, comp: buf };
+      }
+    },
+    [active, activeEntry, setLetter]
+  );
+
   const handleBackspace = useCallback(() => {
+    // Any deletion resets the in-progress Hangul composition.
+    composeRef.current = { key: "", comp: emptyComp() };
     const key = cellKey(active.row, active.col);
     if (values[key]) {
       setLetter(active.row, active.col, "");
@@ -271,7 +352,17 @@ export default function CrosswordGame({
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.metaKey || e.ctrlKey || e.altKey) return;
-      if (/^[a-zA-Z]$/.test(e.key)) {
+      if (confirmClear) return; // modal owns the keyboard while open
+      if (koActive) {
+        // Map physical QWERTY position → 2벌식 jamo (independent of OS IME state).
+        const jamo = e.shiftKey ? QWERTY_TO_JAMO_SHIFT[e.code] : QWERTY_TO_JAMO[e.code];
+        if (jamo) {
+          e.preventDefault();
+          handleJamo(jamo);
+          return;
+        }
+      }
+      if (!koActive && /^[a-zA-Z]$/.test(e.key)) {
         e.preventDefault();
         handleChar(e.key.toUpperCase());
       } else if (e.key === "Backspace") {
@@ -297,7 +388,22 @@ export default function CrosswordGame({
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [handleChar, handleBackspace, move]);
+  }, [handleChar, handleBackspace, handleJamo, move, koActive, confirmClear]);
+
+  // Confirm dialog: focus 취소 on open (never the destructive button) and let
+  // Esc cancel (UX #1).
+  useEffect(() => {
+    if (!confirmClear) return;
+    cancelRef.current?.focus();
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        e.preventDefault();
+        setConfirmClear(false);
+      }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [confirmClear]);
 
   const runCheck = useCallback(() => {
     const next: CheckState = {};
@@ -309,8 +415,43 @@ export default function CrosswordGame({
         if (v) next[key] = v === cell.solution ? "correct" : "wrong";
       }
     }
+    wrongCursor.current = 0;
     setCheck(next);
   }, [board, values]);
+
+  // Wrong cells in reading order (row, then col) — drives the summary banner
+  // and the "다음 오답으로" jump. Empty (unfilled) cells are never counted here
+  // because runCheck only records cells that had a value (UX #2).
+  const wrongCells = useMemo(() => {
+    const out: { row: number; col: number }[] = [];
+    for (const row of board.cells) {
+      for (const cell of row) {
+        if (cell && check[cellKey(cell.row, cell.col)] === "wrong") {
+          out.push({ row: cell.row, col: cell.col });
+        }
+      }
+    }
+    return out;
+  }, [board, check]);
+
+  // Non-null only after a check ran (check map non-empty). Live-updates as the
+  // player fixes a cell, because setLetter drops that cell's check mark.
+  const checkSummary = useMemo(() => {
+    const keys = Object.keys(check);
+    if (keys.length === 0) return null;
+    let wrong = 0;
+    for (const k of keys) if (check[k] === "wrong") wrong++;
+    return { filled: keys.length, wrong };
+  }, [check]);
+
+  const jumpNextWrong = useCallback(() => {
+    if (wrongCells.length === 0) return;
+    const idx = wrongCursor.current % wrongCells.length;
+    const target = wrongCells[idx];
+    wrongCursor.current = idx + 1;
+    selectCell(target.row, target.col);
+    boardRef.current?.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  }, [wrongCells, selectCell]);
 
   const revealCell = useCallback(() => {
     const cell = cellAt(active.row, active.col);
@@ -378,6 +519,10 @@ export default function CrosswordGame({
         ["--paper-deep"]: paperDeep,
         ["--poster-bg"]: posterBg,
         ["--board-base"]: boardBase,
+        // Contrast ink for text sitting ON the accent fill (seg toggle, primary
+        // + danger buttons). Light accent → dark ink, dark accent → white. CSS
+        // reads it via color: var(--on-accent, …) (Spec #3).
+        ["--on-accent"]: luminance(t.accent[0]) > 0.45 ? "#111111" : "#ffffff",
       } as React.CSSProperties)
     : undefined;
   const scope = t ? (luminance(t.bg) > 0.5 ? "light" : "dark") : "dark";
@@ -397,7 +542,12 @@ export default function CrosswordGame({
         </Link>
         <span className="game__art-spacer" />
         <div className="seg-mini" role="group" aria-label="문제 언어">
-          <button data-on={mode === "ko"} onClick={() => setMode("ko")}>
+          <button
+            data-on={mode === "ko"}
+            disabled={!hasKo}
+            onClick={() => setMode("ko")}
+            title={hasKo ? undefined : "이 앨범은 한글 퀴즈가 아직 없어요"}
+          >
             한글
           </button>
           <button data-on={mode === "en"} onClick={() => setMode("en")}>
@@ -538,32 +688,75 @@ export default function CrosswordGame({
         <button className="tool" onClick={runCheck}><Check size={16} /> 정답 확인</button>
         <button className="tool" onClick={revealCell}><Lightbulb size={16} /> 한 칸 힌트</button>
         <button className="tool" onClick={() => setCheck({})}><Eraser size={16} /> 표시 지우기</button>
-        <button className="tool" onClick={clearAll}><RotateCcw size={16} /> 처음부터</button>
+        <button className="tool" onClick={() => setConfirmClear(true)}><RotateCcw size={16} /> 처음부터</button>
       </div>
+
+      {checkSummary && (
+        <div className="check-summary" role="status" aria-live="polite">
+          <span className="check-summary__text">
+            {checkSummary.wrong === 0
+              ? `${checkSummary.filled}칸 전부 정답 ✓`
+              : `${checkSummary.filled}칸 채움 · ${checkSummary.wrong}칸 오답`}
+          </span>
+          <button
+            className="tool check-summary__jump"
+            onClick={jumpNextWrong}
+            disabled={checkSummary.wrong === 0}
+          >
+            다음 오답으로
+          </button>
+        </div>
+      )}
 
       <div className="keypad-spacer" aria-hidden="true" />
 
       {/* Keypad (mobile-first) */}
-      <div className="keypad">
-        {KEYPAD_ROWS.map((rowStr, i, arr) => (
-          <div className="keypad__row" key={i}>
-            {rowStr.split("").map((ch) => (
-              <button
-                key={ch}
-                className="key"
-                onClick={() => handleChar(ch)}
-              >
+      {koActive ? (
+        <div className="keypad">
+          <div className="keypad__row">
+            {KEYPAD_ROW_KO_SHIFT.map((ch) => (
+              <button key={ch} className="key" onClick={() => handleJamo(ch)}>
                 {ch}
               </button>
             ))}
-            {i === arr.length - 1 && (
-              <button className="key key--del" onClick={handleBackspace} aria-label="Delete">
-                <Delete size={18} />
-              </button>
-            )}
           </div>
-        ))}
-      </div>
+          {KEYPAD_ROWS_KO.map((row, i, arr) => (
+            <div className="keypad__row" key={i}>
+              {row.map((ch) => (
+                <button key={ch} className="key" onClick={() => handleJamo(ch)}>
+                  {ch}
+                </button>
+              ))}
+              {i === arr.length - 1 && (
+                <button className="key key--del" onClick={handleBackspace} aria-label="Delete">
+                  <Delete size={18} />
+                </button>
+              )}
+            </div>
+          ))}
+        </div>
+      ) : (
+        <div className="keypad">
+          {KEYPAD_ROWS.map((rowStr, i, arr) => (
+            <div className="keypad__row" key={i}>
+              {rowStr.split("").map((ch) => (
+                <button
+                  key={ch}
+                  className="key"
+                  onClick={() => handleChar(ch)}
+                >
+                  {ch}
+                </button>
+              ))}
+              {i === arr.length - 1 && (
+                <button className="key key--del" onClick={handleBackspace} aria-label="Delete">
+                  <Delete size={18} />
+                </button>
+              )}
+            </div>
+          ))}
+        </div>
+      )}
       </section>
 
       </div>
@@ -580,6 +773,34 @@ export default function CrosswordGame({
       </aside>
       </div>
       {/* /game__play */}
+
+      {confirmClear && (
+        <div
+          className="victory"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="confirm-title"
+        >
+          <div className="victory__card confirm">
+            <strong className="confirm__title" id="confirm-title">처음부터 다시?</strong>
+            <div className="confirm__body">입력한 답과 표시가 모두 지워져요. 되돌릴 수 없어요.</div>
+            <div className="victory__actions">
+              <button className="tool" ref={cancelRef} onClick={() => setConfirmClear(false)}>
+                취소
+              </button>
+              <button
+                className="tool tool--danger"
+                onClick={() => {
+                  clearAll();
+                  setConfirmClear(false);
+                }}
+              >
+                <RotateCcw size={16} /> 전부 지우기
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {done && (
         <div className="victory" role="dialog" aria-modal="true">
