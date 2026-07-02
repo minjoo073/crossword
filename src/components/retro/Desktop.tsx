@@ -12,6 +12,13 @@ interface DesktopProps {
 export default function Desktop({ children, taskbarLabel, fill }: DesktopProps) {
   return (
     <div className={`desktop ${fill ? "desktop--fill" : ""}`}>
+      <div className="desktop__icons" aria-hidden>
+        <span className="desktop__icon desktop__icon--computer" />
+        <span className="desktop__icon desktop__icon--folder" />
+        <span className="desktop__icon desktop__icon--cd" />
+        <span className="desktop__icon desktop__icon--recycle" />
+        <span className="desktop__icon desktop__icon--globe" />
+      </div>
       <div className="desktop__stage">{children}</div>
       <div className="taskbar">
         <Link href="/" className="start-btn">

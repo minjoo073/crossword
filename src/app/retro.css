@@ -12,6 +12,18 @@
   --rt-wall-mid: #5f7889;
   --rt-wall-low: #93a7b4;
   --rt-wall-base: #ccd5db;
+  /* Faint original "Bliss-style" scene (.desktop::after): toned-down blue sky +
+     soft white clouds + rolling green hill, rebuilt from scratch as pure CSS
+     gradients (NO Microsoft photo/logo/icon). Tones kept low-saturation so the
+     scene reads as retro without the old "쌧파랑" glare. --rt-bliss-opacity is
+     the SINGLE tuning knob — lower it to fade further back (try 0.18), raise it
+     toward ~0.4 to read more; content always stays above via z-index. */
+  --rt-bliss-sky-1: #8fb3d6;
+  --rt-bliss-sky-2: #bcd6e8;
+  --rt-bliss-sky-3: #dbe9f0;
+  --rt-bliss-hill-1: #93c069;
+  --rt-bliss-hill-2: #5f9a45;
+  --rt-bliss-opacity: 0.3;
   --rt-taskbar: linear-gradient(180deg, #3168d8 0%, #4a86e8 6%, #245edc 14%, #1f55cf 90%, #1a4ec4 100%);
   --rt-tahoma: Tahoma, "Segoe UI", Verdana, "MS Sans Serif", system-ui, sans-serif;
 }
@@ -34,14 +46,41 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
-  /* C: a faint retro grid (barely-there texture) over the horizon light +
-     vignette. alpha kept very low (0.035) so it reads as OS/terminal nuance,
-     never a loud lattice. */
+  /* Soft top light + gentle bottom vignette for depth. The retro texture role
+     is now carried by the Bliss scene on .desktop::after, so the grid is gone. */
   background:
-    repeating-linear-gradient(0deg, transparent 0 31px, rgba(255, 255, 255, 0.035) 31px 32px),
-    repeating-linear-gradient(90deg, transparent 0 31px, rgba(255, 255, 255, 0.035) 31px 32px),
     radial-gradient(140% 80% at 50% -12%, rgba(255, 255, 255, 0.1), transparent 55%),
     radial-gradient(130% 95% at 50% 120%, rgba(17, 17, 17, 0.14), transparent 62%);
+}
+/* Original "Bliss-style" wallpaper scene — toned blue sky + soft white clouds +
+   a rolling green hill, all pure CSS gradients (no Microsoft asset). Full-bleed,
+   sits ABOVE .desktop::before but BELOW .desktop__stage (z-index:1), so windows
+   and the game board always render on top and stay fully legible. Strength is
+   controlled solely by --rt-bliss-opacity. Desktop-only (hidden ≤700). */
+.desktop::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: var(--rt-bliss-opacity);
+  background:
+    /* soft white clouds (upper sky) */
+    radial-gradient(70px 26px at 20% 22%, rgba(255, 255, 255, 0.9), transparent 72%),
+    radial-gradient(110px 34px at 27% 26%, rgba(255, 255, 255, 0.7), transparent 74%),
+    radial-gradient(80px 28px at 70% 16%, rgba(255, 255, 255, 0.85), transparent 72%),
+    radial-gradient(130px 40px at 80% 24%, rgba(255, 255, 255, 0.6), transparent 74%),
+    radial-gradient(60px 22px at 52% 12%, rgba(255, 255, 255, 0.75), transparent 72%),
+    /* rolling green hill rising from the bottom (curved ridge via ellipse) */
+    radial-gradient(150% 66% at 50% 132%,
+      var(--rt-bliss-hill-1) 0 43%,
+      var(--rt-bliss-hill-2) 43% 55%,
+      transparent 56%),
+    /* toned-down blue sky, fading out before the hill */
+    linear-gradient(180deg,
+      var(--rt-bliss-sky-1) 0%,
+      var(--rt-bliss-sky-2) 42%,
+      var(--rt-bliss-sky-3) 64%,
+      transparent 76%);
 }
 .desktop--fill {
   height: 100dvh;
@@ -61,6 +100,38 @@
   align-items: stretch;
   justify-content: center;
   padding-bottom: 0;
+}
+
+/* Desktop icons (real cut-out retro icons) — a left column in the wallpaper
+   margin, behind the centered window. Decorative (aria-hidden). Hidden on
+   narrower viewports where the window fills the width. */
+.desktop__icons {
+  position: absolute;
+  top: 30px;
+  left: 20px;
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  pointer-events: none;
+}
+.desktop__icon {
+  width: 54px;
+  height: 54px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  image-rendering: pixelated;
+  filter: drop-shadow(2px 2px 2px rgba(17, 17, 17, 0.35));
+}
+.desktop__icon--computer { background-image: url("/win-icons/computer.png"); }
+.desktop__icon--folder { background-image: url("/win-icons/folder.png"); }
+.desktop__icon--cd { background-image: url("/win-icons/cd.png"); }
+.desktop__icon--recycle { background-image: url("/win-icons/recycle.png"); }
+.desktop__icon--globe { background-image: url("/win-icons/globe.png"); }
+/* only show when there's real margin beside the 940px-max window */
+@media (max-width: 1120px) {
+  .desktop__icons { display: none; }
 }
 
 /* Window chrome */
@@ -836,5 +907,71 @@
   }
   .win .game {
     padding: 8px 8px 26px;
+  }
+  /* Bliss scene off on phones — the background is mostly covered by the app dock
+     there, so the overlay would only add visual noise / paint cost. */
+  .desktop::after {
+    display: none;
+  }
+}
+
+/* ════════════ DESKTOP: fixed viewport shell + in-window scroll ════════════
+   On real desktops (≥1024px) we pin the whole retro shell to the viewport
+   (100dvh) so the wallpaper, desktop icons and taskbar never move. Content that
+   used to scroll the DOCUMENT now scrolls INSIDE the window body — a proper
+   "maximised window" instead of a page that scrolls past the taskbar.
+
+   This reproduces the existing (but unused) .desktop--fill / .win--fill
+   infrastructure and gates it purely on WIDTH, so nothing below 1024px changes:
+   • ≤700px  → untouched (fixed app-dock keypad + natural scroll).
+   • 700–1024px (incl. the 900px two-column band) → untouched (document scroll).
+   Chosen over threading a `fill` prop (CEO option a): zero TSX change, zero
+   mobile/tablet regression risk — the media query simply never applies there. */
+@media (min-width: 1024px) {
+  /* 1. Shell pinned to the viewport — the document itself can no longer scroll. */
+  .desktop {
+    height: 100dvh;
+    overflow: hidden;
+  }
+  /* 2. Stage fills the height left over above the taskbar and centres the window
+        horizontally. align-items:flex-start lets a SHORT page (home) size the
+        window to its content, while a TALL page (game / long artist grid) is
+        capped by the window's max-height:100% below and scrolls internally. */
+  .desktop__stage {
+    display: flex;
+    flex: 1 1 0;
+    min-height: 0;
+    align-items: flex-start;
+    justify-content: center;
+    padding-bottom: 14px;
+  }
+  /* 3. Window never exceeds the stage; its body is the single scroll area.
+        (.win__title / .win__menu are fixed rows; .win__body flex:1 soaks the
+        rest and scrolls — standard app-shell column.) */
+  .win--app {
+    max-height: 100%;
+  }
+  .win__body {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+  }
+  /* 4. Game window: the WINDOW BODY is now the scrollport, so the game element
+        must not trap position:sticky (base .game is overflow:hidden, which would
+        create its own non-scrolling scrollport and kill the sticky clue bar).
+        Making it visible lets .game__top (active clue) + .clues (clue file) pin
+        to the top of .win__body while the board scrolls beneath them. */
+  .win--game .game {
+    overflow: visible;
+  }
+  /* 5. Cap the sticky clue list to the WINDOW-BODY viewport, not 100dvh. The
+        body is shorter than the viewport by the shell chrome (taskbar 38 + stage
+        pad 22/14 + title 30 + menu ~28 ≈ 132, plus the 8px sticky offset and a
+        little breathing room). Without this the ≥900 rule's calc(100dvh-56px)
+        would make the pinned list taller than the body, clipping its last clues
+        below the fold. Inside this cap the list keeps its own overflow-y:auto. */
+  .game__play .clues {
+    max-height: calc(100dvh - 160px);
+    top: 12px;
   }
 }
