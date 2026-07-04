@@ -115,7 +115,7 @@ export default function CrosswordGame({
   const [check, setCheck] = useState<CheckState>({});
   const [active, setActive] = useState<{ row: number; col: number }>(() => {
     const first = board.across[0] ?? board.down[0];
-    return { row: first.row, col: first.col };
+    return first ? { row: first.row, col: first.col } : { row: 0, col: 0 };
   });
   const [dir, setDir] = useState<Direction>(board.across[0] ? "across" : "down");
   const [seconds, setSeconds] = useState(0);
@@ -124,6 +124,8 @@ export default function CrosswordGame({
   const [zoom, setZoom] = useState(1);
   // clearAll is destructive, so it is gated behind a confirm dialog (UX #1).
   const [confirmClear, setConfirmClear] = useState(false);
+  // Falls back to the glyph if the album art CDN URL fails to load.
+  const [artImgBroken, setArtImgBroken] = useState(false);
   // First-run onboarding coachmark (C1). Starts false so SSR and the first
   // client render agree (localStorage is client-only); a mount effect flips it
   // on when the player hasn't seen it yet, avoiding a hydration mismatch.
@@ -157,12 +159,12 @@ export default function CrosswordGame({
     return new Set(entryCells(activeEntry).map((c) => cellKey(c.row, c.col)));
   }, [activeEntry]);
 
-  // Timer — runs until solved.
+  // Timer — runs until solved, paused while the coachmark overlay is open.
   useEffect(() => {
-    if (done) return;
+    if (done || showCoach) return;
     const id = setInterval(() => setSeconds((s) => s + 1), 1000);
     return () => clearInterval(id);
-  }, [done]);
+  }, [done, showCoach]);
 
   // Pop a word's cells the moment it becomes fully correct.
   useEffect(() => {
@@ -619,8 +621,18 @@ export default function CrosswordGame({
 
   const t = album.theme;
   const brand = getAlbumBrand(artist, album);
+  // Cell size tiers per grid width. cols≥20 gets an extra squeeze so
+  // 21-23 col albums (armageddon/unforgiven/ive-ive/…) still fit a 375px
+  // viewport without horizontal scroll. Min stays ≥16px so tap-to-move
+  // remains usable next to the keypad. (Spec #2 tap-target audit)
   const cellBase =
-    board.cols >= 18 ? "clamp(18px, 5vw, 29px)" : board.cols >= 16 ? "clamp(21px, 5.8vw, 32px)" : "clamp(24px, 6.8vw, 36px)";
+    board.cols >= 20
+      ? "clamp(16px, 4.2vw, 26px)"
+      : board.cols >= 18
+      ? "clamp(18px, 5vw, 29px)"
+      : board.cols >= 16
+      ? "clamp(21px, 5.8vw, 32px)"
+      : "clamp(24px, 6.8vw, 36px)";
   const paperBase = t ? mixHex(t.accent[0], "#f8f9fc", 0.88) : "#f9fafc";
   const paperDeep = t ? mixHex(t.accent[1] ?? t.accent[0], "#e8ecf2", 0.82) : "#e9edf3";
   const posterBg = t ? mixHex(t.bg, "#eef1f6", 0.9) : "#eef1f6";
@@ -639,7 +651,12 @@ export default function CrosswordGame({
         // Contrast ink for text sitting ON the accent fill (seg toggle, primary
         // + danger buttons). Light accent → dark ink, dark accent → white. CSS
         // reads it via color: var(--on-accent, …) (Spec #3).
-        ["--on-accent"]: luminance(t.accent[0]) > 0.45 ? "#111111" : "#ffffff",
+        // Threshold tuned from 0.45 → 0.555 after WCAG audit across 30 accents.
+        // The old bar routed #FF5FA2 (0.526) / #FF5CA8 (0.519) / #FF4D6D (0.460)
+        // / #2E7DEE (0.457) to dark ink and dropped seg-mini pill contrast under
+        // 4.5:1. New bar keeps the two amber-golds (#E8A23D 0.575, #D4AF37 0.683)
+        // on dark ink where they belong. (Spec #1)
+        ["--on-accent"]: luminance(t.accent[0]) > 0.555 ? "#111111" : "#ffffff",
       } as React.CSSProperties)
     : undefined;
   return (
@@ -690,9 +707,9 @@ export default function CrosswordGame({
           </div>
         </div>
         <div className="game__art-visual" aria-hidden="true">
-          {brand.imageSrc ? (
+          {brand.imageSrc && !artImgBroken ? (
             // eslint-disable-next-line @next/next/no-img-element
-            <img className="game__art-motif" src={brand.imageSrc} alt={`${artist.name} ${album.title} cover`} />
+            <img className="game__art-motif" src={brand.imageSrc} alt={`${artist.name} ${album.title} cover`} onError={() => setArtImgBroken(true)} />
           ) : (
             <span className="game__art-glyph">{brand.glyph}</span>
           )}

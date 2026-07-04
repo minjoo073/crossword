@@ -276,6 +276,13 @@ a {
   z-index: 0;
   pointer-events: none;
   opacity: 0.42;
+  /* Generic accent-driven skin so the 27 albums without a custom
+     .game[data-album="…"] .game__albumskin rule still feel branded
+     instead of showing a flat --poster-bg. Custom rules below override
+     this by re-declaring `background`. (Spec #3) */
+  background:
+    radial-gradient(120% 80% at 12% 8%, color-mix(in srgb, var(--accent) 22%, transparent) 0%, transparent 55%),
+    radial-gradient(90% 70% at 92% 100%, color-mix(in srgb, var(--accent-2, var(--accent)) 18%, transparent) 0%, transparent 60%);
 }
 .game__header {
   display: flex;
@@ -366,6 +373,19 @@ a {
   /* --on-accent injected per-album by luminance (CrosswordGame). Flat ink,
      no text-shadow — the luminance pick owns contrast now (A2). */
   color: var(--on-accent, #111111);
+}
+/* KO=0 albums (golden-hour-part1) — button is disabled but the browser
+   default (translucent grey text on white) has ~2:1 contrast, invisible
+   next to the active EN pill. Explicit disabled state: hatched paper,
+   muted ink, no-drop cursor. (Spec #5) */
+.seg-mini button:disabled {
+  background: repeating-linear-gradient(
+    135deg,
+    #f4f5f8 0 6px,
+    #ecedf1 6px 12px
+  );
+  color: #7a7a83;
+  cursor: not-allowed;
 }
 /* Control bar + album hero (dreamcore cover) */
 .game__bar {
