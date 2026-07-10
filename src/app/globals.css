@@ -662,7 +662,10 @@ a {
   overflow-x: auto;
   padding: 8px 0 6px;
   display: flex;
-  justify-content: center;
+  /* `safe` falls back to start-alignment when the board is wider than the
+     viewport (20–23 col grids on mobile), so the overflowed left column stays
+     scroll-reachable instead of being clipped by centered overflow. */
+  justify-content: safe center;
 }
 .game__sheet {
   background: var(--paper);

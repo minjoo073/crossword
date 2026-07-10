@@ -663,8 +663,8 @@
             },
             {
               "answer": "MOON",
-              "clue": "Celestial body inspiring 'Moonstruck'; also half of the DARK ___ universe.",
-              "clueKo": "'Moonstruck'를 떠올리게 하는 천체이자, DARK ___ 서사의 한 축은?",
+              "clue": "Half of ENHYPEN's 'DARK ___' saga — the celestial body lighting up their night.",
+              "clueKo": "ENHYPEN 'DARK ___' 서사의 한 축이자 밤하늘을 밝히는 천체는?",
               "len": 4,
               "row": 12,
               "col": 1,
@@ -853,7 +853,7 @@
             {
               "answer": "ALTAR",
               "clue": "The 'Blood ___' in the webtoon title DARK MOON: The Blood ___.",
-              "clueKo": "The 'Blood ___' in the webtoon title DARK MOON: The Blood ___.",
+              "clueKo": "웹툰 제목 'DARK MOON: The Blood ___'의 빈칸에 들어갈 단어는?",
               "len": 5,
               "row": 5,
               "col": 1,
@@ -1738,7 +1738,7 @@
             {
               "answer": "ENDURANCE",
               "clue": "The 'golden hour' is a testament to this — pushing through to survive.",
-              "clueKo": "고든아워를 버텨내며 증명하는 태도, 즉 ___를 뜻하는 단어는?",
+              "clueKo": "골든아워를 버텨내며 증명하는 태도, 즉 ___를 뜻하는 단어는?",
               "len": 9,
               "row": 3,
               "col": 11,
@@ -1840,7 +1840,7 @@
             {
               "answer": "SELFISH",
               "clue": "First word of track 5, '___ Waltz.'",
-              "clueKo": "First word of track 5, '___ Waltz.'",
+              "clueKo": "5번 트랙 '___ Waltz', 오직 나만 챙긴다는 이기심을 뜻하는 첫 단어는?",
               "len": 7,
               "row": 0,
               "col": 15,
@@ -1850,7 +1850,7 @@
             {
               "answer": "FIRE",
               "clue": "Track 4 is 'Man On ___.'",
-              "clueKo": "Track 4 is 'Man On ___.'",
+              "clueKo": "4번 트랙 'Man On ___', 활활 타오르는 그것 위에 선 남자를 그린 빈칸은?",
               "len": 4,
               "row": 3,
               "col": 8,
@@ -1860,7 +1860,7 @@
             {
               "answer": "TEETH",
               "clue": "Last word of the title track: 'Ice On My ___.'",
-              "clueKo": "Last word of the title track: 'Ice On My ___.'",
+              "clueKo": "타이틀곡 'Ice On My ___', 얼음을 물고 있는 입속 그 하얀 부위는?",
               "len": 5,
               "row": 4,
               "col": 10,
@@ -1870,7 +1870,7 @@
             {
               "answer": "DIVE",
               "clue": "Second word of track 1, 'Deep ___.'",
-              "clueKo": "Second word of track 1, 'Deep ___.'",
+              "clueKo": "1번 트랙 'Deep ___', 깊은 곳으로 곤두박질쳐 뛰어든다는 두 번째 단어는?",
               "len": 4,
               "row": 6,
               "col": 5,
@@ -1880,7 +1880,7 @@
             {
               "answer": "ICE",
               "clue": "First word of the title track: '___ On My Teeth.'",
-              "clueKo": "First word of the title track: '___ On My Teeth.'",
+              "clueKo": "타이틀곡의 첫 단어, 서리와 빙판 콘셉트를 상징하는 차갑게 얼어붙은 그것은?",
               "len": 3,
               "row": 6,
               "col": 6,
@@ -1890,7 +1890,7 @@
             {
               "answer": "ENOUGH",
               "clue": "The closing track 6 — a one-word declaration that you've had it.",
-              "clueKo": "The closing track 6 — a one-word declaration that you've had it.",
+              "clueKo": "이제 참을 만큼 참았다고 선언하는, EP를 닫는 6번 트랙의 한 단어 제목은?",
               "len": 6,
               "row": 6,
               "col": 10,
@@ -1910,7 +1910,7 @@
             {
               "answer": "SCENE",
               "clue": "Track 2 opens with '___ 1 : Value.'",
-              "clueKo": "Track 2 opens with '___ 1 : Value.'",
+              "clueKo": "2번 트랙 '___ 1 : Value', 영화나 연극에서 한 상황이 펼쳐지는 단위를 뜻하는 첫 단어는?",
               "len": 5,
               "row": 8,
               "col": 5,
@@ -1920,7 +1920,7 @@
             {
               "answer": "WALTZ",
               "clue": "Track 5 is 'Selfish ___' — a three-beat ballroom dance.",
-              "clueKo": "Track 5 is 'Selfish ___' — a three-beat ballroom dance.",
+              "clueKo": "5번 트랙 'Selfish ___', 3박자로 우아하게 빙그르 도는 사교춤을 뜻하는 빈칸은?",
               "len": 5,
               "row": 8,
               "col": 11,
@@ -1930,7 +1930,7 @@
             {
               "answer": "DEEP",
               "clue": "First word of opening track 1, '___ Dive.'",
-              "clueKo": "First word of opening track 1, '___ Dive.'",
+              "clueKo": "오프닝 1번 트랙 '___ Dive', 얕지 않고 아득할 만큼 깊다는 뜻의 첫 단어는?",
               "len": 4,
               "row": 9,
               "col": 13,
@@ -1940,7 +1940,7 @@
             {
               "answer": "MATURE",
               "clue": "Compared to Part.1, this EP's vibe is cooler, chiller, and more ___.",
-              "clueKo": "Compared to Part.1, this EP's vibe is cooler, chiller, and more ___.",
+              "clueKo": "Part.1보다 한층 차갑고 차분해진, 더 원숙해진 이번 EP의 분위기를 한 단어로 하면?",
               "len": 6,
               "row": 10,
               "col": 0,
@@ -1950,7 +1950,7 @@
             {
               "answer": "VALUE",
               "clue": "Track 2 is 'Scene 1 : ___' — the EP's theme of self-worth.",
-              "clueKo": "Track 2 is 'Scene 1 : ___' — the EP's theme of self-worth.",
+              "clueKo": "2번 트랙 'Scene 1 : ___', 나 자신이 얼마나 소중한지를 노래한 EP의 핵심 주제어는?",
               "len": 5,
               "row": 10,
               "col": 9,
@@ -2108,7 +2108,7 @@
             {
               "answer": "EMOTIONAL",
               "clue": "RIIZE call their genre '___ pop.'",
-              "clueKo": "RIIZE call their genre '___ pop.'",
+              "clueKo": "RIIZE가 자신들의 장르를 '___ pop'이라 부를 때 빈칸에 들어갈 단어는?",
               "len": 9,
               "row": 3,
               "col": 4,
@@ -2327,7 +2327,7 @@
             {
               "answer": "ODYSSEY",
               "clue": "The album's title and its opening track 1 — an epic voyage.",
-              "clueKo": "The album's title and its opening track 1 — an epic voyage.",
+              "clueKo": "앨범 제목이자 첫 트랙 — 서사시 같은 대장정을 뜻하는 단어는?",
               "len": 7,
               "row": 0,
               "col": 6,
@@ -2337,7 +2337,7 @@
             {
               "answer": "FLY",
               "clue": "First word of the title track '___ Up.'",
-              "clueKo": "First word of the title track '___ Up.'",
+              "clueKo": "타이틀곡 '___ Up'의 첫 단어는?",
               "len": 3,
               "row": 2,
               "col": 4,
@@ -2347,7 +2347,7 @@
             {
               "answer": "SOLAR",
               "clue": "Track 3 is 'Ember to ___' — relating to the sun.",
-              "clueKo": "Track 3 is 'Ember to ___' — relating to the sun.",
+              "clueKo": "3번 트랙 'Ember to ___'에 들어가는, 태양에 관한 형용사는?",
               "len": 5,
               "row": 4,
               "col": 2,
@@ -2357,7 +2357,7 @@
             {
               "answer": "MIRAGE",
               "clue": "Track 7 is 'Midnight ___' — an illusion shimmering in the distance.",
-              "clueKo": "Track 7 is 'Midnight ___' — an illusion shimmering in the distance.",
+              "clueKo": "7번 트랙 'Midnight ___'의 뒷단어 — 멀리서 아른거리는 신기루는?",
               "len": 6,
               "row": 4,
               "col": 9,
@@ -2367,7 +2367,7 @@
             {
               "answer": "VOYAGE",
               "clue": "The album frames youth as a long ___ — a journey by sea or space.",
-              "clueKo": "The album frames youth as a long ___ — a journey by sea or space.",
+              "clueKo": "앨범은 청춘을 긴 항해에 빗대는데, 바다나 우주를 건너는 그 여정을 뜻하는 단어는?",
               "len": 6,
               "row": 5,
               "col": 1,
@@ -2377,7 +2377,7 @@
             {
               "answer": "ANOTHER",
               "clue": "The closing track 10 is '___ Life.'",
-              "clueKo": "The closing track 10 is '___ Life.'",
+              "clueKo": "마지막 10번 트랙 '___ Life'의 앞단어는?",
               "len": 7,
               "row": 5,
               "col": 11,
@@ -2387,7 +2387,7 @@
             {
               "answer": "SPACE",
               "clue": "The synth atmosphere makes you feel like floating through this.",
-              "clueKo": "The synth atmosphere makes you feel like floating through this.",
+              "clueKo": "신스 사운드가 그 안을 떠다니는 듯한 기분을 주는, 별들 사이의 공간은?",
               "len": 5,
               "row": 7,
               "col": 0,
@@ -2397,7 +2397,7 @@
             {
               "answer": "EMBER",
               "clue": "Track 3 is '___ to Solar' (잉걸) — a glowing coal.",
-              "clueKo": "Track 3 is '___ to Solar' (잉걸) — a glowing coal.",
+              "clueKo": "3번 트랙 '___ to Solar'의 앞단어 — 잉걸, 벌겋게 타는 숯은?",
               "len": 5,
               "row": 7,
               "col": 4,
@@ -2407,7 +2407,7 @@
             {
               "answer": "MIDNIGHT",
               "clue": "Track 7 opens with '___ Mirage' — twelve o'clock at night.",
-              "clueKo": "Track 7 opens with '___ Mirage' — twelve o'clock at night.",
+              "clueKo": "7번 트랙 '___ Mirage'의 앞단어 — 밤 열두 시, 자정은?",
               "len": 8,
               "row": 8,
               "col": 4,
@@ -2417,7 +2417,7 @@
             {
               "answer": "JOURNEY",
               "clue": "The title track captures the thrill before starting this trip.",
-              "clueKo": "The title track captures the thrill before starting this trip.",
+              "clueKo": "타이틀곡이 담아낸, 여정을 시작하기 직전의 설렘 — 그 '여행'을 뜻하는 단어는?",
               "len": 7,
               "row": 11,
               "col": 1,
@@ -2427,7 +2427,7 @@
             {
               "answer": "PASSAGE",
               "clue": "Track 6 — a one-word b-side meaning a way through or a journey.",
-              "clueKo": "Track 6 — a one-word b-side meaning a way through or a journey.",
+              "clueKo": "6번 트랙, 통로나 여정을 뜻하는 한 단어 수록곡은?",
               "len": 7,
               "row": 12,
               "col": 10,
@@ -2595,7 +2595,7 @@
             {
               "answer": "ROCK",
               "clue": "Track 2 is 'Gonna be a ___' — both a stone and a music genre.",
-              "clueKo": "Track 2 is 'Gonna be a ___' — both a stone and a music genre.",
+              "clueKo": "2번 트랙 'Gonna be a ___', 단단한 돌덩이이자 기타 사운드 강렬한 음악 장르이기도 한 단어는?",
               "len": 4,
               "row": 0,
               "col": 3,
@@ -2605,7 +2605,7 @@
             {
               "answer": "CALL",
               "clue": "Track 6 is '___ Me.'",
-              "clueKo": "Track 6 is '___ Me.'",
+              "clueKo": "6번 트랙 '___ Me', 나에게 연락해 달라며 수화기를 들라는 첫 단어는?",
               "len": 4,
               "row": 0,
               "col": 5,
@@ -2615,7 +2615,7 @@
             {
               "answer": "ADULT",
               "clue": "Turning 20 in Korea means officially becoming one of these.",
-              "clueKo": "Turning 20 in Korea means officially becoming one of these.",
+              "clueKo": "한국에서 스무 살이 되면 법적으로 공식 인정받는, 더는 아이가 아닌 존재는?",
               "len": 5,
               "row": 3,
               "col": 2,
@@ -2635,7 +2635,7 @@
             {
               "answer": "NICE",
               "clue": "First word of the title track '___ Guy.'",
-              "clueKo": "First word of the title track '___ Guy.'",
+              "clueKo": "타이틀곡 '___ Guy', 다정하고 좋은 사람임을 뜻하는 첫 단어는?",
               "len": 4,
               "row": 5,
               "col": 8,
@@ -2645,7 +2645,7 @@
             {
               "answer": "NINETEEN",
               "clue": "The age in '19.99' — the year you're still not quite twenty.",
-              "clueKo": "The age in '19.99' — the year you're still not quite twenty.",
+              "clueKo": "앨범 제목 '19.99'가 가리키는, 아직 스물엔 못 미친 그 나이는?",
               "len": 8,
               "row": 6,
               "col": 2,
@@ -2655,7 +2655,7 @@
             {
               "answer": "SKIT",
               "clue": "Track 3 — a short spoken interlude, not a full song.",
-              "clueKo": "Track 3 — a short spoken interlude, not a full song.",
+              "clueKo": "3번 트랙, 정식 곡이 아니라 짧은 대사로 채운 막간 코너를 가리키는 말은?",
               "len": 4,
               "row": 6,
               "col": 6,
@@ -2675,7 +2675,7 @@
             {
               "answer": "DANGEROUS",
               "clue": "The pre-release / track 1 — a one-word warning of risk.",
-              "clueKo": "The pre-release / track 1 — a one-word warning of risk.",
+              "clueKo": "선공개 1번 트랙, 조심하라며 위태로움을 경고하는 한 단어 제목은?",
               "len": 9,
               "row": 8,
               "col": 4,
@@ -2685,7 +2685,7 @@
             {
               "answer": "GUY",
               "clue": "Second word of the title track 'Nice ___.'",
-              "clueKo": "Second word of the title track 'Nice ___.'",
+              "clueKo": "타이틀곡 'Nice ___'의 두 번째 단어, '괜찮은 그 사람'에서 그 사람을 가리키는 말은?",
               "len": 3,
               "row": 8,
               "col": 7,
@@ -2695,7 +2695,7 @@
             {
               "answer": "TWENTY",
               "clue": "Track 5, the age the EP's title (19.99) is about to hit.",
-              "clueKo": "Track 5, the age the EP's title (19.99) is about to hit.",
+              "clueKo": "5번 트랙, 제목 '19.99'가 이제 막 넘어서려는 바로 그 나이는?",
               "len": 6,
               "row": 10,
               "col": 2,
@@ -2854,7 +2854,7 @@
             {
               "answer": "COOL",
               "clue": "Track 5 is 'Life is ___.'",
-              "clueKo": "Track 5 is 'Life is ___.'",
+              "clueKo": "인생을 여유롭고 멋지게 규정하는 5번 트랙 'Life is ___'의 빈칸에 들어갈 단어는?",
               "len": 4,
               "row": 0,
               "col": 9,
@@ -2864,7 +2864,7 @@
             {
               "answer": "DARLING",
               "clue": "Track 6 is 'Dear. My ___' — a sweet name for a sweetheart.",
-              "clueKo": "Track 6 is 'Dear. My ___' — a sweet name for a sweetheart.",
+              "clueKo": "연인을 다정하게 부르는 애칭이 제목인 6번 트랙 'Dear. My ___'의 빈칸은?",
               "len": 7,
               "row": 2,
               "col": 3,
@@ -2874,7 +2874,7 @@
             {
               "answer": "LOVE",
               "clue": "The whole trilogy is about first ___.",
-              "clueKo": "The whole trilogy is about first ___.",
+              "clueKo": "BOYNEXTDOOR 3부작이 통째로 그려내는 것, 'first ___'의 빈칸에 들어갈 이 풋풋한 감정은?",
               "len": 4,
               "row": 2,
               "col": 8,
@@ -2884,7 +2884,7 @@
             {
               "answer": "TRILOGY",
               "clue": "HOW? completes BOYNEXTDOOR's first-love three-part ___.",
-              "clueKo": "HOW? completes BOYNEXTDOOR's first-love three-part ___.",
+              "clueKo": "'HOW?'가 마침표를 찍는, Who!·Why..에 이어 세 장으로 완성되는 이 연작 형태는?",
               "len": 7,
               "row": 3,
               "col": 1,
@@ -2894,7 +2894,7 @@
             {
               "answer": "HOW",
               "clue": "The EP's one-word title, closing the trilogy after 'Who!' and 'Why..'",
-              "clueKo": "The EP's one-word title, closing the trilogy after 'Who!' and 'Why..'",
+              "clueKo": "'Who!'와 'Why..'에 이어 3부작을 닫는, 한 단어짜리 이 앨범 제목은?",
               "len": 3,
               "row": 3,
               "col": 5,
@@ -2904,7 +2904,7 @@
             {
               "answer": "WIND",
               "clue": "Second word of the title track 'Earth, ___ & Fire.'",
-              "clueKo": "Second word of the title track 'Earth, ___ & Fire.'",
+              "clueKo": "타이틀곡 'Earth, ___ & Fire'에서 두 번째 자리에 들어갈 단어는?",
               "len": 4,
               "row": 3,
               "col": 7,
@@ -2914,7 +2914,7 @@
             {
               "answer": "FIRE",
               "clue": "Last word of the title track 'Earth, Wind & ___.'",
-              "clueKo": "Last word of the title track 'Earth, Wind & ___.'",
+              "clueKo": "타이틀곡 'Earth, Wind & ___'의 마지막을 장식하는 단어는?",
               "len": 4,
               "row": 4,
               "col": 10,
@@ -2924,7 +2924,7 @@
             {
               "answer": "AMNESIA",
               "clue": "Track 2 — a one-word b-side meaning loss of memory.",
-              "clueKo": "Track 2 — a one-word b-side meaning loss of memory.",
+              "clueKo": "기억을 잃어버린다는 뜻을 담은, 한 단어짜리 제목의 2번 수록곡은?",
               "len": 7,
               "row": 5,
               "col": 5,
@@ -2934,7 +2934,7 @@
             {
               "answer": "STARS",
               "clue": "Track 3 is 'So Let's Go See the ___' (별 보러 가자).",
-              "clueKo": "Track 3 is 'So Let's Go See the ___' (별 보러 가자).",
+              "clueKo": "밤하늘에 반짝이는 그것을 보러 가자는 3번 트랙 'So Let's Go See the ___'의 빈칸은?",
               "len": 5,
               "row": 6,
               "col": 13,
@@ -2954,7 +2954,7 @@
             {
               "answer": "EARTH",
               "clue": "First word of the title track '___, Wind & Fire.'",
-              "clueKo": "First word of the title track '___, Wind & Fire.'",
+              "clueKo": "타이틀곡 '___, Wind & Fire'의 맨 앞을 여는 단어는?",
               "len": 5,
               "row": 7,
               "col": 10,
@@ -2964,7 +2964,7 @@
             {
               "answer": "OUR",
               "clue": "The opening track 1 — a one-word possessive, 'belonging to us.'",
-              "clueKo": "The opening track 1 — a one-word possessive, 'belonging to us.'",
+              "clueKo": "앨범의 문을 여는 1번 트랙, '~에게 속한'이라는 뜻의 한 단어 소유격 제목은?",
               "len": 3,
               "row": 9,
               "col": 11,
@@ -3303,7 +3303,7 @@
             {
               "answer": "ROMEO",
               "clue": "'Kill the ___,' a b-side naming Shakespeare's tragic lover.",
-              "clueKo": "'Kill the ___,' a b-side naming Shakespeare's tragic lover.",
+              "clueKo": "'Kill the ___'라는 수록곡 제목에 담긴, 셰익스피어 비극 속 줄리엣의 연인은?",
               "len": 5,
               "row": 0,
               "col": 10,
@@ -3313,7 +3313,7 @@
             {
               "answer": "CINEMA",
               "clue": "First word of the 4th mini-album title; the film-house concept it runs on.",
-              "clueKo": "First word of the 4th mini-album title; the film-house concept it runs on.",
+              "clueKo": "네 번째 미니앨범 제목의 첫 단어이자, 앨범을 관통하는 영화관 콘셉트를 뜻하는 말은?",
               "len": 6,
               "row": 0,
               "col": 12,
@@ -3333,7 +3333,7 @@
             {
               "answer": "SEA",
               "clue": "ZB1's remake on this EP is 'The ___' (바다).",
-              "clueKo": "ZB1's remake on this EP is 'The ___' (바다).",
+              "clueKo": "이 앨범에서 ZB1이 리메이크한 'The ___'는 우리말로 '바다'를 뜻하는 곡, 빈칸에 들어갈 단어는?",
               "len": 3,
               "row": 1,
               "col": 4,
@@ -3343,7 +3343,7 @@
             {
               "answer": "BAD",
               "clue": "Last word of the title track 'Good So ___.'",
-              "clueKo": "Last word of the title track 'Good So ___.'",
+              "clueKo": "타이틀곡 'Good So ___'의 마지막 단어는?",
               "len": 3,
               "row": 1,
               "col": 7,
@@ -3353,7 +3353,7 @@
             {
               "answer": "MOVIE",
               "clue": "'Road ___,' a b-side named for a film genre.",
-              "clueKo": "'Road ___,' a b-side named for a film genre.",
+              "clueKo": "'Road ___'라는 수록곡 제목에 쓰인, 영화 장르를 가리키는 단어는?",
               "len": 5,
               "row": 1,
               "col": 9,
@@ -3363,7 +3363,7 @@
             {
               "answer": "PARADISE",
               "clue": "Second word of the album title, evoking a heaven of movies.",
-              "clueKo": "Second word of the album title, evoking a heaven of movies.",
+              "clueKo": "영화들의 천국을 떠올리게 하는, 앨범 제목의 두 번째 단어는?",
               "len": 8,
               "row": 3,
               "col": 3,
@@ -3373,7 +3373,7 @@
             {
               "answer": "ROAD",
               "clue": "First word of the b-side '___ Movie.'",
-              "clueKo": "First word of the b-side '___ Movie.'",
+              "clueKo": "수록곡 '___ Movie'의 첫 단어는?",
               "len": 4,
               "row": 3,
               "col": 5,
@@ -3383,7 +3383,7 @@
             {
               "answer": "INSOMNIA",
               "clue": "Sleepless-night-titled b-side on CINEMA PARADISE.",
-              "clueKo": "Sleepless-night-titled b-side on CINEMA PARADISE.",
+              "clueKo": "CINEMA PARADISE에 실린, 잠 못 이루는 밤을 제목으로 삼은 수록곡은?",
               "len": 8,
               "row": 3,
               "col": 8,
@@ -3403,7 +3403,7 @@
             {
               "answer": "GOOD",
               "clue": "First word of the title track '___ So Bad.'",
-              "clueKo": "First word of the title track '___ So Bad.'",
+              "clueKo": "타이틀곡 '___ So Bad'의 첫 단어는?",
               "len": 4,
               "row": 6,
               "col": 2,
@@ -3413,7 +3413,7 @@
             {
               "answer": "ETERNITY",
               "clue": "B-side whose one-word title means everlasting time.",
-              "clueKo": "B-side whose one-word title means everlasting time.",
+              "clueKo": "'영원한 시간'을 뜻하는 한 단어 제목의 수록곡은?",
               "len": 8,
               "row": 8,
               "col": 4,
@@ -3572,7 +3572,7 @@
             {
               "answer": "DOUBLE",
               "clue": "'___ Take,' a b-side on SUMMER BEAT!",
-              "clueKo": "'___ Take,' a b-side on SUMMER BEAT!",
+              "clueKo": "SUMMER BEAT!에 실린 수록곡 '___ Take'의 빈칸에 들어갈 단어는?",
               "len": 6,
               "row": 0,
               "col": 2,
@@ -3592,7 +3592,7 @@
             {
               "answer": "MAGNET",
               "clue": "Title-track metaphor: 'If I'm S, you're my N' likens attraction to this object's poles.",
-              "clueKo": "Title-track metaphor: 'If I'm S, you're my N' likens attraction to this object's poles.",
+              "clueKo": "'내가 S면 넌 나의 N'이라며 서로 끌리는 마음을 N극·S극에 빗댄, 타이틀곡 속 이 물건은?",
               "len": 6,
               "row": 4,
               "col": 7,
@@ -3622,7 +3622,7 @@
             {
               "answer": "POP",
               "clue": "TWS brands their music 'boyhood ___.'",
-              "clueKo": "TWS brands their music 'boyhood ___.'",
+              "clueKo": "TWS가 자신들의 음악을 'boyhood ___'이라 부를 때 빈칸에 들어갈 장르는?",
               "len": 3,
               "row": 10,
               "col": 3,
@@ -3642,7 +3642,7 @@
             {
               "answer": "FIRE",
               "clue": "First word of the b-side '___ Confetti.'",
-              "clueKo": "First word of the b-side '___ Confetti.'",
+              "clueKo": "수록곡 '___ Confetti'의 맨 앞을 여는 단어는?",
               "len": 4,
               "row": 10,
               "col": 9,
@@ -3762,7 +3762,7 @@
             {
               "answer": "UNPLUGGED",
               "clue": "'___ boy,' an acoustic-leaning b-side on the debut EP.",
-              "clueKo": "'___ boy,' an acoustic-leaning b-side on the debut EP.",
+              "clueKo": "데뷔 EP에 실린 '___ boy'라는, 어쿠스틱 감성이 짙은 수록곡의 첫 단어는?",
               "len": 9,
               "row": 0,
               "col": 5,
@@ -3782,7 +3782,7 @@
             {
               "answer": "YOUNGJAE",
               "clue": "A main vocalist and lead dancer of TWS.",
-              "clueKo": "A main vocalist and lead dancer of TWS.",
+              "clueKo": "TWS의 메인보컬이자 리드댄서를 맡은 멤버는?",
               "len": 8,
               "row": 2,
               "col": 0,
@@ -3792,7 +3792,7 @@
             {
               "answer": "TWIST",
               "clue": "'plot ___,' the debut title track (Korean: 첫 만남은 계획대로 되지 않아).",
-              "clueKo": "'plot ___,' the debut title track (Korean: 첫 만남은 계획대로 되지 않아).",
+              "clueKo": "'plot ___'라는 데뷔 타이틀곡 제목의 두 번째 단어는? (우리말 제목: 첫 만남은 계획대로 되지 않아)",
               "len": 5,
               "row": 2,
               "col": 11,
@@ -3812,7 +3812,7 @@
             {
               "answer": "BLUE",
               "clue": "Second word of the debut EP title; the color of fresh youth.",
-              "clueKo": "Second word of the debut EP title; the color of fresh youth.",
+              "clueKo": "싱그러운 청춘의 색을 뜻하는, 데뷔 EP 제목의 두 번째 단어는?",
               "len": 4,
               "row": 4,
               "col": 12,
@@ -3822,7 +3822,7 @@
             {
               "answer": "HOOKY",
               "clue": "'First ___,' a b-side about skipping out / playing truant.",
-              "clueKo": "'First ___,' a b-side about skipping out / playing truant.",
+              "clueKo": "'First ___'라는, 수업을 빼먹고 땡땡이치는 이야기를 담은 수록곡의 두 번째 단어는?",
               "len": 5,
               "row": 5,
               "col": 5,
@@ -3832,7 +3832,7 @@
             {
               "answer": "SPARKLING",
               "clue": "First word of TWS's debut EP title.",
-              "clueKo": "First word of TWS's debut EP title.",
+              "clueKo": "TWS 데뷔 EP 제목의 첫 단어는?",
               "len": 9,
               "row": 5,
               "col": 7,
@@ -3842,7 +3842,7 @@
             {
               "answer": "PLOT",
               "clue": "First word of the title track '___ twist.'",
-              "clueKo": "First word of the title track '___ twist.'",
+              "clueKo": "타이틀곡 '___ twist'의 첫 단어는?",
               "len": 4,
               "row": 5,
               "col": 8,
@@ -3852,7 +3852,7 @@
             {
               "answer": "DOHOON",
               "clue": "The center and a main vocalist of TWS.",
-              "clueKo": "The center and a main vocalist of TWS.",
+              "clueKo": "TWS의 센터이자 메인보컬을 맡은 멤버는?",
               "len": 6,
               "row": 7,
               "col": 4,
@@ -3862,7 +3862,7 @@
             {
               "answer": "DEBUT",
               "clue": "What Sparkling Blue marked for TWS on Jan 22, 2024.",
-              "clueKo": "What Sparkling Blue marked for TWS on Jan 22, 2024.",
+              "clueKo": "Sparkling Blue가 2024년 1월 22일 TWS에게 안겨준 바로 그 첫 무대, 이것을 영어로 하면?",
               "len": 5,
               "row": 7,
               "col": 11,
@@ -3872,7 +3872,7 @@
             {
               "answer": "BFF",
               "clue": "Best-friends-forever-titled b-side on Sparkling Blue.",
-              "clueKo": "Best-friends-forever-titled b-side on Sparkling Blue.",
+              "clueKo": "Sparkling Blue에 실린, '영원한 절친'을 뜻하는 약어를 제목으로 삼은 수록곡은?",
               "len": 3,
               "row": 7,
               "col": 13,
@@ -4031,7 +4031,7 @@
             {
               "answer": "VIRTUAL",
               "clue": "PLAVE is a ___ idol group, rendered with real-time motion capture.",
-              "clueKo": "PLAVE is a ___ idol group, rendered with real-time motion capture.",
+              "clueKo": "PLAVE는 실시간 모션캡처로 구현되는 ___ 아이돌 그룹이다 — 빈칸에 들어갈, '가상의'를 뜻하는 단어는?",
               "len": 7,
               "row": 2,
               "col": 5,
@@ -4051,7 +4051,7 @@
             {
               "answer": "TERRA",
               "clue": "PLAVE's name for Earth; the 'T' in the b-side '12:32 (A to T).'",
-              "clueKo": "PLAVE's name for Earth; the 'T' in the b-side '12:32 (A to T).'",
+              "clueKo": "PLAVE 세계관에서 지구를 부르는 이름이자, 수록곡 '12:32 (A to T)'의 그 'T'는?",
               "len": 5,
               "row": 4,
               "col": 1,
@@ -4061,7 +4061,7 @@
             {
               "answer": "DRIFT",
               "clue": "Second word of the city-pop track 'Chroma ___.'",
-              "clueKo": "Second word of the city-pop track 'Chroma ___.'",
+              "clueKo": "시티팝 트랙 'Chroma ___'의 뒷단어는?",
               "len": 5,
               "row": 6,
               "col": 1,
@@ -4081,7 +4081,7 @@
             {
               "answer": "FOG",
               "clue": "The English meaning of 'Caligo' that veils this dark-turn EP.",
-              "clueKo": "The English meaning of 'Caligo' that veils this dark-turn EP.",
+              "clueKo": "어두워진 이 EP를 뒤덮는 'Caligo'의 영어 뜻 — 앞을 가리는 안개는?",
               "len": 3,
               "row": 6,
               "col": 9,
@@ -4091,7 +4091,7 @@
             {
               "answer": "ASTERUM",
               "clue": "PLAVE's worldview realm bridging Caelum and Terra.",
-              "clueKo": "PLAVE's worldview realm bridging Caelum and Terra.",
+              "clueKo": "PLAVE 세계관에서 카일룸과 테라를 잇는 영역의 이름은?",
               "len": 7,
               "row": 8,
               "col": 0,
@@ -4111,7 +4111,7 @@
             {
               "answer": "CAELUM",
               "clue": "The distant world the members drifted in before reaching Asterum.",
-              "clueKo": "The distant world the members drifted in before reaching Asterum.",
+              "clueKo": "멤버들이 아스테룸에 닿기 전 떠돌던 먼 세계의 이름은?",
               "len": 6,
               "row": 10,
               "col": 2,
@@ -4281,7 +4281,7 @@
             {
               "answer": "LOVE",
               "clue": "The thing PLAVE search for across this mini-album.",
-              "clueKo": "The thing PLAVE search for across this mini-album.",
+              "clueKo": "이 미니앨범 내내 PLAVE가 찾아 헤매는 그 하나, 이 감정은?",
               "len": 4,
               "row": 0,
               "col": 6,
@@ -4291,7 +4291,7 @@
             {
               "answer": "WOO",
               "clue": "'Watch Me ___!', the dreamy afropop opener.",
-              "clueKo": "'Watch Me ___!', the dreamy afropop opener.",
+              "clueKo": "몽환적인 아프로팝 오프닝 'Watch Me ___!'의 빈칸에 들어갈 단어는?",
               "len": 3,
               "row": 1,
               "col": 5,
@@ -4301,7 +4301,7 @@
             {
               "answer": "WAY",
               "clue": "First word of the title track '___ 4 LUV.'",
-              "clueKo": "First word of the title track '___ 4 LUV.'",
+              "clueKo": "타이틀곡 '___ 4 LUV'의 맨 앞 단어는?",
               "len": 3,
               "row": 2,
               "col": 3,
@@ -4311,7 +4311,7 @@
             {
               "answer": "LUV",
               "clue": "'WAY 4 ___,' the title track about a journey to find love.",
-              "clueKo": "'WAY 4 ___,' the title track about a journey to find love.",
+              "clueKo": "누군가를 향한 마음을 찾아 떠나는 여정을 그린 타이틀곡 'WAY 4 ___'의 빈칸은?",
               "len": 3,
               "row": 2,
               "col": 8,
@@ -4321,7 +4321,7 @@
             {
               "answer": "ASTERUM",
               "clue": "The titular realm; this mini-album is the final chapter '___ : 134-1.'",
-              "clueKo": "The titular realm; this mini-album is the final chapter '___ : 134-1.'",
+              "clueKo": "미니앨범 제목이자 세계관의 무대인 이곳, 마지막 장 '___ : 134-1'의 빈칸은?",
               "len": 7,
               "row": 3,
               "col": 3,
@@ -4331,7 +4331,7 @@
             {
               "answer": "TERRA",
               "clue": "PLAVE's name for Earth, where their fans live.",
-              "clueKo": "PLAVE's name for Earth, where their fans live.",
+              "clueKo": "팬들이 사는 지구를 PLAVE가 부르는 이름은?",
               "len": 5,
               "row": 3,
               "col": 5,
@@ -4341,7 +4341,7 @@
             {
               "answer": "FROM",
               "clue": "One-word b-side on ASTERUM : 134-1.",
-              "clueKo": "One-word b-side on ASTERUM : 134-1.",
+              "clueKo": "ASTERUM : 134-1에 실린 한 단어짜리 제목의 수록곡은?",
               "len": 4,
               "row": 5,
               "col": 4,
@@ -4361,7 +4361,7 @@
             {
               "answer": "VIRTUAL",
               "clue": "'___ Idol' (버추얼 아이돌), a self-referential b-side; also what kind of group PLAVE is.",
-              "clueKo": "'___ Idol' (버추얼 아이돌), a self-referential b-side; also what kind of group PLAVE is.",
+              "clueKo": "실제 사람이 아닌 그래픽 캐릭터로 활동하는 아이돌 유형이자, 자기 자신을 노래한 수록곡 '___ Idol'의 빈칸은?",
               "len": 7,
               "row": 7,
               "col": 3,
@@ -4371,7 +4371,7 @@
             {
               "answer": "EUNHO",
               "clue": "PLAVE's main rapper, who also produces.",
-              "clueKo": "PLAVE's main rapper, who also produces.",
+              "clueKo": "프로듀싱까지 맡는 PLAVE의 메인래퍼는?",
               "len": 5,
               "row": 11,
               "col": 2,
@@ -4381,7 +4381,7 @@
             {
               "answer": "CAELUM",
               "clue": "The world PLAVE drifted from before reaching Asterum.",
-              "clueKo": "The world PLAVE drifted from before reaching Asterum.",
+              "clueKo": "PLAVE가 아스테룸에 닿기 전 떠밀려온 세계의 이름은?",
               "len": 6,
               "row": 13,
               "col": 0,
@@ -4530,7 +4530,7 @@
             {
               "answer": "CULTURE",
               "clue": "Middle word of 'Neo ___ Technology,' the meaning behind NCT.",
-              "clueKo": "Middle word of 'Neo ___ Technology,' the meaning behind NCT.",
+              "clueKo": "NCT의 의미인 'Neo ___ Technology'에서 가운데 자리에 들어갈 단어는?",
               "len": 7,
               "row": 0,
               "col": 8,
@@ -4540,7 +4540,7 @@
             {
               "answer": "SCHOOLBOY",
               "clue": "The youthful 'classroom crush' archetype driving the Steady visuals (one compound word).",
-              "clueKo": "The youthful 'classroom crush' archetype driving the Steady visuals (one compound word).",
+              "clueKo": "교복 입은 풋풋한 첫사랑 콘셉트로 Steady 비주얼을 이끄는, 한 단어로 된 이 소년상은?",
               "len": 9,
               "row": 2,
               "col": 3,
@@ -4560,7 +4560,7 @@
             {
               "answer": "NEO",
               "clue": "First word of the 'Neo Culture Technology' that the letters NCT stand for.",
-              "clueKo": "First word of the 'Neo Culture Technology' that the letters NCT stand for.",
+              "clueKo": "NCT의 첫 글자 N이 상징하는, 새로움을 뜻하는 단어는?",
               "len": 3,
               "row": 5,
               "col": 3,
@@ -4610,7 +4610,7 @@
             {
               "answer": "HANDS",
               "clue": "The Korean re-cut of a pre-debut track closes the EP: '___ Up.'",
-              "clueKo": "The Korean re-cut of a pre-debut track closes the EP: '___ Up.'",
+              "clueKo": "데뷔 전 공개곡을 한국어로 다시 담아 EP를 닫는 트랙 '___ Up'의 빈칸은?",
               "len": 5,
               "row": 11,
               "col": 3,
@@ -4630,7 +4630,7 @@
             {
               "answer": "SUMMER",
               "clue": "The warm season whose carefree mood drenches this whole school-set EP.",
-              "clueKo": "The warm season whose carefree mood drenches this whole school-set EP.",
+              "clueKo": "학교를 배경으로 한 이 EP 전체를 여유로운 무드로 물들이는, 한 해 중 가장 뜨거운 계절은?",
               "len": 6,
               "row": 13,
               "col": 3,
@@ -4830,7 +4830,7 @@
             {
               "answer": "WICHU",
               "clue": "Stylized b-side title that reads aloud like 'with you.'",
-              "clueKo": "Stylized b-side title that reads aloud like 'with you.'",
+              "clueKo": "소리 내어 읽으면 'with you'처럼 들리도록 표기한 수록곡 제목은?",
               "len": 5,
               "row": 4,
               "col": 3,
@@ -4840,7 +4840,7 @@
             {
               "answer": "CODE",
               "clue": "Second word of that same '___'-cracking b-side.",
-              "clueKo": "Second word of that same '___'-cracking b-side.",
+              "clueKo": "그 암호를 풀어내는 같은 수록곡 제목의 두 번째 단어는?",
               "len": 4,
               "row": 8,
               "col": 3,
@@ -4850,7 +4850,7 @@
             {
               "answer": "NEO",
               "clue": "First word of 'Neo Culture Technology,' what NCT abbreviates.",
-              "clueKo": "First word of 'Neo Culture Technology,' what NCT abbreviates.",
+              "clueKo": "NCT라는 이름 맨 앞 글자가 가리키는, 새 시대를 뜻하는 단어는?",
               "len": 3,
               "row": 8,
               "col": 5,
@@ -4870,7 +4870,7 @@
             {
               "answer": "VIDEOHOOD",
               "clue": "Coined one-word b-side mashing 'video' with 'neighborhood.'",
-              "clueKo": "Coined one-word b-side mashing 'video' with 'neighborhood.'",
+              "clueKo": "'video'와 'neighborhood'를 붙여 만든 조어 제목의 한 단어 수록곡은?",
               "len": 9,
               "row": 10,
               "col": 1,
@@ -4880,7 +4880,7 @@
             {
               "answer": "BLUE",
               "clue": "B-side 'Baby ___,' a shade hiding in its own title.",
-              "clueKo": "B-side 'Baby ___,' a shade hiding in its own title.",
+              "clueKo": "제목 속에 색깔 하나가 숨어 있는 수록곡 'Baby ___'은?",
               "len": 4,
               "row": 12,
               "col": 4,
@@ -4890,7 +4890,7 @@
             {
               "answer": "SURF",
               "clue": "The pre-release single that rode out ahead of this third mini album.",
-              "clueKo": "The pre-release single that rode out ahead of this third mini album.",
+              "clueKo": "이 세 번째 미니앨범에 앞서 먼저 공개된 선공개 싱글은?",
               "len": 4,
               "row": 12,
               "col": 6,
@@ -4900,7 +4900,7 @@
             {
               "answer": "CULTURE",
               "clue": "Middle word of 'Neo ___ Technology.'",
-              "clueKo": "Middle word of 'Neo ___ Technology.'",
+              "clueKo": "'Neo ___ Technology'의 가운데 단어는?",
               "len": 7,
               "row": 13,
               "col": 2,
@@ -4910,7 +4910,7 @@
             {
               "answer": "CHEAT",
               "clue": "Gaming-flavored b-side: '___ Code.'",
-              "clueKo": "Gaming-flavored b-side: '___ Code.'",
+              "clueKo": "게임 느낌을 살린 수록곡 '___ Code'의 앞 단어는?",
               "len": 5,
               "row": 14,
               "col": 1,
@@ -4920,7 +4920,7 @@
             {
               "answer": "SHINE",
               "clue": "The concept's promise: each member letting their own light ___.",
-              "clueKo": "The concept's promise: each member letting their own light ___.",
+              "clueKo": "각 멤버가 저마다의 빛을 내라는 이 앨범 콘셉트의 약속, 그 '빛나다'에 해당하는 단어는?",
               "len": 5,
               "row": 15,
               "col": 0,
@@ -5149,7 +5149,7 @@
             {
               "answer": "CHASING",
               "clue": "First word of that storm-themed opener, '___ Lightning.'",
-              "clueKo": "First word of that storm-themed opener, '___ Lightning.'",
+              "clueKo": "번개를 소재로 한 오프닝 '___ Lightning', 잡으려 끝까지 뒤따라 달려간다는 뜻의 첫 단어는?",
               "len": 7,
               "row": 2,
               "col": 12,
@@ -5189,7 +5189,7 @@
             {
               "answer": "DISCO",
               "clue": "The retro club genre fueling the 'CRAZY' sound.",
-              "clueKo": "The retro club genre fueling the 'CRAZY' sound.",
+              "clueKo": "타이틀 'CRAZY'의 사운드를 이끄는, 미러볼 아래서 춤추는 복고풍 클럽 음악 장르는?",
               "len": 5,
               "row": 7,
               "col": 10,
@@ -5399,7 +5399,7 @@
             {
               "answer": "UNFORGIVEN",
               "clue": "Title track featuring Nile Rodgers, named for the Clint Eastwood Western.",
-              "clueKo": "Title track featuring Nile Rodgers, named for the Clint Eastwood Western.",
+              "clueKo": "나일 로저스가 참여한 타이틀곡, 클린트 이스트우드 서부극에서 이름을 딴 이 곡은?",
               "len": 10,
               "row": 0,
               "col": 18,
@@ -5409,7 +5409,7 @@
             {
               "answer": "IMPURITIES",
               "clue": "Track 6 whose plural title means 'flaws' or things deemed unclean.",
-              "clueKo": "Track 6 whose plural title means 'flaws' or things deemed unclean.",
+              "clueKo": "결점, 혹은 불결하다 여겨지는 것들을 뜻하는 복수형 제목의 6번 트랙은?",
               "len": 10,
               "row": 6,
               "col": 13,
@@ -5419,7 +5419,7 @@
             {
               "answer": "PSYCHE",
               "clue": "Mythic figure named in 'Eve, ___ & the Bluebeard's Wife.'",
-              "clueKo": "Mythic figure named in 'Eve, ___ & the Bluebeard's Wife.'",
+              "clueKo": "'Eve, ___ & the Bluebeard's Wife'에 등장하는 신화 속 인물은?",
               "len": 6,
               "row": 7,
               "col": 11,
@@ -5429,7 +5429,7 @@
             {
               "answer": "HYDRA",
               "clue": "'The ___,' the many-headed-serpent-named track that opens the album's new material.",
-              "clueKo": "'The ___,' the many-headed-serpent-named track that opens the album's new material.",
+              "clueKo": "머리가 여럿 달린 뱀에서 이름을 딴, 새 수록곡의 문을 여는 'The ___'는?",
               "len": 5,
               "row": 8,
               "col": 1,
@@ -5439,7 +5439,7 @@
             {
               "answer": "FEARLESS",
               "clue": "A 2023-version track here, and the name of their debut EP.",
-              "clueKo": "A 2023-version track here, and the name of their debut EP.",
+              "clueKo": "여기 2023 버전으로 실린 곡이자, 그들의 데뷔 EP 이름이기도 한 이 단어는?",
               "len": 8,
               "row": 8,
               "col": 13,
@@ -5459,7 +5459,7 @@
             {
               "answer": "OYSTER",
               "clue": "'The World Is My ___,' the album's confident opening line and track.",
-              "clueKo": "'The World Is My ___,' the album's confident opening line and track.",
+              "clueKo": "'The World Is My ___', 앨범의 당당한 첫 소절이자 트랙 — 그 바다 조개는?",
               "len": 6,
               "row": 9,
               "col": 0,
@@ -5469,7 +5469,7 @@
             {
               "answer": "FLAME",
               "clue": "'Blue ___,' a 2023-version track burning early in the tracklist.",
-              "clueKo": "'Blue ___,' a 2023-version track burning early in the tracklist.",
+              "clueKo": "트랙리스트 앞쪽에서 타오르는 2023 버전 곡 'Blue ___'의 뒷단어는?",
               "len": 5,
               "row": 10,
               "col": 7,
@@ -5489,7 +5489,7 @@
             {
               "answer": "NILE",
               "clue": "Disco legend ___ Rodgers, featured on the title track.",
-              "clueKo": "Disco legend ___ Rodgers, featured on the title track.",
+              "clueKo": "타이틀곡에 참여한 디스코 전설, ___ 로저스의 이름은?",
               "len": 4,
               "row": 11,
               "col": 4,
@@ -5499,7 +5499,7 @@
             {
               "answer": "ANTIFRAGILE",
               "clue": "Re-included track sharing its name with the group's 2022 EP and title song.",
-              "clueKo": "Re-included track sharing its name with the group's 2022 EP and title song.",
+              "clueKo": "그룹의 2022년 EP이자 타이틀곡과 같은 이름으로 다시 수록된 곡은?",
               "len": 11,
               "row": 12,
               "col": 1,
@@ -5509,7 +5509,7 @@
             {
               "answer": "WESTERN",
               "clue": "The dusty outlaw film genre framing the album's whole worldview.",
-              "clueKo": "The dusty outlaw film genre framing the album's whole worldview.",
+              "clueKo": "앨범 전체 세계관을 감싸는, 흙먼지 날리는 무법자 영화 장르는?",
               "len": 7,
               "row": 14,
               "col": 3,
@@ -5698,7 +5698,7 @@
             {
               "answer": "CRY",
               "clue": "'You Wanna ___,' the tearful-titled track 3.",
-              "clueKo": "'You Wanna ___,' the tearful-titled track 3.",
+              "clueKo": "눈물을 떠올리게 하는 제목의 3번 트랙 'You Wanna ___'의 마지막 단어는?",
               "len": 3,
               "row": 0,
               "col": 6,
@@ -5748,7 +5748,7 @@
             {
               "answer": "FLU",
               "clue": "Track 2's three-letter title, named for a feverish illness.",
-              "clueKo": "Track 2's three-letter title, named for a feverish illness.",
+              "clueKo": "열이 오르는 병에서 이름을 딴, 세 글자 제목의 2번 트랙은?",
               "len": 3,
               "row": 2,
               "col": 12,
@@ -5768,7 +5768,7 @@
             {
               "answer": "TKO",
               "clue": "Closing track abbreviating a boxing 'technical knockout.'",
-              "clueKo": "Closing track abbreviating a boxing 'technical knockout.'",
+              "clueKo": "권투의 '기술적 넉아웃'을 줄인, 앨범을 닫는 마지막 트랙은?",
               "len": 3,
               "row": 4,
               "col": 11,
@@ -5798,7 +5798,7 @@
             {
               "answer": "BOHEMIAN",
               "clue": "The free-spirited aesthetic word describing the EP's concept photos.",
-              "clueKo": "The free-spirited aesthetic word describing the EP's concept photos.",
+              "clueKo": "이 EP의 콘셉트 포토를 설명하는, 자유분방한 미학을 뜻하는 단어는?",
               "len": 8,
               "row": 9,
               "col": 5,
@@ -5978,7 +5978,7 @@
             {
               "answer": "DREAMERS",
               "clue": "The Bertolucci film 'The ___,' quoted in the 'Kitsch' visuals.",
-              "clueKo": "The Bertolucci film 'The ___,' quoted in the 'Kitsch' visuals.",
+              "clueKo": "'Kitsch' 비주얼에 인용된 베르톨루치 영화 'The ___', 몽상에 빠진 이들을 그린 제목은?",
               "len": 8,
               "row": 0,
               "col": 5,
@@ -5988,7 +5988,7 @@
             {
               "answer": "CHERISH",
               "clue": "Track 10 whose title means to hold something dear.",
-              "clueKo": "Track 10 whose title means to hold something dear.",
+              "clueKo": "무언가를 애틋하게 아끼고 소중히 여긴다는 뜻의 10번 트랙 제목은?",
               "len": 7,
               "row": 1,
               "col": 18,
@@ -5998,7 +5998,7 @@
             {
               "answer": "BLOOD",
               "clue": "'Blue ___,' the album's opening track.",
-              "clueKo": "'Blue ___,' the album's opening track.",
+              "clueKo": "앨범 문을 여는 트랙 'Blue ___', 혈관을 타고 흐르는 붉은 그것을 가리키는 빈칸은?",
               "len": 5,
               "row": 2,
               "col": 8,
@@ -6008,7 +6008,7 @@
             {
               "answer": "MINE",
               "clue": "Possessive one-word track 6.",
-              "clueKo": "Possessive one-word track 6.",
+              "clueKo": "무언가가 오직 내 소유임을 당당히 선언하는, 한 단어짜리 6번 트랙 제목은?",
               "len": 4,
               "row": 2,
               "col": 13,
@@ -6038,7 +6038,7 @@
             {
               "answer": "LIPS",
               "clue": "Track 4 named for the part of the face you kiss with.",
-              "clueKo": "Track 4 named for the part of the face you kiss with.",
+              "clueKo": "입맞춤할 때 서로 맞닿는 얼굴의 그 부위 이름을 딴 4번 트랙은?",
               "len": 4,
               "row": 4,
               "col": 11,
@@ -6058,7 +6058,7 @@
             {
               "answer": "CONFIDENCE",
               "clue": "The self-love attitude at the album's core — believing in yourself.",
-              "clueKo": "The self-love attitude at the album's core — believing in yourself.",
+              "clueKo": "앨범의 핵심인 자기애, 스스로를 굳게 믿는 그 당당한 마음을 뜻하는 단어는?",
               "len": 10,
               "row": 5,
               "col": 7,
@@ -6068,7 +6068,7 @@
             {
               "answer": "HYPNOSIS",
               "clue": "Track 7, titled '섬찟' in Korean, about a spellbinding trance.",
-              "clueKo": "Track 7, titled '섬찟' in Korean, about a spellbinding trance.",
+              "clueKo": "한국어 제목 '섬찟'인 7번 트랙, 상대를 홀려 몽롱하게 빠져들게 만드는 상태를 뜻하는 영어 제목은?",
               "len": 8,
               "row": 7,
               "col": 0,
@@ -6078,7 +6078,7 @@
             {
               "answer": "KITSCH",
               "clue": "Pre-released dual title track whose MV quotes 'Books, not guns' from The Dreamers.",
-              "clueKo": "Pre-released dual title track whose MV quotes 'Books, not guns' from The Dreamers.",
+              "clueKo": "MV에 영화 The Dreamers의 'Books, not guns'를 인용한, 통속적 대중예술을 뜻하는 선공개 더블 타이틀곡은?",
               "len": 6,
               "row": 7,
               "col": 13,
@@ -6088,7 +6088,7 @@
             {
               "answer": "HEROINE",
               "clue": "Track 5 naming the leading lady of a story.",
-              "clueKo": "Track 5 naming the leading lady of a story.",
+              "clueKo": "한 이야기를 이끌어가는 여자 주인공을 가리키는 5번 트랙 제목은?",
               "len": 7,
               "row": 9,
               "col": 13,
@@ -6286,7 +6286,7 @@
             {
               "answer": "FLAT",
               "clue": "The digital world where the æ avatars actually live.",
-              "clueKo": "The digital world where the æ avatars actually live.",
+              "clueKo": "æ 아바타들이 실제로 살아가는 디지털 세계의 이름은?",
               "len": 4,
               "row": 5,
               "col": 1,
@@ -6295,7 +6295,7 @@
             },
             {
               "answer": "FLOWERS",
-              "clue": "A blooming b-side closing out the techno-leaning tracklist.",
+              "clue": "A blooming b-side on aespa's techno-leaning Whiplash tracklist.",
               "clueKo": "앨범에 핀 꽃 같은 수록곡은?",
               "len": 7,
               "row": 5,
@@ -6306,7 +6306,7 @@
             {
               "answer": "SYNK",
               "clue": "The act of connecting with your 'æ' to share thoughts and emotions.",
-              "clueKo": "The act of connecting with your 'æ' to share thoughts and emotions.",
+              "clueKo": "자신의 'æ'와 연결되어 생각과 감정을 나누는 행위를 부르는 말은?",
               "len": 4,
               "row": 6,
               "col": 4,
@@ -6316,7 +6316,7 @@
             {
               "answer": "KILL",
               "clue": "'___ It,' the punchy track that follows the title cut on the EP.",
-              "clueKo": "'___ It,' the punchy track that follows the title cut on the EP.",
+              "clueKo": "EP에서 타이틀곡 바로 뒤를 잇는, 강렬한 곡 '___ It'의 첫 단어는?",
               "len": 4,
               "row": 6,
               "col": 7,
@@ -6366,7 +6366,7 @@
             {
               "answer": "HOODIE",
               "clue": "'Pink ___,' the self-love hip-hop track on this EP.",
-              "clueKo": "'Pink ___', EP의 포근한 제목 트랙 속 단어는?",
+              "clueKo": "'Pink ___', 자기애를 노래한 이 EP의 힙합 수록곡 제목 속 빈칸은?",
               "len": 6,
               "row": 14,
               "col": 2,
@@ -6525,7 +6525,7 @@
             {
               "answer": "MULTIVERSE",
               "clue": "The expanded worldview this first studio album opened up.",
-              "clueKo": "The expanded worldview this first studio album opened up.",
+              "clueKo": "이 첫 정규가 본격적으로 열어젖힌 확장된 세계관은?",
               "len": 10,
               "row": 0,
               "col": 5,
@@ -6535,7 +6535,7 @@
             {
               "answer": "SUPERNOVA",
               "clue": "The glittering cosmic hyper-pop double title track, pre-released ahead of the album.",
-              "clueKo": "The glittering cosmic hyper-pop double title track, pre-released ahead of the album.",
+              "clueKo": "앨범보다 먼저 공개된, 반짝이는 우주적 하이퍼팝 더블 타이틀곡은?",
               "len": 9,
               "row": 1,
               "col": 16,
@@ -6545,7 +6545,7 @@
             {
               "answer": "PROLOGUE",
               "clue": "An album track whose title means the opening of a story.",
-              "clueKo": "An album track whose title means the opening of a story.",
+              "clueKo": "'이야기의 시작'을 뜻하는 제목의 수록곡은?",
               "len": 8,
               "row": 2,
               "col": 18,
@@ -6555,7 +6555,7 @@
             {
               "answer": "REKALL",
               "clue": "The worldview term for an 'æ' crossing over into the real world.",
-              "clueKo": "The worldview term for an 'æ' crossing over into the real world.",
+              "clueKo": "'æ'가 현실 세계로 넘어오는 것을 가리키는 세계관 용어는?",
               "len": 6,
               "row": 3,
               "col": 7,
@@ -6565,7 +6565,7 @@
             {
               "answer": "MAMBA",
               "clue": "'Black ___,' the evil entity that severs aespa's SYNK, from their debut single.",
-              "clueKo": "'Black ___,' the evil entity that severs aespa's SYNK, from their debut single.",
+              "clueKo": "데뷔 싱글에 등장한, 에스파의 SYNK를 끊어버리는 악한 존재 'Black ___'은?",
               "len": 5,
               "row": 3,
               "col": 10,
@@ -6575,7 +6575,7 @@
             {
               "answer": "MINE",
               "clue": "Possessive one-word b-side early on the tracklist.",
-              "clueKo": "Possessive one-word b-side early on the tracklist.",
+              "clueKo": "트랙리스트 앞쪽에 자리한, '내 것'이란 뜻의 한 단어 수록곡은?",
               "len": 4,
               "row": 3,
               "col": 12,
@@ -6585,7 +6585,7 @@
             {
               "answer": "LICORICE",
               "clue": "A b-side named after a chewy black candy.",
-              "clueKo": "A b-side named after a chewy black candy.",
+              "clueKo": "쫀득한 검은 사탕에서 이름을 딴 수록곡은?",
               "len": 8,
               "row": 4,
               "col": 0,
@@ -6595,7 +6595,7 @@
             {
               "answer": "MELODY",
               "clue": "The English subtitle of closing track '목소리.'",
-              "clueKo": "The English subtitle of closing track '목소리.'",
+              "clueKo": "마지막 트랙 '목소리'의 영어 부제는?",
               "len": 6,
               "row": 4,
               "col": 15,
@@ -6605,7 +6605,7 @@
             {
               "answer": "BAHAMA",
               "clue": "A breezy b-side named after an island getaway.",
-              "clueKo": "A breezy b-side named after an island getaway.",
+              "clueKo": "휴양지 섬 이름을 딴 산뜻한 분위기의 수록곡은?",
               "len": 6,
               "row": 5,
               "col": 10,
@@ -6615,7 +6615,7 @@
             {
               "answer": "ARMAGEDDON",
               "clue": "The other double title track — and the album's name, evoking a final battle of good vs evil.",
-              "clueKo": "The other double title track — and the album's name, evoking a final battle of good vs evil.",
+              "clueKo": "선과 악의 최후 결전을 떠올리게 하는, 앨범명이기도 한 또 하나의 더블 타이틀곡은?",
               "len": 10,
               "row": 6,
               "col": 7,
@@ -6625,7 +6625,7 @@
             {
               "answer": "NAEVIS",
               "clue": "The AI helper guiding aespa through the FLAT and KWANGYA.",
-              "clueKo": "The AI helper guiding aespa through the FLAT and KWANGYA.",
+              "clueKo": "플랫과 광야를 오가며 에스파를 이끄는 AI 조력자는?",
               "len": 6,
               "row": 8,
               "col": 9,
@@ -6635,7 +6635,7 @@
             {
               "answer": "KWANGYA",
               "clue": "The boundless digital wilderness at the heart of aespa's lore.",
-              "clueKo": "The boundless digital wilderness at the heart of aespa's lore.",
+              "clueKo": "에스파 세계관의 중심에 놓인 광활한 디지털 황야는?",
               "len": 7,
               "row": 10,
               "col": 8,
@@ -6773,7 +6773,7 @@
             {
               "answer": "WORLD",
               "clue": "'My ___,' the opening track also used to promote the debut EP.",
-              "clueKo": "'My ___,' the opening track also used to promote the debut EP.",
+              "clueKo": "데뷔 EP 홍보에도 쓰인 오프닝 트랙 'My ___'은?",
               "len": 5,
               "row": 1,
               "col": 3,
@@ -6783,7 +6783,7 @@
             {
               "answer": "REAL",
               "clue": "The middle word of the EP's title, 'SUPER ___ ME.'",
-              "clueKo": "The middle word of the EP's title, 'SUPER ___ ME.'",
+              "clueKo": "EP 제목 'SUPER ___ ME'의 가운데 단어는?",
               "len": 4,
               "row": 1,
               "col": 5,
@@ -6793,7 +6793,7 @@
             {
               "answer": "NOSTALGIA",
               "clue": "The Y2K, '90s–2000s East-Asian feeling the album's aesthetic chases.",
-              "clueKo": "The Y2K, '90s–2000s East-Asian feeling the album's aesthetic chases.",
+              "clueKo": "이 앨범의 미감이 좇는 Y2K, 90~2000년대 동아시아의 그 감성은?",
               "len": 9,
               "row": 3,
               "col": 1,
@@ -7032,7 +7032,7 @@
             {
               "answer": "PIMPLE",
               "clue": "A cheeky b-side named after a spot you'd hate to get before a date.",
-              "clueKo": "A cheeky b-side named after a spot you'd hate to get before a date.",
+              "clueKo": "데이트 전날엔 정말 나기 싫은 그것을 제목으로 삼은, 발랄한 수록곡은?",
               "len": 6,
               "row": 2,
               "col": 9,
@@ -7042,7 +7042,7 @@
             {
               "answer": "IROHA",
               "clue": "The Japanese maknae of ILLIT.",
-              "clueKo": "The Japanese maknae of ILLIT.",
+              "clueKo": "ILLIT의 일본인 막내 멤버는?",
               "len": 5,
               "row": 2,
               "col": 10,
@@ -7062,7 +7062,7 @@
             {
               "answer": "TACK",
               "clue": "'Tick-___,' that same maximalist b-side (second half).",
-              "clueKo": "'Tick-___,' that same maximalist b-side (second half).",
+              "clueKo": "시계 초침 소리를 흉내 낸 수록곡 'Tick-___'의 뒷부분 단어는?",
               "len": 4,
               "row": 3,
               "col": 4,
@@ -7072,7 +7072,7 @@
             {
               "answer": "TICK",
               "clue": "'___-Tack,' the chiptune-heavy standout b-side (first half).",
-              "clueKo": "'___-Tack,' the chiptune-heavy standout b-side (first half).",
+              "clueKo": "칩튠 사운드가 돋보이는 수록곡 '___-Tack'의 앞부분 단어는?",
               "len": 4,
               "row": 3,
               "col": 4,
@@ -7082,7 +7082,7 @@
             {
               "answer": "LIKE",
               "clue": "The verb in the EP's own title, 'I'll ___ You,' and its short opening track.",
-              "clueKo": "The verb in the EP's own title, 'I'll ___ You,' and its short opening track.",
+              "clueKo": "EP 제목 'I'll ___ You'에 들어간 동사이자, 짧은 인트로 트랙의 제목이기도 한 단어는?",
               "len": 4,
               "row": 4,
               "col": 8,
@@ -7092,7 +7092,7 @@
             {
               "answer": "CHERISH",
               "clue": "'___ (My Love),' the minimalistic lead single of this 2nd EP.",
-              "clueKo": "'___ (My Love),' the minimalistic lead single of this 2nd EP.",
+              "clueKo": "'___ (My Love)'라는, 이 두 번째 EP의 미니멀한 리드 싱글 제목의 첫 단어는?",
               "len": 7,
               "row": 5,
               "col": 4,
@@ -7102,7 +7102,7 @@
             {
               "answer": "IYKYK",
               "clue": "The b-side whose title is the texting acronym for 'If You Know You Know.'",
-              "clueKo": "The b-side whose title is the texting acronym for 'If You Know You Know.'",
+              "clueKo": "'아는 사람만 안다(If You Know You Know)'는 문자 속어를 제목으로 삼은 수록곡은?",
               "len": 5,
               "row": 6,
               "col": 0,
@@ -7310,7 +7310,7 @@
             {
               "answer": "BILLIONAIRE",
               "clue": "Money-flexing R&B b-side with 808 bass and a Y2K vibe.",
-              "clueKo": "Money-flexing R&B b-side with 808 bass and a Y2K vibe.",
+              "clueKo": "808 베이스와 Y2K 감성이 흐르는, 돈 자랑 가득한 R&B 수록곡은?",
               "len": 11,
               "row": 9,
               "col": 0,
@@ -7320,7 +7320,7 @@
             {
               "answer": "CLAK",
               "clue": "'Clik ___,' the second half of that pre-released double-title track.",
-              "clueKo": "'Clik ___,' the second half of that pre-released double-title track.",
+              "clueKo": "선공개된 더블 타이틀곡 'Clik ___'의 뒷부분 단어는?",
               "len": 4,
               "row": 11,
               "col": 3,
@@ -7539,7 +7539,7 @@
             {
               "answer": "BATTER",
               "clue": "'___ Up,' the sporty pre-debut single included here (and remixed).",
-              "clueKo": "'___ Up,' the sporty pre-debut single included here (and remixed).",
+              "clueKo": "스포티한 분위기로 이 앨범에 (리믹스와 함께) 실린 선공개 싱글 '___ Up'은?",
               "len": 6,
               "row": 4,
               "col": 5,
@@ -7549,7 +7549,7 @@
             {
               "answer": "DREAM",
               "clue": "A b-side that had circulated during the group's pre-debut reality show.",
-              "clueKo": "A b-side that had circulated during the group's pre-debut reality show.",
+              "clueKo": "데뷔 전 서바이벌 프로그램 시절부터 돌던 수록곡은?",
               "len": 5,
               "row": 5,
               "col": 3,
@@ -7559,7 +7559,7 @@
             {
               "answer": "SHEESH",
               "clue": "The slang-titled lead single of this debut EP.",
-              "clueKo": "The slang-titled lead single of this debut EP.",
+              "clueKo": "이 데뷔 EP의 타이틀곡, 슬랭에서 따온 제목의 곡은?",
               "len": 6,
               "row": 7,
               "col": 0,
@@ -7569,7 +7569,7 @@
             {
               "answer": "STUCK",
               "clue": "'___ in the Middle,' the EP track that also gets a remix version.",
-              "clueKo": "'___ in the Middle,' the EP track that also gets a remix version.",
+              "clueKo": "리믹스 버전도 함께 실린 수록곡 '___ in the Middle'은?",
               "len": 5,
               "row": 7,
               "col": 0,
@@ -7579,7 +7579,7 @@
             {
               "answer": "RAMI",
               "clue": "A four-letter vocalist who once went by 'Haram.'",
-              "clueKo": "A four-letter vocalist who once went by 'Haram.'",
+              "clueKo": "한때 '하람'이라는 이름으로 활동했던 네 글자 보컬 멤버는?",
               "len": 4,
               "row": 7,
               "col": 9,
@@ -7599,7 +7599,7 @@
             {
               "answer": "ASA",
               "clue": "A three-letter Japanese rapper in the seven-piece lineup.",
-              "clueKo": "A three-letter Japanese rapper in the seven-piece lineup.",
+              "clueKo": "7인 라인업에 속한 세 글자 일본인 래퍼는?",
               "len": 3,
               "row": 8,
               "col": 6,
@@ -7609,7 +7609,7 @@
             {
               "answer": "MONSTERS",
               "clue": "The short intro track that kicks the EP off.",
-              "clueKo": "The short intro track that kicks the EP off.",
+              "clueKo": "이 EP의 문을 여는 짧은 인트로 트랙은?",
               "len": 8,
               "row": 9,
               "col": 3,
